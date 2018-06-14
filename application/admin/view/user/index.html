@@ -1,0 +1,98 @@
+{extend name="layout:app"/}
+
+{block name="body"}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>用户</h2>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" style="padding: 0 0 40px 0;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>用户管理</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-9 m-b-xs">
+                            <a class="btn btn-outline btn-primary" href="{:\\think\\Url::build('User/create')}">新增</a>
+                            <button type="button" class="btn btn-outline btn-info ajax-post " url="{:\\think\\Url::build('batchUpdate',['value'=>1])}" target-form="ids">启用</button>
+                            <button type="button" class="btn btn-outline btn-warning ajax-post confirm" url="{:\\think\\Url::build('batchUpdate',['value'=>0])}" target-form="ids" >禁用</button>
+                            <button type="button" class="btn btn-outline btn-danger ajax-post confirm" url="{:\\think\\Url::build('batchUpdate',['value'=>-1])}" target-form="ids">删除</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <input type="text" id="search" value="{$search|default=''}" placeholder="请输入用户名或真实名称" class="input-sm form-control"> <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary search_user"> 搜索</button> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="">
+                                    <input class="i-checks checkbox check-all" type="checkbox">
+                                </th>
+                                <th class="">UID</th>
+                                <th class="">用户名</th>
+                                <th class="">真实姓名</th>
+                                <th class="">登录次数</th>
+                                <th class="">最后登录时间</th>
+                                <th class="">最后登录IP</th>
+                                <th class="">状态</th>
+                                <th class="">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {notempty name="admins"}
+                            {volist name="admins" id="vo"}
+                            <tr>
+                                <td><input class="ids i-checks" type="checkbox" name="ids[]" value="{$vo.id}"></td>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.username}</td>
+                                <td>{$vo.truename}</td>
+                                <td>{$vo.login_num}</td>
+                                <td><span>{$vo.login_time|time_format}</span></td>
+                                <td><span>{$vo.login_ip|long2ip}</span></td>
+                                <td>{$vo.status|change_status=['禁用','正常']}</td>
+                                <td>
+                                    <a title="编辑" href="{:\\think\\Url::build('userEdit',['id'=>$vo['uid']])}">编辑</a>
+                                    <a title="授权" class="group" href="{:\\think\\Url::build('AuthManager/group',['id'=>$vo['uid']])}">授权</a>
+                                    <a class="ajax-get confirm" title="{$vo.status|change_status=[1 => '禁用', 0 => '启用']}" href="{:\\think\\Url::build('setStatus',['value'=>abs($vo['status']-1),'ids'=>$vo['uid']])}">{$vo.status|change_status=[1=> '禁用', 0 => '启用']}</a>
+                                    <a class="confirm ajax-get" title="删除" href="{:\\think\\Url::build('setStatus',['value'=>-1,'ids'=>$vo['uid']])}">删除</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            {else /}
+                            <td colspan="10" class="text-center"> aOh! 暂时还没有内容!</td>
+                            {/notempty}
+                            </tbody>
+                           
+                        </table>
+                    </div>
+                       <!-- 分页 -->
+                    <div class="text-center" style="color: #000000;">
+                        {notempty name="page"}
+                        <font style="color:#000000;font-size: 16px;">共 {$totalpage} 条&nbsp;&nbsp;</font>
+                        {/notempty}
+                        {notempty name="list"}
+                        {$page}
+                        {/notempty}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
