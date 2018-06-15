@@ -19,14 +19,12 @@ class Admin extends Model {
     protected $rule = [
         'username' => "require|max:25",
         'password' => "require|confirm",
-        'phone' => 'unique|max:20',
     ];
     protected $msg = [
         'username.require' => '管理员名称不能为空',
         'username.max' => '管理员名称最多不能超过25个字符',
         'password.require' => '管理员密码不能为空',
-        'password.confirm' => '两次密码不一致',
-        'phone.unique' => '管理员联系电话唯一',
+        'password.confirm' => '两次密码不一致'
     ];
 
     /**
@@ -78,15 +76,16 @@ class Admin extends Model {
     public function renew() {
         $data = Request::instance()->post();
         $validate = new Validate($this->rule, $this->msg);
-        var_dump($validate->check($data));exit;
+
         if (!$validate->check($data)) {
-            echo 1;exit;
             // 验证失败 输出错误信息
             return $validate->getError();
         }
-        print_r($data);exit;
-        echo 1;exit;
+
+        unset($data['password_confirm']);
+        $data['addtime'] = time();
         $object = (int) $data['id'] ? $this::update($data) : $this::create($data);
+
         return $object ? $object->toArray() : null;
     }
 

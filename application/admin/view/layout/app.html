@@ -4,15 +4,24 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{$metaTitle|default='药智报告'}-药智报告后台管理系统</title>
+    <title>{$metaTitle|default='海迈健康'}-海迈健康后台管理系统</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="/admin/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
     <link href="/admin/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
     <link href="/admin/css/animate.min.css" rel="stylesheet">
     <link href="/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
     {block name="css"}{/block}
-    <script src="__JS__/jquery/2.2.4/jquery.js"></script>
-    <script src="__JS__/bootstrap.min.js"></script>
+    <style type="text/css">
+        .footer{
+            background: none repeat scroll 0 0 white;
+            border-top: 1px solid #e7eaec;
+            bottom: 0;
+            left: 0;
+            padding: 10px 20px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -49,49 +58,41 @@
                         <div class="logo-element">H+
                         </div>
                     </li>
-                    {block name="sidebar"}
-                        这是左侧菜单
+                    {block name='sidebar'}
+                        {include file="layout/sidebar" /}
                     {/block}
 
                 </ul>
             </div>
         </nav>
         <!--左侧导航结束-->
-        <!--右侧部分开始-->
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            <div class="row content-tabs">
-                <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
-                </button>
-                <nav class="page-tabs J_menuTabs">
-                    <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
-                    </div>
-                </nav>
-                <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
-                </button>
-                <div class="btn-group roll-nav roll-right">
-                    <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+        <!-- 主体 -->
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+                <div class="row border-bottom">
+                    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
 
-                    </button>
-                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                        <li class="J_tabShowActive"><a>定位当前选项卡</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
-                        </li>
-                        <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
-                        </li>
-                    </ul>
+                        </div>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li>
+                                <span class="m-r-sm text-muted welcome-message"><a href="{:\\think\\Url::build('Index/index')}" title="首页"><i class="fa fa-home"></i>首页</a></span>
+                            </li>
+                            <li>
+                                <a href="{:\\think\\Url::build('Login/logout')}">
+                                    <i class="fa fa-sign-out"></i> 退出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
-            </div>
-            
-            {block name="body"}
-            这是内容
-            {/block}
+                {block name="body"}
+                这是内容
+                {/block}
             
             <div class="footer">
-                <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
+                <div class="pull-right">
+                    <strong>Copyright</strong>   hanmau © 2018
                 </div>
             </div>
         </div>

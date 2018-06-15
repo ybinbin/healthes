@@ -51,9 +51,8 @@ class User extends Controller
      */
     public function save(Request $request)
     {
-        // var_dump(Loader::model('Admin'));exit;
         $re = Loader::model('Admin')->renew();
-        var_dump($re);
+        return $this->success('添加成功',Url::build('/admin/user/index'));
     }
 
     /**

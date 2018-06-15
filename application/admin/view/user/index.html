@@ -62,14 +62,12 @@
                                 <td>{$vo.username}</td>
                                 <td>{$vo.truename}</td>
                                 <td>{$vo.login_num}</td>
-                                <td><span>{$vo.login_time|time_format}</span></td>
+                                <td><span>{$vo.login_time}</span></td>
                                 <td><span>{$vo.login_ip|long2ip}</span></td>
-                                <td>{$vo.status|change_status=['禁用','正常']}</td>
+                                <td>{$vo.status}</td>
                                 <td>
-                                    <a title="编辑" href="{:\\think\\Url::build('userEdit',['id'=>$vo['uid']])}">编辑</a>
-                                    <a title="授权" class="group" href="{:\\think\\Url::build('AuthManager/group',['id'=>$vo['uid']])}">授权</a>
-                                    <a class="ajax-get confirm" title="{$vo.status|change_status=[1 => '禁用', 0 => '启用']}" href="{:\\think\\Url::build('setStatus',['value'=>abs($vo['status']-1),'ids'=>$vo['uid']])}">{$vo.status|change_status=[1=> '禁用', 0 => '启用']}</a>
-                                    <a class="confirm ajax-get" title="删除" href="{:\\think\\Url::build('setStatus',['value'=>-1,'ids'=>$vo['uid']])}">删除</a>
+                                    <a title="编辑" href="{:\\think\\Url::build('userEdit',['id'=>$vo['id']])}">编辑</a>
+                                    <a class="confirm ajax-get" title="删除" href="{:\\think\\Url::build('setStatus',['value'=>-1,'ids'=>$vo['id']])}">删除</a>
                                 </td>
                             </tr>
                             {/volist}
