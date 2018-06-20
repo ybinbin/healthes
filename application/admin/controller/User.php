@@ -6,6 +6,7 @@ use think\Controller;
 use think\Request;
 use think\Loader;
 use think\Db;
+use think\Url;
 
 class User extends Controller
 {
@@ -14,16 +15,22 @@ class User extends Controller
      *
      * @return \think\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $admins = Loader::model('Admin')->actionList([], true, 'id DESC');
-
+        $map = '';
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $search = $_GET['search'];
+            $map = "(username like '%$search%' OR truename like '%$search%')";
+            $value['search'] = $search;
+        }
+        $admins = Loader::model('Admin')->actionList([], $map, true, 'id DESC');
+        
         $value = [
             'admins' => $admins['data'] ?? null,
             'page' => $admins['page'],
             'totalpage' => $admins['totalpage'] ?? '',
+            'search' => $search ?? '',
         ];
-
         $this->view->metaTitle = '管理员列表';
         $this->view->action = 'user';
 
@@ -74,7 +81,12 @@ class User extends Controller
      */
     public function edit($id)
     {
-        //
+        $admins = Loader::model('Admin')->find($id);
+
+        $this->view->metaTitle = '编辑管理员';
+        $this->view->action = 'user';
+
+        return $this->view->assign(['member'=>$admins])->fetch('create');
     }
 
     /**
@@ -86,7 +98,8 @@ class User extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $re = Loader::model('Admin')->renew();
+        return $this->success('编辑成功',Url::build('/admin/user/index'));
     }
 
     /**
@@ -97,6 +110,16 @@ class User extends Controller
      */
     public function delete($id)
     {
-        //
+        $re = Loader::model('Admin')->setStatus(['id' => $id], ['status' => '-1']);
+
+        return $this->success('删除成功',Url::build('/admin/user/index'));
+    }
+
+    public function changeStatus()
+    {
+        $status = $_POST['status']==1 ? 2 : 1;
+        $re = Loader::model('Admin')->setStatus(['id' => $_POST['id']], ['status' => $status]);
+
+        return json_encode(array('status' => 1, 'msg' => '操作成功'));
     }
 }

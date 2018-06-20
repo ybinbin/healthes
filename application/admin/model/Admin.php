@@ -35,9 +35,10 @@ class Admin extends Model {
      * @author yaozh
      */
 
-    public function actionList(array $map_tmp = [], $field = true, string $order = 'id ASC'): array {
+    public function actionList(array $map_tmp = [],string $or_map = '', $field = true, string $order = 'id ASC'): array {
         $map = array_merge(['status' => ['neq', '-1']], $map_tmp);
-        $object = $this::where($map)->order($order)->field($field)->paginate(Config::get('list_rows') ?? 10);
+        $object = $this::where($map)->where($or_map)->order($order)->field($field)->paginate(Config::get('list_rows') ?? 10);
+        
         return $object ? array_merge($object->toArray(), ['page' => $object->render()]) : [];
     }
 
@@ -75,6 +76,8 @@ class Admin extends Model {
 
     public function renew() {
         $data = Request::instance()->post();
+        $data['head'] = $data['head'] ? $data['head'] : $data['old_head'];
+        unset($data['old_head']);
         $validate = new Validate($this->rule, $this->msg);
 
         if (!$validate->check($data)) {
@@ -87,16 +90,6 @@ class Admin extends Model {
         $object = (int) $data['id'] ? $this::update($data) : $this::create($data);
 
         return $object ? $object->toArray() : null;
-    }
-
-    /**
-     * 配置名称过滤
-     * @param 类型 参数 参数说明
-     * @author yaozh
-     */
-
-    protected function setTitleAttr($value) {
-        return htmlspecialchars($value);
     }
 
 }
