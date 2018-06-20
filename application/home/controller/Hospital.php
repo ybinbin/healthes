@@ -5,16 +5,17 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 
-class Index extends Controller
+class Hospital extends Controller
 {
     /**
      * 显示资源列表
-     *
+     *  
      * @return \think\Response
      */
     public function index()
     {
-        echo "这里是index";
+        //访问方式  http://www.haimai.com/home/Hospital/index
+        echo "这里是Hospital de index";
         die();
         return $this->view->fetch("index");
     }
