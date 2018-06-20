@@ -25,14 +25,11 @@
                     <div class="row">
                         <div class="col-sm-9 m-b-xs">
                             <a class="btn btn-outline btn-primary" href="{:\\think\\Url::build('User/create')}">新增</a>
-                            <button type="button" class="btn btn-outline btn-info ajax-post " url="{:\\think\\Url::build('batchUpdate',['value'=>1])}" target-form="ids">启用</button>
-                            <button type="button" class="btn btn-outline btn-warning ajax-post confirm" url="{:\\think\\Url::build('batchUpdate',['value'=>0])}" target-form="ids" >禁用</button>
-                            <button type="button" class="btn btn-outline btn-danger ajax-post confirm" url="{:\\think\\Url::build('batchUpdate',['value'=>-1])}" target-form="ids">删除</button>
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <input type="text" id="search" value="{$search|default=''}" placeholder="请输入用户名或真实名称" class="input-sm form-control"> <span class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary search_user"> 搜索</button> </span>
+                                <input type="text" id="search" value="{$search|default=''}" name="search" placeholder="请输入用户名或真实名称" class="input-sm form-control"> <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary search_user" onclick="search();"> 搜索</button> </span>
                             </div>
                         </div>
                     </div>
@@ -64,10 +61,12 @@
                                 <td>{$vo.login_num}</td>
                                 <td><span>{$vo.login_time}</span></td>
                                 <td><span>{$vo.login_ip|long2ip}</span></td>
-                                <td>{$vo.status}</td>
+                                <td>{if $vo.status==1}启用{else}禁用{/if}</td>
                                 <td>
-                                    <a title="编辑" href="{:\\think\\Url::build('userEdit',['id'=>$vo['id']])}">编辑</a>
-                                    <a class="confirm ajax-get" title="删除" href="{:\\think\\Url::build('setStatus',['value'=>-1,'ids'=>$vo['id']])}">删除</a>
+                                    <input type="hidden" id="status_{$vo.id}" value="{$vo.status}">
+                                    <a title="{if $vo.status==1}禁用{else}启用{/if}" id="changeStatus_{$vo.id}" onclick="changeStatus({$vo.id})">{if $vo.status==1}禁用{else}启用{/if}</a>
+                                    <a title="编辑" href="{:\\think\\Url::build('edit',['id'=>$vo['id']])}">编辑</a>
+                                    <a class="confirm ajax-get" title="删除" href="{:\\think\\Url::build('delete',['id'=>$vo['id']])}">删除</a>
                                 </td>
                             </tr>
                             {/volist}
@@ -93,4 +92,20 @@
         </div>
     </div>
 </div>
+{/block}
+{block name="script"}
+<script type="text/javascript">
+    function search() {
+        $search = $('#search').val();
+        location.href="/admin/user/index?search="+$search;
+    }
+    function changeStatus(id)
+    {
+        var status = $('#status_'+id).val();
+        $.post('/admin/user/changeStatus',{id:id, status:status},function(e){
+            history.go(0);
+        },'json')
+    }
+
+</script>
 {/block}

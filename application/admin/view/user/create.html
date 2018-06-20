@@ -30,7 +30,8 @@
                     </div>
                 </div>
                 <div class="ibox-content p-xl-important">
-                    <form class="form-horizontal" id="signupForm" method="post" action="{:\\think\\Url::build('User/save')}">
+
+                    <form class="form-horizontal" id="signupForm" method="post" {if isset($member.id)} action="{:\\think\\Url::build('User/update')}" {else} action="{:\\think\\Url::build('User/save')}" {/if}>
                         <div class="form-group input-large">
                             <label class=" control-label">用户名<span class="check-tips">（用户名会作为登录账号）</span></label>
                             <input type="hidden" id="id" name="id" value="{$member.id|default=''}"/>
@@ -58,7 +59,7 @@
                             <label class=" control-label">头像<span class="check-tips">(用户邮箱，用于找回密码等安全操作)</span></label>
                             <br /> <br />
                             <input class="" type="file" name="head" >
-                            <!-- <input type="hidden" name="head" value="{$member.email|default=''}"> -->
+                            <input type="hidden" name="old_head" value="{$member.head|default=''}">
                         </div>
                         <br />
                         <div class="form-group">
