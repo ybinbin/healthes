@@ -14,8 +14,6 @@ class Index extends Controller
      */
     public function index()
     {
-        echo "这里是index";
-        die();
         return $this->view->fetch("index");
     }
 

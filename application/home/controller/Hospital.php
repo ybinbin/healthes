@@ -27,7 +27,8 @@ class Hospital extends Controller
      */
     public function create()
     {
-        //
+        
+        return $this->view->fetch("create");
     }
 
     /**
