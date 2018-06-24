@@ -10,152 +10,162 @@
 	<script src="/static/js/config.js"></script>
 </head>
 <body>
-	<header>
-		<!-- top 广告 -->
-		<div class="pr" style="background: #080832;">
-			<a href="">
-				<div class="wrapper ad-top" style="background: url(/static/images/index/ad_top.png) center center no-repeat;background-size: cover;">
-				</div>
-			</a>
-			<i class="iconfont icon-guanbi pa ad-top-close"></i>
+	{include file="common/header" /}
+	<!-- 轮播图 -->
+	<div id="product-loop" class="pr">
+		<!-- 图片显示顺序是逆序 -->
+		<a href=""><div class="img" style="background-image: url(/static/images/index/loop2.jpg);"></div></a>
+		<a href=""><div class="img" style="background-image: url(/static/images/index/loop1.jpg);"></div></a>
+		<a href=""><div class="img" style="background-image: url(/static/images/index/loop0.jpg);"></div></a>
+		<div class="index tc fs32 pa fw900">
+			<ul class="ib">
+				<li class="active">○</li>
+				<li>○</li>
+				<li>○</li>
+			</ul>
 		</div>
-		
-		<!-- logo 栏 -->
-		<div class="wrapper bar-logo clearfix">
-			<!-- logo -->
-			<div class="fl out-box">
-				<span class="line-middle" style="width: 168px;">
-					<a href="">
-						<img src="/static/images/logo.png" id="logo">
-					</a>
-				</span>
-			</div>
-			<!-- 分隔竖线 -->
-			<div class="fl out-box">
-				<span class="line-middle" style="width: 42px;">
-					<span class="fl ib" style="width: 2px;height: 35px;background: #ccc;margin: 0 20px;"></span>
-				</span>
-			</div>
-			<!-- 口号 -->
-			<div class="fl out-box">
-				<span class="line-middle" style="width: 160px;">
-					<span class="ib c1c1c1">
-						印度医疗旅游专业平台<br>
-						让丙肝患者有更多更好的选择
-					</span>
-				</span>
-			</div>
-			<!-- 右边浮动 -->
-			<div class="fr">
-				<div class="fl out-box">
-					<span class="line-middle" style="width: 197px;">
-						<i class="iconfont icon-shizhongtubiao b cf04e66 vm fs16"></i>
-						<span class="b vm c51616b fs14">8:30AM TO  5:30PM</span>
-					</span>
-				</div>
-
-				<div class="fl out-box">
-					<span class="line-middle" style="width: 160px;">
-						<i class="iconfont icon-shouji-man b cf04e66 vm fs18"></i>
-						<span class="b vm c51616b fs14">133-9980-6488</span>
-					</span>
-				</div>
-
-				<div class="fl out-box">
-					<span class="line-middle" style="width: 138px;">
-						<i class="iconfont icon-dianhua b cf04e66 vm fs14"></i>
-						<span class="b vm c51616b fs14">400-188-2515</span>
-					</span>
-				</div>
-
-				<div class="fl out-box">
-					<span class="line-middle" style="width: 280px;">
-						<a href="" class="cf00">端午节优惠活动来袭，健康直邮服务减免服务费啦！</a>
-					</span>
-				</div>
-			</div>
-		</div>
-
-		<!-- Nav 导航栏 -->
-		<nav>
-			<div class="wrapper content">
-				<ul class="ul-title">
-					<li class="active">
-						<a href="javascript:void(0);">全站首页		</a>
-						<ul>
-							<li><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">解决方案		</a>
-						<ul>
-							<li><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">知识&amp;咨询	</a>
-						<ul>
-							<li><a href="">丙肝知识</a></li>
-							<li><a href="">说明书</a></li>
-							<li><a href="">行业资讯</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">医疗资源		</a>
-						<ul>
-							<li><a href="">医院列表</a></li>
-							<li><a href="">合作医生</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">转阴案例		</a>
-						<ul>
-							<li><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">关于&amp;联系	</a>
-						<ul>
-							<li><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0);">关注我们		</a>
-						<div class="qr dn">
-							<img src="http://www.huayinyiliao.com/templets/default/images/index/wechat_code1.png">
-						</div>
-					</li>
-					
-					<!-- 向右浮动，调整dom顺序 -->
-					<li class="fr vt pr" style="width: auto;">
-						<form>
-							<input type="search" name="search" id="input-search" class="vb" placeholder="输入您想查找内容的关键词进行搜索">
-							<i class="iconfont icon-sousuo btn-search pa b tc">
-								<button type="submit" class="dn"></button>
-							</i>
-						</form>
-					</li>
-					<li class="bcff6600 tc fs18 fr">
-						<a href="" class="cf vt">互助问答	</a>
-					</li>
-					
+	</div>
+	<!-- 产品介绍 -->
+	<div id="product-text" class="tc">
+		<ul class="text ib">
+			<li>
+				<ul>
+					<li class="title">免费套餐</li>
+					<li>提供40余款高性能云产品帮助您获得上云实践经验</li>
 				</ul>
-			</div>
-		</nav>
-		<div style="width: 100%;background: #f00;">
-			123
+			</li>
+			<li>
+				<ul>
+					<li class="title">阿里云AI产品矩阵发布</li>
+					<li>即刻了解130余款AI产品，12个产业级解决方案</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">云数据库POLARDB</li>
+					<li>自研创新智能数据引擎，全新一代企业级云数据库</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">ET城市大脑</li>
+					<li>利用AI、大数据等突破性技术，全局优化城市治理</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">移动云</li>
+					<li>用于研发、构建、运维、营销等移动应用的基础设施</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- 公司介绍 -->
+	<div id="introduce" class="tc clearfix">
+		<div class="txt0 fs33 c009eb6">海迈健康用心服务，让丙肝患者更多选择</div>
+		<div class="txt1 fs18 c009eb6">团队于2017年6月赴印度考察，并与Fortis医院、Apollo医院、Max医院等多家权威医院签订合作协议，为丙肝患者提供优质医疗旅游服务</div>
+
+		<div class="txt2 fs14 cfd6501 ib">极少数耐药者在海迈健康协助下且按医嘱治疗未能转阴的，将免费为患者提供同等价值的康复资助，并未患者联系境外医生提供进一步治疗建议，详情见与海迈健康签署的咨询服务协议。</div>
+
+		<!-- 提供的服务 -->
+		<div id="supply" class="c787878 tc">
+			<ul class="ib tl content">
+				<li>
+					<ul>
+						<li class="c797979">
+							<span class="fw700">海迈健康咨询服务</span>
+							<i class="icon fs36 cf05536 vm">&#xe608;</i>
+						</li>
+						<li class="fs13">
+							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
+							<span class="cf05536 fs19">￥778</span>元</li>
+						<li>
+							<a href=""><div>查看详情</div></a>
+							<a href=""><div>立即咨询</div></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="c797979">
+							<span class="fw700">海迈健康咨询服务</span>
+							<i class="icon fs36 cf05536 vm">&#xe608;</i>
+						</li>
+						<li class="fs13">
+							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
+							<span class="cf05536 fs19">￥778</span>元</li>
+						<li>
+							<a href=""><div>查看详情</div></a>
+							<a href=""><div>立即咨询</div></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="c797979">
+							<span class="fw700">海迈健康咨询服务</span>
+							<i class="icon fs36 cf05536 vm">&#xe608;</i>
+						</li>
+						<li class="fs13">
+							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
+							<span class="cf05536 fs19">￥778</span>元</li>
+						<li>
+							<a href=""><div>查看详情</div></a>
+							<a href=""><div>立即咨询</div></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li class="c797979">
+							<span class="fw700">海迈健康咨询服务</span>
+							<i class="icon fs36 cf05536 vm">&#xe608;</i>
+						</li>
+						<li class="fs13">
+							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
+							<span class="cf05536 fs19">￥778</span>元</li>
+						<li>
+							<a href=""><div>查看详情</div></a>
+							<a href=""><div>立即咨询</div></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-	</header>
+		<!-- 关于海迈健康 -->
+		<div id="about" class="tc">
+			<div class="fs24 c797979 title">关于海迈健康</div>
+			<div class="introduce-detail c797979 tl">
+				海迈健康（hanmau.com）是一站式国际医疗旅游服务,由重庆视焦网络科技有限责任公司运营，是属于视焦网络科技的品牌，海迈健康让您远离非法，杜绝救命假药,重获新生!团队于2017年6月赴印度考察，并与Fortis医院、Apollo医院、Max医院等多家权威医院签订合作协议，为患者提供医疗旅游服务，海迈健康的小伙伴们有一颗仁心和严谨的心，真正做到让您省心、安心、放心、贴心；我们只做一个桥梁，通向印度医院，开通VIP绿色就诊通道。在外期间保障您合法的利益与权益，回国后您能继续与我们联络， 跟踪诊疗效果，在国外您享受奢华吃住行体验，治病的同时感受异国风情，并且问诊印度国宝级肝病专家。
+			</div>
+		</div>
+		<!-- 海迈健康服务流程 -->
+		<div id="process">
+			<div class="fs24 c797979 title">海迈健康服务流程</div>
+			<div class="c797979">我们只做一个桥梁，疗旅游服务,由重庆视焦网络科技有限责任公司运</div>
+			<!-- 做到这里了 -->
+		</div>
+	</div>
+	
+
 	<script>
-		require(['jquery'], function ($) {
+		require(['jquery','self'], function ($,self) {
+			// 轮播图片
+			var loopImg = [].reverse.call($('#product-loop .img').parent()),
+				pointer = $('#product-loop .index li'),
+				index = 0;
+
+			setInterval(function () {
+				loopFun();
+			},2000);
+			function loopFun() {
+				index = index % loopImg.size();//0 1 2
+				if (index == loopImg.size()) {
+					loopImg.fadeIn();
+				} else {
+					$(loopImg[index++]).fadeOut();
+				}
+			}
 
 		})
 	</script>
