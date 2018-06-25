@@ -140,32 +140,163 @@
 			</div>
 		</div>
 		<!-- 海迈健康服务流程 -->
-		<div id="process">
+		<div id="process" class="tc">
 			<div class="fs24 c797979 title">海迈健康服务流程</div>
-			<div class="c797979">我们只做一个桥梁，疗旅游服务,由重庆视焦网络科技有限责任公司运</div>
-			<!-- 做到这里了 -->
+			<div class="c797979">我们只做一个桥梁，疗旅游服务 ,由重庆视焦网络科技有限责任公司运</div>
+			<ul class="content ib">
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server6.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server0.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server3.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server4.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server1.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server5.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server2.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<br>
+			<ul class="num ib">
+				<li>
+					<div>1</div>
+				</li>
+				<li>
+					<div>2</div>
+				</li>
+				<li>
+					<div>3</div>
+				</li>
+				<li>
+					<div>4</div>
+				</li>
+				<li>
+					<div>5</div>
+				</li>
+				<li>
+					<div>6</div>
+				</li>
+				<li>
+					<div>7</div>
+				</li>
+			</ul>
 		</div>
 	</div>
-	
+	<!-- 大咖云集，知识分享 -->
+	<div id="knowledge" class="tc">
+		
+	</div>
 
 	<script>
 		require(['jquery','self'], function ($,self) {
 			// 轮播图片
-			var loopImg = [].reverse.call($('#product-loop .img').parent()),
-				pointer = $('#product-loop .index li'),
-				index = 0;
+			// var loopImg = [].reverse.call($('#product-loop .img')),
+			// 	pointer = $('#product-loop .index li'),
+			// 	index = 0,
+			// 	interval;
 
-			setInterval(function () {
-				loopFun();
-			},2000);
-			function loopFun() {
-				index = index % loopImg.size();//0 1 2
-				if (index == loopImg.size()) {
-					loopImg.fadeIn();
-				} else {
-					$(loopImg[index++]).fadeOut();
-				}
-			}
+			// pointer.each(function (index) {
+			// 	$(this).data(pointer,index);
+			// })
+
+			// setInterval(function () {
+			// 	index = ++index % loopImg.size(); // 1 2 0  
+			// 	loopFun();
+			// },2000);
+
+			// function loopFun() {
+   // 				if (index == loopImg.size()-1) {
+   // 					loopImg.each(function (cursor) {
+   // 						if (cursor < index) {
+   // 							$(this).fadeOut();
+   // 						} else {
+   // 							return false;
+   // 						}
+   // 					})
+			// 	} else {
+
+			// 	}
+			// }
 
 		})
 	</script>
