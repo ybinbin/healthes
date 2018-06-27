@@ -17,6 +17,12 @@ class Index extends Controller
         return $this->view->fetch("index");
     }
 
+    public function solution()
+    {
+        return $this->view->fetch("solution");
+    }
+   
+
     /**
      * 显示创建资源表单页.
      *
@@ -82,4 +88,5 @@ class Index extends Controller
     {
         //
     }
+
 }
