@@ -29,6 +29,9 @@
 #div-table .table th {background: #66a3c3;color: #fff;}
 #div-table .table td,#div-table .table th {border-collapse: collapse;border: 1px solid #999;width: 326px;padding: 3px 0;}
 #div-table .zixun {width: 406px;height: 455px;background: #ff9933;}
+#div-table .zixun table {width: 100%;}
+#div-table .zixun td:first-child {width: 20%;text-align: center;}
+#div-table .zixun td:only-child {width: 156px;}
 #div-table .xing,#div-table .zhou {width: 100px!important;}
 #div-table form {background: #fff;width: 392px;height: 390px;}
 #div-table .title {margin: 3px 0;}
