@@ -139,8 +139,13 @@ footer .content > li li:first-child {color: #fff;font-size: 16px;margin-bottom: 
 #side-right-zhuanjia {width: 364px;border: 1px solid #bcbcbc;}
 #side-right-zhuanjia img {margin-top: 16px;}
 #side-right-zhuanjia .text {width: 319px;}
-
-
+/*常见问题*/
+#common-problem {width: 813px;min-height: 1344px;padding-bottom: 20px;}
+#common-problem .title {margin-bottom: 50px;}
+#common-problem .line {width: 80px;height: 2px;background: #d8d8d8;}
+#common-problem .dian {width: 6px;height: 6px;border-radius: 6px;background: #d8d8d8;}
+#common-problem li {width: 714px;margin: 0 auto;line-height: 25px;font-size: 14px;}
+#common-problem li+li {margin-top: 43px;}
 
 
 

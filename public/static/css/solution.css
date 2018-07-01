@@ -66,12 +66,6 @@
 .arrow1{height:59px;width:62px;background-position:-98px 0;}
 
 #any-question {width: 1193px;margin-top: 60px;}
-#any-question .left {width: 813px;min-height: 1344px;border: 1px solid #bcbcbc;padding-bottom: 20px;}
-#any-question .left .title {margin: 56px 0 50px 0;}
-#any-question .left .line {width: 80px;height: 2px;background: #d8d8d8;}
-#any-question .left .dian {width: 6px;height: 6px;border-radius: 6px;background: #d8d8d8;}
-#any-question .left li {width: 714px;margin: 0 auto;line-height: 25px;font-size: 14px;}
-#any-question .left li+li {margin-top: 43px;}
 
 
 
