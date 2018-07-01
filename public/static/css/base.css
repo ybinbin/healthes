@@ -23,6 +23,7 @@
 .fw900 {font-weight: 700!important;}
 
 a {text-decoration: none!important;}
+a > img {border: 0;}
 ul,li {margin: 0;padding: 0;list-style: none!important;}
 
 .fs12 {font-size: 12px!important;}
@@ -54,6 +55,7 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 .cc {color: #ccc!important;}
 .cf {color: #fff!important;}
 .c6 {color: #666!important;}
+.c8 {color: #888!important;}
 .cf00 {color: #f00;}
 .cf04e66 {color: #F04E66;}
 .c51616b {color: #51616b;}
@@ -143,9 +145,25 @@ footer .content > li li:first-child {color: #fff;font-size: 16px;margin-bottom: 
 /*部分页面公用部分样式*/
 
 /*1、新闻页面右边栏*/
-#side-right-zhuanjia {width: 364px;border: 1px solid #bcbcbc;}
+#side-right-zhuanjia {width: 382px;}
 #side-right-zhuanjia img {margin-top: 16px;}
-#side-right-zhuanjia .text {width: 319px;}
+#side-right-zhuanjia .text {width: 330px;}
+/*2、新闻页面右边栏：说明书-行业咨询-知识点*/
+#shz {padding-bottom: 20px;}
+#shz > div {height: 50px;line-height: 55px;border-bottom: 1px solid #eaeaea;width: 323px;}
+#shz > div > span {display: inline-block;width: 32%;color: #333;font-size: 17px;position: relative;}
+#shz > div > span.active:after {content: '';width: 100%;height: 1px;position: absolute;left: -1px;bottom: 4px;background: #e74c3c;}
+#shz ul {width: 328px;color: #62717a;font-size: 14px;line-height: 25px;}
+#shz ul li {margin-top: 30px;}
+#shz ul span {color: #333;font-size: 17px;}
+#shz ul a {color: #62717a;padding: 0 8px;border: 1px solid #62717a;}
+#shz > a {width: 200px;line-height: 30px;background: #f2f2f2;}
+/*2、新闻页面右边栏：关键词*/
+#guanjianci {width: 360px;}
+#guanjianci .outbox {margin-left: -10px;}
+#guanjianci span {display: inline-block;border: 2px solid #f1f6fd;padding: 5px 8px;text-align: center;margin: 7px 0 7px 11px;}
+
+
 /*常见问题*/
 #common-problem {width: 813px;padding-bottom: 20px;}
 #common-problem .title {margin-bottom: 50px;}

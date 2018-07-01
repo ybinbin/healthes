@@ -1,0 +1,5 @@
+#left li {margin-top: 22px;background: #fff;padding: 24px 21px;}
+#left li > div {margin-left: 15px;}
+#left li > div > span {color: #63727b;font-weight: bold;font-size: 20px;}
+#left li p {width: 563px;line-height: 25px;font-size: 14px;}
+#left li p a {padding: 3px 5px;background: #ff6600;color: #fff;}
