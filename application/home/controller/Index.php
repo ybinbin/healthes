@@ -21,6 +21,11 @@ class Index extends Controller
     {
         return $this->view->fetch("solution");
     }
+
+    public function solutiondetail()
+    {
+        return $this->view->fetch("solution-detail");
+    }
    
 
     /**

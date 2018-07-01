@@ -66,12 +66,14 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 .c797979 {color: #797979;}
 .c00a4ff {color: #00a4ff;}
 .cff8a00 {color: #ff8a00;}
+.cff6600 {color: #ff6600;}
 
 .bf {background: #fff;}
 .bff6600 {background: #ff6600;}
 
 .mt10 {margin-top: 10px;}
 .mt20 {margin-top: 20px;}
+.mt25 {margin-top: 25px;}
 .ml10 {margin-left: 10px;}
 .ml20 {margin-left: 20px;}
 .mb10 {margin-bottom: 10px;}
@@ -79,6 +81,11 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 .mr10 {margin-right: 10px;}
 .mr20 {margin-right: 20px;}
 
+/*line-through*/
+.lt {position: relative;}
+.lt:after {content: '';position: absolute;width: 100%;height: 1px;background: #f00;left: 2px;top: 50%;}
+
+.lhn {line-height: normal;}
 
 .clearfix:before,.clearfix:after {
    content:"";
@@ -140,14 +147,17 @@ footer .content > li li:first-child {color: #fff;font-size: 16px;margin-bottom: 
 #side-right-zhuanjia img {margin-top: 16px;}
 #side-right-zhuanjia .text {width: 319px;}
 /*常见问题*/
-#common-problem {width: 813px;min-height: 1344px;padding-bottom: 20px;}
+#common-problem {width: 813px;padding-bottom: 20px;}
 #common-problem .title {margin-bottom: 50px;}
 #common-problem .line {width: 80px;height: 2px;background: #d8d8d8;}
 #common-problem .dian {width: 6px;height: 6px;border-radius: 6px;background: #d8d8d8;}
 #common-problem li {width: 714px;margin: 0 auto;line-height: 25px;font-size: 14px;}
 #common-problem li+li {margin-top: 43px;}
 
-
+/*地址层次导航：首页 > 第二层 > 第三层*/
+#nav-address {height: 46px;line-height: 46px;background: #5e5e5e;color: #fcfcfc;}
+#nav-address a {color: #fcfcfc;}
+#nav-address span {margin: 0 7px;}
 
 
 
