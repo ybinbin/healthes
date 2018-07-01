@@ -161,7 +161,7 @@ footer .content > li li:first-child {color: #fff;font-size: 16px;margin-bottom: 
 /*2、新闻页面右边栏：关键词*/
 #guanjianci {width: 360px;}
 #guanjianci .outbox {margin-left: -10px;}
-#guanjianci span {display: inline-block;border: 2px solid #f1f6fd;padding: 5px 8px;text-align: center;margin: 7px 0 7px 11px;}
+#guanjianci a {display: inline-block;border: 2px solid #f1f6fd;padding: 5px 8px;text-align: center;margin: 7px 0 7px 11px;color: #7b8890;}
 
 
 /*常见问题*/
