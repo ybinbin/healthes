@@ -64,6 +64,8 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 .cf05536 {color: #f05536;}
 .c787878 {color: #787878;}
 .c797979 {color: #797979;}
+.c00a4ff {color: #00a4ff;}
+.cff8a00 {color: #ff8a00;}
 
 .bf {background: #fff;}
 .bff6600 {background: #ff6600;}
@@ -71,8 +73,11 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 .mt10 {margin-top: 10px;}
 .mt20 {margin-top: 20px;}
 .ml10 {margin-left: 10px;}
+.ml20 {margin-left: 20px;}
 .mb10 {margin-bottom: 10px;}
 .mb20 {margin-bottom: 20px;}
+.mr10 {margin-right: 10px;}
+.mr20 {margin-right: 20px;}
 
 
 .clearfix:before,.clearfix:after {
