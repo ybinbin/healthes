@@ -415,20 +415,31 @@
 		<div class="wrapper clearfix content">
 			<div class="sprites-arrow arrow0 fl"></div>
 			<div class="sprites-arrow arrow1 fr"></div>
-			<ul>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-			</ul>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<!-- 常见问题 -->
@@ -446,5 +457,36 @@
 	<div style="margin-top: 30px">
 		{include file="common/footer" /}
 	</div>
+
+	<script type="text/javascript">
+		require(['jquery', 'underscore'], function ($, _) {
+			// 携手共赢，与全球合作伙伴共建云端生态 切换
+			(function () {
+				var kl = $('#process2 .sprites-arrow'),
+					ul = $('#process2 .box ul'),
+					itemWidth = 281,
+					showNum = 4;
+
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('arrow0') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+		})
+	</script>
 </body>
 </html>
