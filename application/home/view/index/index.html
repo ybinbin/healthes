@@ -13,10 +13,12 @@
 	{include file="common/header" /}
 	<!-- 轮播图 -->
 	<div id="product-loop" class="pr">
-		<!-- 图片显示顺序是逆序 -->
-		<a href=""><div class="img" style="background-image: url(/static/images/index/loop2.jpg);"></div></a>
-		<a href=""><div class="img" style="background-image: url(/static/images/index/loop1.jpg);"></div></a>
-		<a href=""><div class="img" style="background-image: url(/static/images/index/loop0.jpg);"></div></a>
+		<!-- 图片显示顺序是逆序，box是为了可能左右切换准备的 -->
+		<div class="box">
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop2.jpg);"></div></a>
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop1.jpg);"></div></a>
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop0.jpg);"></div></a>
+		</div>
 		<div class="index tc fs32 pa fw900">
 			<ul class="ib">
 				<li class="active">○</li>
@@ -269,44 +271,58 @@
 		<div class="wrapper clearfix content">
 			<div class="sprites-arrow arrow0 fl"></div>
 			<div class="sprites-arrow arrow1 fr"></div>
-			<ul>
-				<li>
-					<div class="bf ib img-box">
-						<a href="">
-							<img src="/static/images/index/knowledge0.jpg">
-							<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
-						</a>
-					</div>
-					<p class="fs13 tl">
-						【揭秘】阿里云媒体处理技术全解<br>
-						【案例合集】阿里云场景实践研究合集
-					</p>
-				</li>
-				<li>
-					<div class="bf ib img-box">
-						<a href="">
-							<img src="/static/images/index/knowledge0.jpg">
-							<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
-						</a>
-					</div>
-					<p class="fs13 tl">
-						【揭秘】阿里云媒体处理技术全解<br>
-						【案例合集】阿里云场景实践研究合集
-					</p>
-				</li>
-				<li>
-					<div class="bf ib img-box">
-						<a href="">
-							<img src="/static/images/index/knowledge0.jpg">
-							<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
-						</a>
-					</div>
-					<p class="fs13 tl">
-						【揭秘】阿里云媒体处理技术全解<br>
-						【案例合集】阿里云场景实践研究合集
-					</p>
-				</li>
-			</ul>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<!-- question -->
@@ -316,38 +332,70 @@
 		<div class="wrapper clearfix content" style="width: 1240px!important;">
 			<i class="icon fl">&#xe601;</i>
 			<i class="icon fr">&#xe602;</i>
-			<ul class="ma">
-				<li>
-					<div class="tl">
-						<span class="fs22">肝癌晚期怎么治</span>
-						<p>
-							对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
-						</p>
-						<span class="c9 vm fs12">阅读数：5</span>
-						<span class="yjd ib vm">
-							<i class="icon ib">&#xe609;</i>
-							<span class="fr">已解答</span>
-						</span>
-						<br>
-						<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
-					</div>
-				</li>
-				<li>
-					<div class="tl">
-						<span class="fs22">肝癌晚期怎么治</span>
-						<p>
-							对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
-						</p>
-						<span class="c9 vm fs12">阅读数：5</span>
-						<span class="yjd ib vm">
-							<i class="icon ib">&#xe609;</i>
-							<span class="fr">已解答</span>
-						</span>
-						<br>
-						<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
-					</div>
-				</li>
-			</ul>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治1</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治2</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治3</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治4</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div> 
 	<!-- 携手共赢 -->
@@ -392,20 +440,31 @@
 		<div class="wrapper clearfix content">
 			<div class="sprites-arrow arrow0 fl"></div>
 			<div class="sprites-arrow arrow1 fr"></div>
-			<ul>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-				<li>
-					<img src="/static/images/index/head0.jpg">
-				</li>
-			</ul>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<!--  -->
@@ -491,36 +550,120 @@
 	</div>
 
 	<script>
-		require(['jquery','self'], function ($,self) {
-			// 轮播图片
-			// var loopImg = [].reverse.call($('#product-loop .img')),
-			// 	pointer = $('#product-loop .index li'),
-			// 	index = 0,
-			// 	interval;
+		require(['jquery', 'underscore'], function ($, _) {
+			// 顶部 banner 切换
+			(function () {
+				var banners = $('#product-loop .box a'),
+					pointer = $('#product-loop .index li'),
+					interval,
+					currIndex = 0;
 
-			// pointer.each(function (index) {
-			// 	$(this).data(pointer,index);
-			// })
+				// 给小圆点指定下标
+				pointer.each(function (index) {
+					$(this).data('pointer',index);
+				})
+				pointer.click(function () {
+					clearInterval(interval);
+					currIndex = $(this).data('pointer');
+					change(currIndex);
+					startChange();
+				})
+				// 自动切换
+				startChange();
+				function startChange() {
+					interval = setInterval(function () {
+						currIndex = ++currIndex % pointer.size();
+						change(currIndex);
+					}, 2000)
+				}
+				function change(index) {
+					banners.hide();
+					$(banners[index]).show();
+					pointer.removeClass('active');
+					$(pointer[index]).addClass('active');
+				}
+			})();
+			// *******************************************************************
+			// 大咖云集，知识分享的开发者技术社区 切换
+			(function () {
+				var kl = $('#knowledge .sprites-arrow'),
+					ul = $('#knowledge .box ul'),
+					itemWidth = 396,
+					showNum = 3;
 
-			// setInterval(function () {
-			// 	index = ++index % loopImg.size(); // 1 2 0  
-			// 	loopFun();
-			// },2000);
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('arrow0') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+			// *******************************************************************
+			// 肿瘤问答库，携手抗癌 切换
+			(function () {
+				var kl = $('#question .icon'),
+					ul = $('#question .box ul'),
+					itemWidth = 572,
+					showNum = 2;
 
-			// function loopFun() {
-   // 				if (index == loopImg.size()-1) {
-   // 					loopImg.each(function (cursor) {
-   // 						if (cursor < index) {
-   // 							$(this).fadeOut();
-   // 						} else {
-   // 							return false;
-   // 						}
-   // 					})
-			// 	} else {
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('fl') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+			// *******************************************************************
+			// 携手共赢，与全球合作伙伴共建云端生态 切换
+			(function () {
+				var kl = $('#cooperation .sprites-arrow'),
+					ul = $('#cooperation .box ul'),
+					itemWidth = 281,
+					showNum = 4;
 
-			// 	}
-			// }
-
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('arrow0') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
 		})
 	</script>
 </body>

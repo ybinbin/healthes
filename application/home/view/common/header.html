@@ -140,3 +140,10 @@
 		</div>
 	</nav>
 </header>
+<script type="text/javascript">
+	require(['jquery'], function ($) {
+		$('.btn-search').click(function () {
+			$(this).find('button')[0].click();
+		})
+	})
+</script>

@@ -127,6 +127,7 @@ header nav .ul-title ul a {margin-left: 20px;padding-right: 20px;}
 header nav .ul-title > li:hover ul a {color: #63727b;}
 header nav .ul-title .qr {position: absolute;}
 
+header nav form {height: 60px;overflow: hidden;}
 header nav #input-search {border: 0;background: rgb(67, 78, 85);outline: none;height: 60px;width: 270px;color: #fff;padding-left: 10px;}
 header nav .btn-search {right: 0;top: 0;color: #98acb9;width: 40px;cursor: pointer;}
 
