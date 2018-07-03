@@ -8,6 +8,7 @@
 #left .con .type li.active {border-color: #00a4ff;color: #00a4ff;position: relative;}
 #left .con .type li.active:before {content: '';position: absolute;border-left: 9px solid transparent;border-top: 9px solid transparent;border-right: 9px solid #00a4ff;border-bottom: 9px solid #00a4ff;right: 0;bottom: 0;}
 #left .con .type li.active:after {content: '√';color: #fff;position: absolute;right: 1px;bottom: 0;height: 24px;}
+#left .con .type a {color: #333;}
 #left .yin {height: 50px;line-height: 50px;background: #d7f8ff;color: #4ea4ff;font-size: 14px;}
 #left .yin li {float: left;}
 #left .yin li + li {margin-left: 80px;}

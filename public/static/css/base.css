@@ -159,8 +159,8 @@ footer .content > li li:first-child {color: #fff;font-size: 16px;margin-bottom: 
 #shz ul li {margin-top: 30px;}
 #shz ul span {color: #333;font-size: 17px;}
 #shz ul a {color: #62717a;padding: 0 8px;border: 1px solid #62717a;}
-#shz > a {width: 200px;line-height: 30px;background: #f2f2f2;}
-/*2、新闻页面右边栏：关键词*/
+#shz .more {width: 200px;line-height: 30px;background: #f2f2f2;}
+/*3、新闻页面右边栏：关键词*/
 #guanjianci {width: 360px;}
 #guanjianci .outbox {margin-left: -10px;}
 #guanjianci a {display: inline-block;border: 2px solid #f1f6fd;padding: 5px 8px;text-align: center;margin: 7px 0 7px 11px;color: #7b8890;}

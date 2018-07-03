@@ -45,10 +45,10 @@
 					<div class="type">
 						<span class="vm mr10">套餐类型：</span>
 						<ul class="clearfix ib vm">
-							<li class="active">丙肝远程代诊</li>
-							<li>丙肝远程咨询</li>
-							<li>权威医院购药</li>
-							<li>印度名医问诊</li>
+							<a href=""><li class="active">丙肝远程代诊</li></a>
+							<a href=""><li>丙肝远程咨询</li></a>
+							<a href=""><li>权威医院购药</li></a>
+							<a href=""><li>印度名医问诊</li></a>
 						</ul>
 					</div>
 				</div>
@@ -332,16 +332,6 @@
 	
 	<script type="text/javascript">
 		require(['jquery'], function ($) {
-			// 套餐类型切换
-			(function () {
-				var type = $('#left .type li');
-
-				type.click(function () {
-					type.removeClass('active');
-					$(this).addClass('active');
-				})
-			})();
-			// **********************************************
 			// 套餐介绍 费用说明 服务流程 常见问答
 			(function () {
 				var lis = $('#left .change li');
