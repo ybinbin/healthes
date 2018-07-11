@@ -72,66 +72,25 @@
 		<!-- 提供的服务 -->
 		<div id="supply" class="c787878 tc">
 			<ul class="ib tl content">
+			{notempty name="plans"}
+            {volist name="plans" id="vo"}
 				<li>
 					<ul>
 						<li class="c797979">
-							<span class="fw700">海迈健康咨询服务</span>
+							<span class="fw700">{$vo.title}</span>
 							<i class="icon fs36 cf05536 vm">&#xe608;</i>
 						</li>
 						<li class="fs13">
-							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
-							<span class="cf05536 fs19">￥778</span>元</li>
+							{$vo.desc}
+							<span class="cf05536 fs19">￥{$vo.low_price}</span>元</li>
 						<li>
-							<a href=""><div>查看详情</div></a>
+							<a href="/home/solution/show/id/{$vo.id}"><div>查看详情</div></a>
 							<a href=""><div>立即咨询</div></a>
 						</li>
 					</ul>
 				</li>
-				<li>
-					<ul>
-						<li class="c797979">
-							<span class="fw700">海迈健康咨询服务</span>
-							<i class="icon fs36 cf05536 vm">&#xe608;</i>
-						</li>
-						<li class="fs13">
-							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
-							<span class="cf05536 fs19">￥778</span>元</li>
-						<li>
-							<a href=""><div>查看详情</div></a>
-							<a href=""><div>立即咨询</div></a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul>
-						<li class="c797979">
-							<span class="fw700">海迈健康咨询服务</span>
-							<i class="icon fs36 cf05536 vm">&#xe608;</i>
-						</li>
-						<li class="fs13">
-							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
-							<span class="cf05536 fs19">￥778</span>元</li>
-						<li>
-							<a href=""><div>查看详情</div></a>
-							<a href=""><div>立即咨询</div></a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul>
-						<li class="c797979">
-							<span class="fw700">海迈健康咨询服务</span>
-							<i class="icon fs36 cf05536 vm">&#xe608;</i>
-						</li>
-						<li class="fs13">
-							提供科普、常识指导、膳食指导、报告代分析，服务透明，可靠安全仅需
-							<span class="cf05536 fs19">￥778</span>元</li>
-						<li>
-							<a href=""><div>查看详情</div></a>
-							<a href=""><div>立即咨询</div></a>
-						</li>
-					</ul>
-				</li>
+				{/volist}
+			 	{/notempty}							
 			</ul>
 		</div>
 		<!-- 关于海迈健康 -->
@@ -468,22 +427,129 @@
 		</div>
 	</div>
 	<!--  -->
-	<div id="kouhao" class="tc fs30 c3">
-		<ul class="ib">
-			<li>
-				国内费用&nbsp;20万+
-			</li>
-			<li>
-				国内治愈率&nbsp;45%
-			</li>
-			<li>
-				印度费用&nbsp;0.9万
-			</li>
-			<li>
-				印度治愈率&nbsp;98%
-			</li>
-		</ul>
-	</div>
+	<div id="kouhao" class="ma clearfix">
+        <div class="title clearfix">
+            <div class="active">我们的承诺</div>
+            <div>我们的实力</div>
+            <div>我们的角色</div>
+        </div>
+        <div class="contents">
+            <div class="content">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行111</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="content dn">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行222</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="content dn">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行333</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 	<!-- 印度医疗门户，点亮生命曙光 -->
 	<div id="good-yd" class="tc fs24">
 		<span>印度医疗门户，点亮生命曙光</span>
@@ -523,8 +589,10 @@
 	</div> 
 	<!-- 友情链接 -->
 	<div id="friend-link" class="ma">
-		<span class="fl">友情链接：</span>
-		<ul class="fl">
+		<div class="fs16 ma" style="height: 43px;line-height: 43px;width: 1189px;border-bottom: 1px solid #eff0f0;">
+			友情链接
+		</div>
+		<ul class="ma mt10" style="width: 1189px">
 			<li><a href=""> 吉四代说明书		</a>	</li>
 			<li><a href=""> 吉三代说明书		</a>	</li>
 			<li><a href=""> 吉三代说明书		</a>	</li>
@@ -545,9 +613,7 @@
 		</ul>
 	</div>
 	<!-- footer -->
-	<div class="mt10">
-		{include file="common/footer" /}
-	</div>
+	{include file="common/footer" /}
 
 	<script>
 		require(['jquery', 'underscore'], function ($, _) {
@@ -664,6 +730,19 @@
 					}
 				})
 			})();
+
+			// 我们的承诺-我们实力-我们的角色
+			(function () {
+				var kh = $('#kouhao'),
+					tits = kh.find('.title div'),
+					cons = kh.find('.contents .content');
+				tits.hover(function () {
+					tits.removeClass('active');
+					$(this).addClass('active');
+					cons.hide();
+					$(cons[$(this).index()]).removeClass('dn').show();
+				})
+			})()
 		})
 	</script>
 </body>
