@@ -1,0 +1,8 @@
+header {padding: .5rem 0;background: #666;}
+header img {width: 27.5%;}
+
+nav {border-bottom: .05rem solid #c9c9c9;height: 2.1rem;line-height: 2.1rem;}
+nav a {color: #000;}
+nav li {float: left;padding:0 .25rem;}
+nav li.active a {color: #3399ff;}
+/*nav li.active:before {content: '';width: 100%;height: .05rem;background: #f00;}*/
