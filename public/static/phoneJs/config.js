@@ -1,5 +1,5 @@
 require.config({
-	baseUrl: "/static/js",
+	baseUrl: "/static/phoneJs",
 	paths: {
 		jquery: "plugins/jquery.min",
 		underscore: "plugins/underscore-min",
