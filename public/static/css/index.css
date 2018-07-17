@@ -1,4 +1,4 @@
-#product-loop {height: 371px;}
+#product-loop {height: 371px;width: 100%;overflow: hidden;}
 #product-loop .box {width: 200000px;height: 100%;}
 #product-loop .box a {display: inline-block;height: 100%;width: calc(100vw);-moz-width: calc(100vw);-webkit-width: calc(100vw);}
 #product-loop .img {width: 100%;height: 100%;background-repeat: no-repeat;background-position: center center;background-size: cover;}
@@ -42,30 +42,30 @@
 #process .num div {width: 30px;height: 30px;line-height: 30px;text-align: center;border: 1px solid #d9d9d9;border-radius: 100px;color: #a3bad2;font-size: 17px;}
 
 #knowledge {background: #f5f5f5;padding: 40px 0 50px 0;margin-top: 40px;}
-#knowledge .content {margin-top: 50px!important;color: #373d41;}
-#knowledge .content .box {width: 1172px;}
+#knowledge .content {margin-top: 50px!important;color: #373d41;width: 1362px;}
+#knowledge .content .box {width: 1208px;}
 #knowledge .content ul {width: 30000px;}
 #knowledge .content a {color: #373d41;}
 #knowledge .sprites-arrow {margin-top: 83px;cursor: pointer;}
 #knowledge .img-box {border: 1px solid #c5d8db;font-size: 0;}
 #knowledge li {float: left;}
-#knowledge li + li {margin-left: 16px;}
-.sprites-arrow{background:url(/static/images/index/sprites-arrow.jpg)  no-repeat;}
-.arrow2{height:40px;width:19px;background-position:0 0;}
-.arrow3{height:40px;width:20px;background-position:-19px 0;}
-.arrow0{height:64px;width:59px;background-position:-39px 0;}
-.arrow1{height:59px;width:62px;background-position:-98px 0;}
+#knowledge li + li {margin-left: 34px;}
+.sprites-arrow{background:url(/static/images/index/sprites-arrow.png)  no-repeat;}
+.arrow1{height:55px;width:55px;background-position:0 0;}
+.arrow0{height:55px;width:55px;background-position:-55px 0;}
+
+
 
 
 #question {padding: 27px 0 42px 0;}
 #question .content {margin-top: 50px!important;color: #373d41;}
-#question .content .box {width: 1114px;}
+#question .content .box {width: 1210px;}
 #question .content ul {width: 30000px;}
 #question .yjd {background: #00a4ff;border-radius: 10px;color: #fff;font-size: 12px;width: 60px;height: 22px;line-height: 22px;padding: 0 8px 0 4px;}
 #question .detail {border: 1px solid #00a4ff;padding: 6px 35px;color: #00a4ff;}
-#question i {margin-top: 99px;font-size: 35px;color: #9d9d9d;cursor: pointer;}
+#question .sprites-arrow {margin-top: 99px;font-size: 35px;color: #9d9d9d;cursor: pointer;}
 #question p {font-size: 14px;color: #666;}
-#question li {float: left;border: 1px solid #d7d8d9;padding: 30px;background: url(/static/images/index/talk-bg.jpg) 95% 92% no-repeat;}
+#question li {float: left;border: 1px solid #d7d8d9;padding: 30px 54px;background: url(/static/images/index/talk-bg.jpg) 95% 92% no-repeat;}
 #question li i {font-size: 20px;color: #fff;margin-top: -2px;}
 #question li > div {width: 480px;}
 #question li + li {margin-left: 30px;}
@@ -73,11 +73,11 @@
 
 #cooperation {padding: 27px 0 42px 0;}
 #cooperation .sprites-arrow {margin-top: 60px;cursor: pointer;}
-#cooperation .content {margin-top: 50px!important;color: #373d41;}
+#cooperation .content {margin-top: 50px!important;color: #373d41;width: 1362px;}
 #cooperation .content li {float: left;border: 1px solid #d7d8d9;background: url(/static/images/index/talk-bg.jpg) 95% 92% no-repeat;width: 255px;height: 177px;position: relative;}
 #cooperation .content li img {position: absolute;bottom: 0;left: 50%;margin-left: -94px;}
-#cooperation .content li + li {margin-left: 24px;}
-#cooperation .content .box {width: 1100px;padding-top: 70px;margin-top: -70px;}
+#cooperation .content li + li {margin-left: 60px;}
+#cooperation .content .box {width: 1208px;padding-top: 70px;margin-top: -70px;}
 #cooperation .content ul {width: 30000px;}
 #cooperation .yjd {background: #00a4ff;border-radius: 10px;color: #fff;font-size: 12px;width: 60px;height: 22px;line-height: 22px;padding: 0 8px 0 4px;}
 #cooperation .detail {border: 1px solid #00a4ff;padding: 6px 35px;color: #00a4ff;}
@@ -103,13 +103,12 @@
 
 
 
-#good-yd {}
 #good-yd {padding: 27px 0 42px 0;}
 #good-yd .content {margin-top: 50px!important;color: #373d41;}
 #good-yd .content div {font-size: 20px;color: #333;margin-top: 40px;}
 #good-yd .content p {font-size: 13px;color: #666;margin-top: 20px;line-height: 21px;}
-#good-yd li {display: inline-block;width: 250px;}
-#good-yd li + li {margin-left: 27px;}
+#good-yd li {display: inline-block;width: 250px;float: left;}
+#good-yd li + li {margin-left: 69px;}
 
 #friend-link {width: 1209px;height: 172px;box-sizing: border-box;}
 #friend-link a,#friend-link span {color: #6a616b;}

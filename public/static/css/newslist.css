@@ -1,3 +1,5 @@
+#left {width: 805px;}
+#left > img {width: 100%;}
 #left li {margin-top: 22px;background: #fff;padding: 24px 21px;}
 #left li > div {margin-left: 15px;}
 #left li > div > span {color: #63727b;font-weight: bold;font-size: 20px;}

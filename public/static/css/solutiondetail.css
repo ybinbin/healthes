@@ -1,4 +1,4 @@
-#left {width: 915px;padding-bottom: 75px;}
+#left {width: 822px;padding-bottom: 75px;}
 #left .con {width: 794px;}
 #left .con .price {width: 794px;height: 70px;line-height: 70px;background: #fbfaf1;font-size: 16px;}
 #left .con .price .btn {width: 130px;height: 37px;line-height: 37px;background: #3399ff;}
@@ -50,14 +50,15 @@
 #left .process li {margin-top: 33px;line-height: 25px;color: #666;}
 #left .process div {color: #333;font-size: 14px;}
 
-#right {width: 400px;}
+#right {width: 370px;}
 #right .concat {height: 265px;color: #6f6f6f;}
 #right .concat a {color: #6f6f6f;}
 #right .concat .btn-concat {width: 50%;line-height: 40px;box-sizing: border-box;border: 1px solid #e4e4e4;cursor: pointer;color: #333;}
 
-#right .list ul {width: 374px;margin: auto;padding-bottom: 46px;padding-top: 1px;}
+#right .gg {width: 100%;}
+#right .list ul {width: 350px;margin: auto;padding-bottom: 46px;padding-top: 1px;}
 #right .list li {margin-top: 27px;}
-#right .list li > div {width: 247px;height: 73px;}
+#right .list li > div {width: 225px;height: 73px;}
 
 #right .white {height: 510px;}
 

@@ -1,5 +1,25 @@
-#left {width: 831px;min-height: 1366px;}
+#left {width: 805px;min-height: 1366px;}
 #left .content {width: 760px;margin-left: 22px;padding: 28px 0 44px 0;}
 #left .content .tit {margin: 34px 0 30px 0;}
 #left .content table {width: 100%;line-height: 35px;}
 #left .content table a {color: #333;}
+#left .copyright-outer-line {
+	background:#f8f8f8;
+    padding:5px;
+    border:1px solid #ede4e4;
+    margin-top:20px;
+}
+#left .yq-blog-sem-remove{
+    background:#fff;
+    border:1px solid #ede4e4;
+    padding:10px 10px 10px 20px;
+    font-size:13px;
+    line-height:1.8em;
+    position:relative;
+    overflow:hidden;
+    word-break:break-all;
+}
+#left .yq-blog-sem-remove .title {margin: 0;}
+#left .flag {font-size: 0;}
+#left .flag span {border: 1px solid #F1F6FD;padding: 3px 5px;font-size: 12px;}
+#left .flag span + span {margin-left: 10px;}
