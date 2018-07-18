@@ -1,0 +1,142 @@
+<header class="pr">
+	<!-- top 广告 -->
+	<div class="pr" style="background: #080832;">
+		<a href="">
+			<div class="wrapper gg-top" style="background: url(/static/images/gg_top.png) center center no-repeat;background-size: cover;">
+			</div>
+		</a>
+		<i class="icon pa gg-top-close">&#xe62b;</i>
+	</div>
+	
+	<!-- logo 栏 -->
+	<div class="wrapper bar-logo clearfix">
+		<!-- logo -->
+		<div class="fl out-box">
+			<span class="line-middle" style="width: 168px;">
+				<a href="">
+					<img src="/static/images/logo.png" id="logo">
+				</a>
+			</span>
+		</div>
+		<!-- 分隔竖线 -->
+		<div class="fl out-box">
+			<span class="line-middle" style="width: 42px;">
+				<span class="fl ib" style="width: 2px;height: 35px;background: #ccc;margin: 0 20px;"></span>
+			</span>
+		</div>
+		<!-- 口号 -->
+		<div class="fl out-box">
+			<span class="line-middle" style="width: 160px;">
+				<span class="ib c1c1c1">
+					印度医疗旅游专业平台<br>
+					让丙肝患者有更多更好的选择
+				</span>
+			</span>
+		</div>
+		<!-- 右边浮动 -->
+		<div class="fr">
+			<div class="fl out-box">
+				<span class="line-middle" style="width: 197px;">
+					<i class="icon b cf04e66 vm fs16">&#xe62c;</i>
+					<span class="b vm c51616b fs14">8:30AM TO  5:30PM</span>
+				</span>
+			</div>
+
+			<div class="fl out-box">
+				<span class="line-middle" style="width: 160px;">
+					<i class="icon b cf04e66 vm fs18">&#xe600;</i>
+					<span class="b vm c51616b fs14">133-9980-6488</span>
+				</span>
+			</div>
+
+			<div class="fl out-box">
+				<span class="line-middle" style="width: 138px;">
+					<i class="icon b cf04e66 vm fs14">&#xe607;</i>
+					<span class="b vm c51616b fs14">400-188-2515</span>
+				</span>
+			</div>
+
+			<div class="fl out-box">
+				<span class="line-middle" style="width: 280px;">
+					<a href="" class="cf00">端午节优惠活动来袭，健康直邮服务减免服务费啦！</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Nav 导航栏 -->
+	<nav>
+		<div class="wrapper content">
+			<ul class="ul-title">
+				<li class="{if $action=='index'}active{/if}">
+					<a href="{:\\think\\Url::build('Index/index')}">全站首页		</a>
+				</li>
+				{notempty name="navs"}
+            	{volist name="navs" id="vo"}
+				<li class="{if $action==$vo.active}active{/if}">
+					<a href="{if $vo.link}{$vo.link}{else}javascript:void(0);{/if}">{$vo.name}		</a>
+					<ul>
+						{notempty name="navs"}
+            			{volist name="vo.navs_son" id="son"}
+						<li><a href="{$son.link}">{$son.name}</a></li>
+						{/volist}
+			 			{/notempty}
+					</ul>
+				</li>
+				{/volist}
+			 	{/notempty}
+				<li>
+					<a href="javascript:void(0);">关注我们		</a>
+					<div class="qr dn">
+						<img src="http://www.huayinyiliao.com/templets/default/images/index/wechat_code1.png">
+					</div>
+				</li>
+				
+				<!-- 向右浮动，调整dom顺序 -->
+				<li class="fr vt pr" style="width: auto;">
+					<form>
+						<input type="search" name="search" id="input-search" class="vb" placeholder="输入您想查找内容的关键词进行搜索" autocomplete="off">
+						<i class="icon btn-search pa b tc">
+							&#xe631;
+							<button type="submit" class="dn"></button>
+						</i>
+					</form>
+				</li>
+				<li class="bff6600 tc fs18 fr">
+					<a href="" class="cf vt">互助问答	</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- 所有页面侧边栏-二维码 -->
+	<div id="side-qr-box" class="tc">
+		<div class="qr-box-c pr"> 
+			<div class="close pa fs16">x</div>
+			<div class="content"> 
+				<p>关注ZOL问答微信公<br>众号得到专家解答</p>
+				<img src="https://ask-fd.zol-img.com.cn/t_s800x800/g2/M00/04/01/ChMlWlW-_bCIdzgIAABrgmuEkWUAAIKlAAhGJoAAGua977.jpg" alt="扫一扫，关注我们" width="111" height="111"> 
+				<div>
+					<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=3bc1828f96a91ea95f582212748e5211cfeb77c6ed6e9c744c4e299aa95db2ce" class="joinqq">
+						<i class="icon vm">&#xe6b3;</i>
+						<span class="vm">加入QQ群</span>
+					</a>
+				</div>
+			</div> 
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+	require(['jquery'], function ($) {
+		$('.btn-search').click(function () {
+			$(this).find('button')[0].click();
+		})
+		$('.gg-top-close').click(function () {
+			$(this).parent().remove();
+		})
+		// 二维码关闭
+		$('#side-qr-box .close').click(function () {
+			$(this).parents('#side-qr-box').remove();
+		})
+	})
+</script>
