@@ -337,8 +337,8 @@
 				</li>
 			</ul>
 		</div> -->
-		<!-- 解决方案页面 -->
-		<div id="solution">
+		<!-- 解决方案详情页面 -->
+		<!-- <div id="solution">
 			<img src="http://wx1.sinaimg.cn/mw690/005NNlPGgy1ftc0ze7m0uj309z068dg2.jpg" class="banner">
 			<div class="name ml10">
 				<div class="title fs22">
@@ -379,7 +379,7 @@
 							详细介绍】： 代，支持的属性值不仅仅上面出现的这几个，还有与underline对应的overline, 表示上划线，虽然兼容性不错，但是似乎没有什么卵用，鄙人不才，写CSS这么多年一次都没有在实际项目中使用过overline
 						</p>
 					</li>
-					<li>
+					<li class="fysm">
 						<div id="fysm" class="title">
 							<span class="vm ib line"></span>
 							<span class="vm ib dian"></span>
@@ -387,7 +387,116 @@
 							<span class="vm ib dian"></span>
 							<span class="vm ib line"></span>
 						</div>
-						
+						<div class="tl s-tit">
+							费用包含
+						</div>
+						<table class="price-sm mt10">
+							<tr>
+								<td>
+									<span class="sprite-sm ib sm0 vm"></span>
+									<div class="ib vm">
+										<div>病例翻译</div>
+										患者病例资料专业翻译
+									</div>
+								</td>
+								<td>
+									<span class="sprite-sm ib sm1 vm"></span>
+									<div class="ib vm">
+										<div>病例翻译</div>
+										患者病例资料专业翻译
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="sprite-sm ib sm2 vm"></span>
+									<div class="ib vm">
+										<div>病例翻译</div>
+										患者病例资料专业翻译
+									</div>
+								</td>
+								<td>
+									<span class="sprite-sm ib sm3 vm"></span>
+									<div class="ib vm">
+										<div>病例翻译</div>
+										患者病例资料专业翻译
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="sprite-sm ib sm4 vm"></span>
+									<div class="ib vm">
+										<div>病例翻译</div>
+										患者病例资料专业翻译
+									</div>
+								</td>
+								<td>
+
+								</td>
+							</tr>
+						</table>
+						<div class="tl s-tit mt20">
+							价格对比
+						</div>
+						<table class="price-db mt10">
+							<tr>
+								<td>
+									国家
+								</td>
+								<td>
+									治疗时间
+								</td>
+								<td>
+									医疗费用
+								</td>
+								<td>
+									康复率
+								</td>
+							</tr>
+							<tr>
+								<td>
+									中国
+								</td>
+								<td>
+									360天左右
+								</td>
+								<td>
+									20万左右
+								</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>
+									美国
+								</td>
+								<td>
+									90天左右
+								</td>
+								<td>
+									80万左右
+								</td>
+								<td>
+									98%
+								</td>
+							</tr>
+							<tr class="active">
+								<td>
+									印度
+								</td>
+								<td>
+									90天左右
+								</td>
+								<td>
+									1万左右
+								</td>
+								<td>
+									99%
+								</td>
+							</tr>
+						</table>
 					</li>
 					<li>
 						<div id="fwlc" class="title">
@@ -397,10 +506,84 @@
 							<span class="vm ib dian"></span>
 							<span class="vm ib line"></span>
 						</div>
-						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftc0zekitjj30ac03x0sr.jpg" class="w">
-						<p>
-							详细介绍】： 代，支持的属性值不仅仅上面出现的这几个，还有与underline对应的overline, 表示上划线，虽然兼容性不错，但是似乎没有什么卵用，鄙人不才，写CSS这么多年一次都没有在实际项目中使用过overline
-						</p>
+						<div class="report pr tc">
+							<span class="pa txt ib c6 fs14">需要准备检查报告材料</span>
+							<table class="fs16">
+								<tbody><tr>
+									<td>
+										<span class="sprite-pr pr0 ib vm"></span>
+										<span class="vm">丙肝病毒抗体</span>
+									</td>
+									<td>
+										<span class="sprite-pr pr1 ib vm"></span>
+										<span class="vm">丙肝病毒抗体</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="sprite-pr pr2 ib vm"></span>
+										<span class="vm">丙肝病毒抗体</span>
+									</td>
+									<td>
+										<span class="sprite-pr pr3 ib vm"></span>
+										<span class="vm">丙肝病毒抗体</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="sprite-pr pr4 ib vm"></span>
+										<span class="vm">丙肝病毒抗体</span>
+									</td>
+									<td>
+									</td>
+								</tr>
+							</tbody></table>
+						</div>
+						<div class="tl s-tit mt20">
+							详细流程
+							<ul class="process oh">
+								<li>
+									<span>
+										 咨询签约
+									</span>
+									<div>
+										通过电话全面沟通了解您的病情，介绍相关事项，签订合同
+									</div>
+								</li>
+								<li>
+									<span>
+										 咨询签约
+									</span>
+									<div>
+										通过电话全面沟通了解您的病情，介绍相关事项，签订合同
+									</div>
+								</li>
+								<li>
+									<span>
+										 咨询签约
+									</span>
+									<div>
+										通过电话全面沟通了解您的病情，介绍相关事项，签订合同
+									</div>
+								</li>
+								<li>
+									<span>
+										 咨询签约
+									</span>
+									<div>
+										通过电话全面沟通了解您的病情，介绍相关事项，签订合同
+									</div>
+								</li>
+								<li>
+									<span>
+										 咨询签约
+									</span>
+									<div>
+										通过电话全面沟通了解您的病情，介绍相关事项，签订合同
+									</div>
+								</li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<div id="cjwt" class="title">
@@ -410,13 +593,49 @@
 							<span class="vm ib dian"></span>
 							<span class="vm ib line"></span>
 						</div>
-						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftc0zekitjj30ac03x0sr.jpg" class="w">
-						<p>
-							详细介绍】： 代，支持的属性值不仅仅上面出现的这几个，还有与underline对应的overline, 表示上划线，虽然兼容性不错，但是似乎没有什么卵用，鄙人不才，写CSS这么多年一次都没有在实际项目中使用过overline
-						</p>
+						<ul class="tl questions">
+							<li>
+								<div>
+									1、什么是远程咨询？
+								</div>
+								<p>
+									21课：过去分词的形容词用法
+									第22课：过去分词当受词、补语及分词的其它用法
+									第23课：形容词(修饰名词)
+									第24课：表示数量的形容词，many,much,few等
+									第25课：英语中数字的读法大全
+									第26课：副词概述，副词的功用和种类
+									第27课：Be动词＋副词＋Ving句式
+									第28课：地方副词、时间副词和程度副词
+									第29课：动词的分类及用法
+									第30课：授予动词所搭配的介词
+								</p>
+							</li>
+							<li>
+								<div>
+									2、什么是远程咨询？
+								</div>
+								<p>
+									21课：过去分词的形容词用法
+									第22课：过去分词当受词、补语及分词的其它用法
+									第23课：形容词(修饰名词)
+									第24课：表示数量的形容词，many,much,few等
+									第25课：英语中数字的读法大全
+									第26课：副词概述，副词的功用和种类
+									第27课：Be动词＋副词＋Ving句式
+									第28课：地方副词、时间副词和程度副词
+									第29课：动词的分类及用法
+									第30课：授予动词所搭配的介词
+								</p>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
+		</div> -->
+		<!-- 解决方案页面 -->
+		<div>
+			123123
 		</div>
 	</div>
 	<!-- 导航图标 -->
