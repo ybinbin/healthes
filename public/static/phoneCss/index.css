@@ -190,11 +190,18 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block4 .zj li > div:first-child {float: left;}
 #page-solution .block4 .zj li > div:first-child + div {float: right;}
 
+/*关于我们*/
+#page-about {padding-bottom: .5rem;}
+#page-about .me {width: 17.95rem;}
 
+#page-about .info .concat {border: 1px solid #e4e4e4;width: 88%;padding: 1rem 0;}
+#page-about .info .concat li {width: 72%;margin: 0 auto;}
+#page-about .info .concat .icon {color: #f04e4e;font-size: 1.2rem;}
 
-
-
-
+#page-about .info .qr {width: 88%;border: 1px solid #e4e4e4;padding: 1rem 0;font-size: .6rem;color: #a1a1a1;margin-top: 1rem;}
+#page-about .info .qr > div {width: 72%;}
+#page-about .info .qr img {margin-bottom: 3px;width: 5.9rem;}
+#page-about .info .copyright {background: #000;color: #fff;padding: .5rem 0;}
 
 
 
