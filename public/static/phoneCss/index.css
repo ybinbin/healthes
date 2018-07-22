@@ -88,6 +88,19 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-case .more {border: 0;}
 #page-case .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
 
+/*案例详情页面*/
+#page-caseD {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
+#page-caseD .lasnex span {display: block;line-height: 2.25rem;padding-left: 15px;background: #ecf2ff;margin: 2px 0;}
+#page-caseD .lasnex a {color: #767676;}
+#page-caseD .line {height: 4px;background: #eeeeef;margin-top: 2rem;}
+#page-caseD .about-read > div {border-bottom: 1px solid #eeeeef;padding: .5rem 0;}
+#page-caseD .about-read li + li {margin-top: 20px;}
+#page-caseD .about-read .more {border: 0;}
+#page-caseD .about-read .more a,#page-caseD .about-read .more i {color: #31b7be;font-size: .9rem;}
+#page-caseD .about-read .tips {color: #bababa;}
+#page-caseD .about-read .name {height: 65px;}
+
+
 /*解决方案详情页面*/
 #page-solutionD {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
 #page-solutionD .banner {width: 100%;}
@@ -165,7 +178,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block3 table th,#page-solution .block3 table td {border: 1px solid #fff;padding: 5px 10px;}
 
 #page-solution .block4 .zj .more {border: 0;}
-#page-solution .block4 .zj .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
+#page-solution .block4 .zj .more a,#page-solution .block4 .zj .more i {color: #31b7be;font-size: .9rem;}
 #page-solution .block4 .price-db {width: 100%;background: #f3f3f3;border: 1px solid #ededee;border-collapse: collapse;font-size: .7rem;}
 #page-solution .block4 .price-db tr:first-child {color: #f37777;font-size: .8rem;}
 #page-solution .block4 .price-db td {border: 1px solid #fff;padding: .4rem .25rem}
@@ -173,8 +186,6 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block4 .zj {width: 85%;}
 #page-solution .block4 .zj p {color: #b6b7b6;}
 #page-solution .block4 .zj span {color: #5d5f5d;}
-#page-solution .block4 .zj .more {border: 0;}
-#page-solution .block4 .zj .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
 #page-solution .block4 .zj li > div {display: inline-block;width: 168px;}
 #page-solution .block4 .zj li > div:first-child {float: left;}
 #page-solution .block4 .zj li > div:first-child + div {float: right;}
