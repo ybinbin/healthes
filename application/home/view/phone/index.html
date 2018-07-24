@@ -58,7 +58,6 @@
 			<span class="dn">点击重新加载</span>
 		</div> -->
 		<!-- 首页-home -->
-		<div class="tc" style="background: #f00;">下面是：首页</div>
 		<div id="page-home">
 			<div class="block1">
 				<img src="/static/phoneImages/index/banner.jpg" class="banner w">
@@ -206,22 +205,15 @@
 				</ul>
 				<ul class="con knowledgepoint">
 					<li>
-						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftas2x2kigj303a02d0so.jpg">
-						<div class="ib">
-							<div>
-								海外医疗新药让晚期乳腺癌不再晚
+						<a href="">
+							<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftas2x2kigj303a02d0so.jpg">
+							<div class="ib">
+								<div>
+									海外医疗新药让晚期乳腺癌不再晚
+								</div>
+								<span>2018年7月15日</span>
 							</div>
-							<span>2018年7月15日</span>
-						</div>
-					</li>
-					<li>
-						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftas2x2kigj303a02d0so.jpg">
-						<div class="ib">
-							<div>
-								海外医疗新药让晚期乳腺癌不再晚
-							</div>
-							<span>2018年7月15日</span>
-						</div>
+						</a>
 					</li>
 					<li>
 						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftas2x2kigj303a02d0so.jpg">
@@ -289,8 +281,7 @@
 			</div>
 		</div>
 		<!-- 案例页面 -->
-		<div class="tc" style="background: #f00;">下面是：案例页面</div>
-		<div id="page-case">
+		<!-- <div id="page-case" class="dn">
 			<ul>
 				<li class="clearfix">
 					<div>
@@ -338,10 +329,9 @@
 					</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 		<!-- 案例详情页面 -->
-		<div class="tc" style="background: #f00;">下面是：案例详情页面</div>
-		<div id="page-caseD">
+		<!-- <div id="page-caseD" class="dn">
 			<div class="tc fs20">某某某博士</div>
 			<div class="c8 mb30 mt10 tc">
 				<i class="icon vm">&#xe603;</i><span class="vm">德哥</span>
@@ -402,10 +392,9 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<!-- 解决方案页面 -->
-		<div class="tc" style="background: #f00;">下面是：解决方案页面</div>
-		<div id="page-solution">
+		<!-- <div id="page-solution" class="dn">
 			<div class="block1">
 				<img src="/static/phoneImages/index/banner.jpg" class="banner w">
 				<div class="gatx">
@@ -786,10 +775,9 @@
 				</ul>
 				<img src="/static/phoneImages/solution/howto.jpg" class="db ma">
 			</div>
-		</div>
+		</div> -->
 		<!-- 解决方案详情页面 -->
-		<div class="tc" style="background: #f00;">下面是：解决方案详情页面</div>
-		<div id="page-solutionD">
+		<!-- <div id="page-solutionD" class="dn">
 			<img src="http://wx1.sinaimg.cn/mw690/005NNlPGgy1ftc0ze7m0uj309z068dg2.jpg" class="banner">
 			<div class="name ml10">
 				<div class="title fs22">
@@ -1083,10 +1071,9 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<!-- 关于我们 -->
-		<div class="tc" style="background: #f00;">下面是：关于我们</div>
-		<div id="page-about">
+		<!-- <div id="page-about" class="dn">
 			<img src="/static/phoneImages/index/banner.jpg" class="banner w">
 			<div class="me ma">
 				<p class="fs22 fw700">
@@ -1139,7 +1126,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- 导航图标 -->
 	<div id="nav" class="tc">
@@ -1178,6 +1165,89 @@
 
 			// 删除php图标
 			$('#think_page_trace_open').remove();
+		})
+		require(['jquery','underscore'], function ($, _) {
+			// 根据 Hash ，决定初始化的页面
+			var hash = location.hash.slice(1);
+			var tpl = {
+				home: {
+					// 资讯&知识
+					zxzs: [
+						'<li>',
+							'<a href="<%= detailUrl %>">',
+								'<img src="<%= imgUrl %>">',
+								'<div class="ib">',
+									'<div>',
+										'<%= title %>',
+									'</div>',
+									'<span><%= date %></span>',
+								'</div>',
+							'</a>',
+						'</li>'
+					].join('')
+				}
+			}
+			var url = {
+				// 说明书
+				instructions: 'http://bang.hanmau.com/api_instructions',
+				// 资讯
+				information: 'http://bang.hanmau.com/api_blog',
+				// 知识点
+				knowledgepoint: 'http://bang.hanmau.com/api_hcvknowledge',
+				// 医生
+				doctor: 'http://bang.hanmau.com/api_mingyi'
+			}
+			var initData = {
+				instructions: function (pageNum) {
+					let deferred = $.Deferred();
+					$.ajax({
+						url: url.instructions,
+						type: 'GET',
+						data: {
+							page: pageNum
+						}
+					}).done(function (res) {
+						deferred.resolve(res);
+					}).fail(function () {
+						deferred.reject();
+					})
+					return deferred;
+				}
+			}
+			var initPage = {
+				home: function () {
+					$.when(initData.instructions()).done(function (data) {
+						console.log(data);
+					})
+				},
+				solution: function () {
+
+				}
+			}
+			switch (hash) {
+				case 'home':
+					initPage.home();
+					break;
+				case 'solution':
+					break;
+				case 'instructions':
+					break;
+				case 'knowledgepoint':
+					break;
+				case 'information':
+					break;
+				case 'anli':
+					break;
+				case 'hospital':
+					break;
+				case 'doctor':
+					break;
+				case 'about':
+					break;
+			}
+
+
+
 		})
 	</script>
 </body>

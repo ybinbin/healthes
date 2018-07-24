@@ -62,7 +62,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-home .block4 .con {width: 17.8rem;margin: 0 auto;}
 #page-home .block4 .con img {width: 5.9rem;}
 #page-home .block4 .con li {padding: 1.2rem 0 1rem 0;border-bottom: 1px solid #dedede;}
-#page-home .block4 .con li > div {width: 11rem;margin-left: .6rem;height: 4.25rem;float: right;position: relative;}
+#page-home .block4 .con li a > div {width: 11rem;margin-left: .6rem;height: 4.25rem;float: right;position: relative;}
 #page-home .block4 .con span {color: #989898;font-size: .7rem;position: absolute;bottom: 0;right: 0;}
 #page-home .block4 .con .more {border: 0;}
 #page-home .block4 .con .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
