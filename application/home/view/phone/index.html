@@ -28,15 +28,15 @@
 	</header>
 	<nav class="tc">
 		<ul class="navs clearfix ib action" data-action="nav">
-			<li class="active"><a href="">首页</a></li>
-			<li><a href="">方案</a></li>
-			<li><a href="">说明书</a></li>
-			<li><a href="">知识点</a></li>
-			<li><a href="">资讯</a></li>
-			<li><a href="">案例</a></li>
-			<li><a href="">医院</a></li>
-			<li><a href="">医生</a></li>
-			<li><a href="">关于</a></li>
+			<li class="active"><a href="" data-name="home">首页</a></li>
+			<li><a href="" data-name="solution">方案</a></li>
+			<li><a href="" data-name="instructions">说明书</a></li>
+			<li><a href="" data-name="knowledgepoint">知识点</a></li>
+			<li><a href="" data-name="information">资讯</a></li>
+			<li><a href="" data-name="anli">案例</a></li>
+			<li><a href="" data-name="hospital">医院</a></li>
+			<li><a href="" data-name="doctor">医生</a></li>
+			<li><a href="" data-name="about">关于</a></li>
 		</ul>
 		<!-- <ul class="links">
 			<li>
@@ -572,56 +572,17 @@
 			</div>
 		</div>
 		<!-- 说明书页面 -->
-		<div id="page-instructions">
+		<div id="page-instructions" class="dn page-lists">
 		</div>
 		<!-- 知识点页面 -->
-		<div id="page-knowledgepoint">
+		<div id="page-knowledgepoint" class="dn page-lists">
 		</div>
 		<!-- 资讯页面 -->
-		<div id="page-information">
+		<div id="page-information" class="dn page-lists">
 		</div>
 		<!-- 案例页面 -->
-		<div id="page-anli" class="dn">
+		<div id="page-anli" class="dn page-lists">
 			<ul>
-				<li class="clearfix">
-					<div>
-						<img src="http://wx3.sinaimg.cn/mw690/005NNlPGgy1ftbri2qkkrj303r02nglh.jpg">
-						<div class="ib fl con">
-							<span>普西帕瓦提.辛加尼亚研究院</span>
-							<div>
-								丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								<a href="">查看详情&gt;&gt;</a>
-							</div>
-
-						</div>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div>
-						<img src="http://wx3.sinaimg.cn/mw690/005NNlPGgy1ftbri2qkkrj303r02nglh.jpg">
-						<div class="ib fl con">
-							<span>普西帕瓦提.辛加尼亚研究院</span>
-							<div>
-								丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								<a href="">查看详情&gt;&gt;</a>
-							</div>
-
-						</div>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div>
-						<img src="http://wx3.sinaimg.cn/mw690/005NNlPGgy1ftbri2qkkrj303r02nglh.jpg">
-						<div class="ib fl con">
-							<span>普西帕瓦提.辛加尼亚研究院</span>
-							<div>
-								丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								<a href="">查看详情&gt;&gt;</a>
-							</div>
-
-						</div>
-					</div>
-				</li>
 				<li class="more tc">
 					<a href="">
 						<div class="vm ib">查看更多</div>
@@ -631,10 +592,10 @@
 			</ul>
 		</div>
 		<!-- 医院页面 -->
-		<div id="page-hospital">
+		<div id="page-hospital" class="dn page-lists">
 		</div>
 		<!-- 医生页面 -->
-		<div id="page-doctor">
+		<div id="page-doctor" class="dn page-lists">
 		</div>
 		<!-- 关于页面 -->
 		<div id="page-about" class="dn">
@@ -1111,7 +1072,6 @@
 					loading: function () {
 						$('#loading,#loading img').removeClass('dn');
 						$('#loading .reload').addClass('dn');
-						debugger
 						$(page.all()).addClass('dn');
 					},
 					reload: function () {
@@ -1126,11 +1086,6 @@
 					navSwitch: function (targetNav) {
 						$(page.all()).addClass('dn');
 						$('#page-'+page.currPage).removeClass('dn');
-					}
-				},
-				home: {
-					func: {
-
 					}
 				}
 			}
@@ -1159,16 +1114,20 @@
 					hospital: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<img src="<%= imgUrl %>">',
-								'<div class="txt tc">',
-									'<span><%= title %></span>',
-								'</div>',
+								'<a href="<%= detailUrl %>" class="ib">',
+									'<img src="<%= imgUrl %>">',
+									'<div class="txt tc">',
+										'<span><%= title %></span>',
+									'</div>',
+								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<img src="<%= imgUrl2 %>">',
-								'<div class="txt tc">',
-									'<span><%= title2 %></span>',
-								'</div>',
+								'<a href="<%= detailUrl2 %>" class="ib">',
+									'<img src="<%= imgUrl2 %>">',
+									'<div class="txt tc">',
+										'<span><%= title2 %></span>',
+									'</div>',
+								'</a>',
 							'</div>',
 						'</li>'
 					].join('')),
@@ -1186,7 +1145,21 @@
 							'</a>',
 						'</li>'
 					].join(''))
-				}
+				},
+				lists: _.template([
+					'<li class="clearfix">',
+						'<div>',
+							'<img src="<%= imgUrl %>">',
+							'<div class="ib fl con">',
+								'<span><%= title %></span>',
+								'<div>',
+									'<%= content %>',
+									'<a href="<%= detailUrl %>">查看详情&gt;&gt;</a>',
+								'</div>',
+							'</div>',
+						'</div>',
+					'</li>'
+				].join(''))
 			}
 			var url = {
 				// 首页
@@ -1244,7 +1217,7 @@
 
 						// 医院的临时数据
 						data.doctor_news = 
-							[{name: '/uploads/5b3ce4854e747.jpg',age: '我是文字'},{name: '/uploads/5b3ce4854e747.jpg',age: '我是文字'},{name: '/uploads/5b3ce4854e747.jpg',age: '我是文字'},{name: '/uploads/5b3ce4854e747.jpg',age: '我是文字'},{name: '/uploads/5b3ce4854e747.jpg',age: '我是文字'}];
+							[{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"1"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"2"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"3"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"4"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"5"}];
 						// 合作医院
 						let hosData = _.reduce(_.reduce(data.doctor_news, function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
@@ -1257,8 +1230,10 @@
 							return total + tpl.home.hospital({
 								imgUrl: curr[0].name,
 								title: curr[0].age,
+								detailUrl: url.doctor+'/'+curr[0].id,
 								imgUrl2: curr[1] && curr[1].name,
-								title2: curr[1] && curr[1].age
+								title2: curr[1] && curr[1].age,
+								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)
 							});
 						},'');
 						$('#page-home .block3 ul').html(hosData);
@@ -1288,6 +1263,18 @@
 				},
 				solution: function () {
 					alert('准备初始化解决方案列表页面');
+				},
+				lists: function (url, pageObj) {
+					let defer = $.Deferred();
+					$.when(initData.getData(url))
+					.done(function (data) {
+						console.log(pageObj);
+						console.log(data);
+					})
+					.fail(function () {
+						defer.reject();
+					})
+					return defer;
 				}
 			}
 			// 初始化页面的方法---为了加载失败的 reload 调用
@@ -1296,7 +1283,7 @@
 					$.when(initPage.home())
 					.done(function () {
 						page.func.loaded();
-						page.home.isInit = true;
+						$(page.mainPage[0]).data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
@@ -1306,11 +1293,40 @@
 					$.when(initPage.solution())
 					.done(function () {
 						page.func.loaded();
-						page.solution.isInit = true;
+						$(page.mainPage[1]).data('isInit', 1);
 					})
 					.fail(function () {
-						alert('solution 失败');
+						page.func.reload();
 					})
+				},
+				instructions: function () {
+					$.when(initPage.lists(url.instructions, page.mainPage[2]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[2]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
+				},
+				knowledgepoint: function () {
+					alert("我是 knowledgepoint");
+				},
+				information: function () {
+					
+				},
+				anli: function () {
+					
+					alert("我是 information");
+				},
+				hospital: function () {
+					alert("我是 hospital");
+				},
+				doctor: function () {
+					alert("我是 doctor");
+				},
+				about: function () {
+					alert("我是 about");
 				},
 				list: function () {
 
@@ -1319,8 +1335,8 @@
 			// 默认初始化首页
 			initFunc.home();
 			$('#loading .reload').click(function () {
-				initFunc[page.currPage]();
 				page.func.loading();
+				initFunc[page.currPage]();
 			})
 
 			// a 标签事件捕获，页面切换，内容更新
@@ -1328,11 +1344,23 @@
 				let action = $(this).parents('.action').data('action');
 				switch (action) {
 					case 'nav':
-						// 改变 nav 位置
+						let thisPage = $(page.mainPage[$(this).parent().index()]);
+						// 当前页面
+						page.currPage = $(this).data('name');
+						// nav 切换
 						$(this).parents('.action').find('li').removeClass('active');
 						$(this).parent().addClass('active');
-						// 调用 页面初始化
-						initFunc[page.mainPage[$(this).parent().index()]]();
+						// 如果该主页面未 初始化数据，则初始化
+						if (!thisPage.data('isInit')) {
+							page.func.loading();
+							initFunc[$(this).data('name')]();
+						} else {
+							// 防止其他页面的 reload
+							page.func.loaded();
+						}
+						// 主页面切换
+						page.func.navSwitch();
+
 
 						break;
 					case 'nav1':
@@ -1349,7 +1377,16 @@
 						break;
 				}
 			})
-
+		})
+		require(['jquery'], function () {
+			// home-资讯&知识 切换
+			var zxzs = [$('#page-home .block4 .instructions')[0],$('#page-home .block4 .knowledgepoint')[0],$('#page-home .block4 .information')[0]];
+			$('#page-home .block4 .nav li').click(function () {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				$(zxzs).addClass('dn');
+				$(zxzs[$(this).index()]).removeClass('dn');
+			})
 		})
 	</script>
 </body>

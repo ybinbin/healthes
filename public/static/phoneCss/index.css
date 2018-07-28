@@ -77,29 +77,29 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-home .block5 .qr img {margin-bottom: 3px;width: 5.9rem;}
 #page-home .block5 .copyright {background: #000;color: #fff;padding: .5rem 0;}
 
-/*案例页面*/
-#page-case li {padding: 1rem 0;}
-#page-case li + li {border-top: 1px solid #d7d7d7;}
-#page-case li > div {margin-left: .8rem;}
-#page-case img {width: 6.75rem;float: left;}
-#page-case img {width: 6.75rem;float: left;}
-#page-case .con {width: 11rem;margin-left: 1.1rem;margin-top: -2px;}
-#page-case .con div {color: #b6b7b6;font-size: .7rem;margin-top: 10px;}
-#page-case a {color: #3399ff;}
-#page-case .more {border: 0;}
-#page-case .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
+/*列表页面*/
+.page-lists li {padding: 1rem 0;}
+.page-lists li + li {border-top: 1px solid #d7d7d7;}
+.page-lists li > div {margin-left: .8rem;}
+.page-lists img {width: 6.75rem;float: left;}
+.page-lists img {width: 6.75rem;float: left;}
+.page-lists .con {width: 11rem;margin-left: 1.1rem;margin-top: -2px;}
+.page-lists .con div {color: #b6b7b6;font-size: .7rem;margin-top: 10px;}
+.page-lists a {color: #3399ff;}
+.page-lists .more {border: 0;}
+.page-lists .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
 
-/*案例详情页面*/
-#page-caseD {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
-#page-caseD .lasnex span {display: block;line-height: 2.25rem;padding-left: 15px;background: #ecf2ff;margin: 2px 0;}
-#page-caseD .lasnex a {color: #767676;}
-#page-caseD .line {height: 4px;background: #eeeeef;margin-top: 2rem;}
-#page-caseD .about-read > div {border-bottom: 1px solid #eeeeef;padding: .5rem 0;}
-#page-caseD .about-read li + li {margin-top: 20px;}
-#page-caseD .about-read .more {border: 0;}
-#page-caseD .about-read .more a,#page-caseD .about-read .more i {color: #31b7be;font-size: .9rem;}
-#page-caseD .about-read .tips {color: #bababa;}
-#page-caseD .about-read .name {height: 65px;}
+/*列表详情页面*/
+#page-anliD {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
+#page-anliD .lasnex span {display: block;line-height: 2.25rem;padding-left: 15px;background: #ecf2ff;margin: 2px 0;}
+#page-anliD .lasnex a {color: #767676;}
+#page-anliD .line {height: 4px;background: #eeeeef;margin-top: 2rem;}
+#page-anliD .about-read > div {border-bottom: 1px solid #eeeeef;padding: .5rem 0;}
+#page-anliD .about-read li + li {margin-top: 20px;}
+#page-anliD .about-read .more {border: 0;}
+#page-anliD .about-read .more a,#page-anliD .about-read .more i {color: #31b7be;font-size: .9rem;}
+#page-anliD .about-read .tips {color: #bababa;}
+#page-anliD .about-read .name {height: 65px;}
 
 
 /*解决方案详情页面*/
