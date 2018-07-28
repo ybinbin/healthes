@@ -208,54 +208,6 @@
 					<span>解决方案</span>
 				</div>
 				<ul>
-					<li>
-						<div class="top">
-							<img src="/static/phoneImages/index/solution0.jpg">
-							<span class="ib con">
-								远程代诊服务
-								<div>
-									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								</div>
-							</span>
-						</div>
-						<ul class="lists clearfix ma">
-							<li>￥778</li>
-							<li>服务<span>728</span>人</li>
-							<li><a href="">查看详情&gt;&gt;</a></li>
-						</ul>
-					</li>
-					<li>
-						<div class="top">
-							<img src="/static/phoneImages/index/solution0.jpg">
-							<span class="ib con">
-								远程代诊服务
-								<div>
-									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								</div>
-							</span>
-						</div>
-						<ul class="lists clearfix ma">
-							<li>￥778</li>
-							<li>服务<span>728</span>人</li>
-							<li><a href="">查看详情&gt;&gt;</a></li>
-						</ul>
-					</li>
-					<li>
-						<div class="top">
-							<img src="/static/phoneImages/index/solution0.jpg">
-							<span class="ib con">
-								远程代诊服务
-								<div>
-									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								</div>
-							</span>
-						</div>
-						<ul class="lists clearfix ma">
-							<li>￥778</li>
-							<li>服务<span>728</span>人</li>
-							<li><a href="">查看详情&gt;&gt;</a></li>
-						</ul>
-					</li>
 				</ul>
 			</div>
 			<div class="block3">
@@ -547,18 +499,22 @@
 				<ul class="zj ma mt10 tc">
 					<li>
 						<div>
-							<img src="/static/phoneImages/solution/zhuanjia0.jpg">
-							<span>某某某博士</span>
-							<p>
-								丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-							</p>
+							<a href="" class="ib">
+								<img src="/static/phoneImages/solution/zhuanjia0.jpg">
+								<div class="ch">某某某博士</div>
+								<p>
+									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
+								</p>
+							</a>
 						</div>
 						<div>
-							<img src="/static/phoneImages/solution/zhuanjia0.jpg">
-							<span>某某某博士</span>
-							<p>
-								丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-							</p>
+							<a href="" class="ib">
+								<img src="/static/phoneImages/solution/zhuanjia0.jpg">
+								<div class="ch">某某某博士</div>
+								<p>
+									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
+								</p>
+							</a>
 						</div>
 					</li>
 					<li class="more tc">
@@ -568,17 +524,41 @@
 						</a>
 					</li>
 				</ul>
-				<img src="/static/phoneImages/solution/howto.jpg" class="db ma">
+				<img src="/static/phoneImages/solution/howto.jpg" class="db ma how">
 			</div>
 		</div>
 		<!-- 说明书页面 -->
 		<div id="page-instructions" class="dn page-lists">
+			<ul>
+				<li class="more tc">
+					<a href="">
+						<div class="vm ib">查看更多</div>
+						<i class="vm icon">&#xe686;</i>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<!-- 知识点页面 -->
 		<div id="page-knowledgepoint" class="dn page-lists">
+			<ul>
+				<li class="more tc">
+					<a href="">
+						<div class="vm ib">查看更多</div>
+						<i class="vm icon">&#xe686;</i>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<!-- 资讯页面 -->
 		<div id="page-information" class="dn page-lists">
+			<ul>
+				<li class="more tc">
+					<a href="">
+						<div class="vm ib">查看更多</div>
+						<i class="vm icon">&#xe686;</i>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<!-- 案例页面 -->
 		<div id="page-anli" class="dn page-lists">
@@ -1154,7 +1134,7 @@
 								'<span><%= title %></span>',
 								'<div>',
 									'<%= content %>',
-									'<a href="<%= detailUrl %>">查看详情&gt;&gt;</a>',
+									'<a href="<%= detailUrl %>" class="ib">查看详情&gt;&gt;</a>',
 								'</div>',
 							'</div>',
 						'</div>',
@@ -1216,10 +1196,9 @@
 						$('#page-home .block2 ul').html(soData);
 
 						// 医院的临时数据
-						data.doctor_news = 
-							[{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"1"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"2"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"3"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"4"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"5"}];
+						// data.hospitals = [{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"1"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"2"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"3"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"4"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"5"}];
 						// 合作医院
-						let hosData = _.reduce(_.reduce(data.doctor_news, function (total, curr, index, list) {
+						let hosData = _.reduce(_.reduce(data.hospitals, function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
 								total[total.length-1].push(curr);
 							} else {
@@ -1228,14 +1207,15 @@
 							return total;
 						},[]), function (total, curr, index, list) {
 							return total + tpl.home.hospital({
-								imgUrl: curr[0].name,
-								title: curr[0].age,
+								imgUrl: curr[0].image,
+								title: curr[0].title,
 								detailUrl: url.doctor+'/'+curr[0].id,
-								imgUrl2: curr[1] && curr[1].name,
-								title2: curr[1] && curr[1].age,
+								imgUrl2: curr[1] && curr[1].image,
+								title2: curr[1] && curr[1].title,
 								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)
 							});
 						},'');
+
 						$('#page-home .block3 ul').html(hosData);
 
 						// 说明书 知识 行业资讯
@@ -1262,14 +1242,48 @@
 					return defer;
 				},
 				solution: function () {
-					alert('准备初始化解决方案列表页面');
+					let defer = $.Deferred();
+					$.when(initData.getData(url.solution))
+					.done(function (data) {
+						data = JSON.parse(data);
+						$('#page-solution .block1 img')[0].src = data.ad.image;
+
+						// 解决方案
+						let soData = _.reduce(data.data, function (total, curr, index, list) {
+							return total + tpl.home.solution({
+								imgUrl: curr.image,
+								title: curr.title,
+								content: curr.desc,
+								price: curr.low_price,
+								people: curr.service_number,
+								detailUrl: url.solution+'/'+curr.id
+							});
+						}, '');
+						$('#page-solution .block2 ul').html(soData);
+
+						defer.resolve();
+					})
+					.fail(function () {
+						defer.reject();
+					})
+
+					return defer;
 				},
 				lists: function (url, pageObj) {
 					let defer = $.Deferred();
 					$.when(initData.getData(url))
 					.done(function (data) {
-						console.log(pageObj);
-						console.log(data);
+						data = JSON.parse(data);
+						let d = _.reduce(data.data, function (total, curr, index, list) {
+							return total + tpl.lists({
+								imgUrl: curr.image,
+								title: curr.title,
+								content: curr.content.slice(0,75),
+								detailUrl: url+'/'+curr.id
+							});
+						},'');
+						$(pageObj).find('ul .more').before(d);
+						defer.resolve();
 					})
 					.fail(function () {
 						defer.reject();
@@ -1310,13 +1324,26 @@
 					})
 				},
 				knowledgepoint: function () {
-					alert("我是 knowledgepoint");
+					$.when(initPage.lists(url.knowledgepoint, page.mainPage[3]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[3]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
 				information: function () {
-					
+					$.when(initPage.lists(url.information, page.mainPage[4]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[4]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
 				anli: function () {
-					
 					alert("我是 information");
 				},
 				hospital: function () {

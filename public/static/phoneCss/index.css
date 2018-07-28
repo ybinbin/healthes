@@ -185,11 +185,13 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block4 .price-db td {border: 1px solid #fff;padding: .4rem .25rem}
 #page-solution .block4 .price-db tr.active {color: #fff;background: #40bafd;}
 #page-solution .block4 .zj {width: 85%;}
-#page-solution .block4 .zj p {color: #b6b7b6;}
-#page-solution .block4 .zj span {color: #5d5f5d;}
-#page-solution .block4 .zj li > div {display: inline-block;width: 168px;}
+#page-solution .block4 .zj img {width: 8.4rem;}
+#page-solution .block4 .zj p {color: #b6b7b6;width: 8.4rem;}
+#page-solution .block4 .zj .ch {color: #5d5f5d;}
+#page-solution .block4 .zj li > div {display: inline-block;width: 8.4rem;}
 #page-solution .block4 .zj li > div:first-child {float: left;}
 #page-solution .block4 .zj li > div:first-child + div {float: right;}
+#page-solution .block4 .how {width: 18.05rem;}
 
 /*关于我们*/
 #page-about {padding-bottom: .5rem;}
