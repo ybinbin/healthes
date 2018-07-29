@@ -38,7 +38,7 @@
 			<li><a href="" data-name="doctor">医生</a></li>
 			<li><a href="" data-name="about">关于</a></li>
 		</ul>
-		<!-- <ul class="links">
+		<ul class="links dn">
 			<li>
 				<a href="">首页</a>
 			</li>
@@ -48,7 +48,7 @@
 			<li>
 				<a href="">健康咨询服务</a>
 			</li>
-		</ul> -->
+		</ul>
 	</nav>
 	<!-- 动态内容 -->
 	<div id="content">
@@ -108,7 +108,7 @@
 			</div>
 			<div class="block4">
 				<div class="common-title">
-					<span>咨询&amp;知识</span>
+					<span>资讯&amp;知识</span>
 				</div>
 				<ul class="nav clearfix ma">
 					<li class="active"><span>说明书</span></li>
@@ -117,7 +117,7 @@
 				</ul>
 				<ul class="con instructions">
 					<li class="more tc">
-						<a href="">
+						<a href="" onclick="(function(){$('nav .navs a')[2].click()})()">
 							<div class="vm ib">查看更多</div>
 							<i class="vm icon">&#xe686;</i>
 						</a>
@@ -125,7 +125,7 @@
 				</ul>
 				<ul class="con knowledgepoint dn">
 					<li class="more tc">
-						<a href="">
+						<a href="" onclick="(function(){$('nav .navs a')[3].click()})()">
 							<div class="vm ib">查看更多</div>
 							<i class="vm icon">&#xe686;</i>
 						</a>
@@ -133,7 +133,7 @@
 				</ul>
 				<ul class="con information dn">
 					<li class="more tc">
-						<a href="">
+						<a href="" onclick="(function(){$('nav .navs a')[4].click()})()">
 							<div class="vm ib">查看更多</div>
 							<i class="vm icon">&#xe686;</i>
 						</a>
@@ -573,9 +573,25 @@
 		</div>
 		<!-- 医院页面 -->
 		<div id="page-hospital" class="dn page-lists">
+			<ul>
+				<li class="more tc">
+					<a href="">
+						<div class="vm ib">查看更多</div>
+						<i class="vm icon">&#xe686;</i>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<!-- 医生页面 -->
 		<div id="page-doctor" class="dn page-lists">
+			<ul>
+				<li class="more tc">
+					<a href="">
+						<div class="vm ib">查看更多</div>
+						<i class="vm icon">&#xe686;</i>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<!-- 关于页面 -->
 		<div id="page-about" class="dn">
@@ -1066,6 +1082,7 @@
 					navSwitch: function (targetNav) {
 						$(page.all()).addClass('dn');
 						$('#page-'+page.currPage).removeClass('dn');
+						$('nav .links').addClass('dn');
 					}
 				}
 			}
@@ -1146,14 +1163,18 @@
 				home: 'http://bang.hanmau.com/home',
 				// 解决方案
 				solution: 'http://bang.hanmau.com/api_services',
-				// 医生
-				doctor: 'http://bang.hanmau.com/api_mingyi',
 				// 说明书
 				instructions: 'http://bang.hanmau.com/api_instructions',
+				// 知识点
+				knowledgepoint: 'http://bang.hanmau.com/api_hcvknowledge',
 				// 资讯
 				information: 'http://bang.hanmau.com/api_blog',
-				// 知识点
-				knowledgepoint: 'http://bang.hanmau.com/api_hcvknowledge'
+				anli: '',
+				// 医院
+				hospital: 'http://bang.hanmau.com/api_hospital',
+				// 医生
+				doctor: 'http://bang.hanmau.com/api_mingyi'
+				
 			}
 			// 根据 页码参数 获取列表数据
 			var initData = {
@@ -1347,10 +1368,24 @@
 					alert("我是 information");
 				},
 				hospital: function () {
-					alert("我是 hospital");
+					$.when(initPage.lists(url.hospital, page.mainPage[6]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[6]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
 				doctor: function () {
-					alert("我是 doctor");
+					$.when(initPage.lists(url.doctor, page.mainPage[7]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[7]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
 				about: function () {
 					alert("我是 about");
