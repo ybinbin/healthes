@@ -81,8 +81,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 .page-lists li {padding: 1rem 0;}
 .page-lists li + li {border-top: 1px solid #d7d7d7;}
 .page-lists li > div {margin-left: .8rem;}
-.page-lists img {width: 6.75rem;float: left;}
-.page-lists img {width: 6.75rem;float: left;}
+.page-lists li:not(.more) img {width: 6.75rem;float: left;}
 .page-lists .con {width: 11rem;margin-left: 1.1rem;margin-top: -2px;}
 .page-lists .con div {color: #b6b7b6;font-size: .7rem;margin-top: 10px;}
 .page-lists a {color: #3399ff;}

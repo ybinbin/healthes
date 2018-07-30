@@ -27,27 +27,19 @@
 		<span class="vm">让丙肝患者有更多更好的选择</span>
 	</header>
 	<nav class="tc">
-		<ul class="navs clearfix ib action" data-action="nav">
-			<li class="active"><a href="" data-name="home">首页</a></li>
-			<li><a href="" data-name="solution">方案</a></li>
-			<li><a href="" data-name="instructions">说明书</a></li>
-			<li><a href="" data-name="knowledgepoint">知识点</a></li>
-			<li><a href="" data-name="information">资讯</a></li>
-			<li><a href="" data-name="anli">案例</a></li>
-			<li><a href="" data-name="hospital">医院</a></li>
-			<li><a href="" data-name="doctor">医生</a></li>
-			<li><a href="" data-name="about">关于</a></li>
+		<ul class="navs clearfix ib">
+			<li class="active"><a href="" data-type="nav" data-name="home">首页</a></li>
+			<li><a href="" data-type="nav" data-name="solution">方案</a></li>
+			<li><a href="" data-type="nav" data-name="instructions">说明书</a></li>
+			<li><a href="" data-type="nav" data-name="knowledgepoint">知识点</a></li>
+			<li><a href="" data-type="nav" data-name="information">资讯</a></li>
+			<li><a href="" data-type="nav" data-name="anli">案例</a></li>
+			<li><a href="" data-type="nav" data-name="hospital">医院</a></li>
+			<li><a href="" data-type="nav" data-name="doctor">医生</a></li>
+			<li><a href="" data-type="nav" data-name="about">关于</a></li>
 		</ul>
 		<ul class="links dn">
-			<li>
-				<a href="">首页</a>
-			</li>
-			<li>
-				<a href="">解决方案</a>
-			</li>
-			<li>
-				<a href="">健康咨询服务</a>
-			</li>
+			
 		</ul>
 	</nav>
 	<!-- 动态内容 -->
@@ -496,29 +488,10 @@
 				<div class="common-title">
 					<span>印度专家</span>
 				</div>
-				<ul class="zj ma mt10 tc">
-					<li>
-						<div>
-							<a href="" class="ib">
-								<img src="/static/phoneImages/solution/zhuanjia0.jpg">
-								<div class="ch">某某某博士</div>
-								<p>
-									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								</p>
-							</a>
-						</div>
-						<div>
-							<a href="" class="ib">
-								<img src="/static/phoneImages/solution/zhuanjia0.jpg">
-								<div class="ch">某某某博士</div>
-								<p>
-									丙肝远程代诊套餐，无需出国，印度国宝级肝病专家根据病例制定丙肝治疗专属方案，...
-								</p>
-							</a>
-						</div>
-					</li>
+				<ul class="zj ma mt10">
+					
 					<li class="more tc">
-						<a href="">
+						<a href="" onclick="(function(){$('nav .navs a')[7].click()})()">
 							<div class="vm ib">查看更多</div>
 							<i class="vm icon">&#xe686;</i>
 						</a>
@@ -530,12 +503,7 @@
 		<!-- 说明书页面 -->
 		<div id="page-instructions" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 知识点页面 -->
@@ -650,25 +618,8 @@
 		</div>
 
 		<!-- 解决方案详情页面 -->
-		<div id="page-solutionD" class="dn">
-			<img src="http://wx1.sinaimg.cn/mw690/005NNlPGgy1ftc0ze7m0uj309z068dg2.jpg" class="banner">
-			<div class="name ml10">
-				<div class="title fs22">
-					丙肝远程咨询
-				</div>
-				<div class="tag clearfix">
-					<span class="bf38686">预约专家问诊</span>
-					<span class="bec99df">病例翻译</span>
-					<span class="bf1a55d">医院拿药</span>
-					<span class="b5fadda">正品保障</span>
-					<span class="bff6033">医院直邮</span>
-					<span class="bdc524f">正规医院发票</span>
-					<span class="b68ca6d">无需出国</span>
-				</div>
-				<div class="pp oh">
-					<span class="fl cff4b2b">￥<span class="fs24">4800</span></span>
-					<span class="fr fs14">服务人数：427人</span>
-				</div>
+		<div id="page-solutionD" class="">
+			<div class="top-msg">
 			</div>
 			<div class="detail tc">
 				<div class="clearfix">
@@ -686,12 +637,14 @@
 							<span class="vm ib dian"></span>
 							<span class="vm ib line"></span>
 						</div>
-						<img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftc0zekitjj30ac03x0sr.jpg" class="w">
+						<!-- <img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftc0zekitjj30ac03x0sr.jpg" class="w">
 						<p>
 							详细介绍】： 代，支持的属性值不仅仅上面出现的这几个，还有与underline对应的overline, 表示上划线，虽然兼容性不错，但是似乎没有什么卵用，鄙人不才，写CSS这么多年一次都没有在实际项目中使用过overline
-						</p>
+						</p> -->
+						<div class="introduce-detail">
+						</div>
 					</li>
-					<li class="fysm">
+					<li>
 						<div id="fysm" class="title">
 							<span class="vm ib line"></span>
 							<span class="vm ib dian"></span>
@@ -946,7 +899,7 @@
 			</div>
 		</div>
 		<!-- 案例详情页面 -->
-		<div id="page-anliD" class="dn">
+		<div id="page-anliD" class="">
 			<div class="tc fs20">某某某博士</div>
 			<div class="c8 mb30 mt10 tc">
 				<i class="icon vm">&#xe603;</i><span class="vm">德哥</span>
@@ -1082,7 +1035,9 @@
 					navSwitch: function (targetNav) {
 						$(page.all()).addClass('dn');
 						$('#page-'+page.currPage).removeClass('dn');
+						$('#content').scrollTop($('#page-'+page.currPage).data('scrolltop') || 0);
 						$('nav .links').addClass('dn');
+
 					}
 				}
 			}
@@ -1103,7 +1058,7 @@
 							'<ul class="lists clearfix ma">',
 								'<li><span class="vm">￥<%= price %></span></li>',
 								'<li><span class="vm">服务<span><%= people %></span>人</span></li>',
-								'<li><a href="<%= detailUrl %>" class="vm">查看详情&gt;&gt;</a></li>',
+								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solution" class="vm">查看详情&gt;&gt;</a></li>',
 							'</ul>',
 						'</li>'
 					].join('')),
@@ -1111,7 +1066,7 @@
 					hospital: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" class="ib">',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="txt tc">',
 										'<span><%= title %></span>',
@@ -1119,7 +1074,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" class="ib">',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="item" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="txt tc">',
 										'<span><%= title2 %></span>',
@@ -1131,7 +1086,7 @@
 					// 资讯&知识
 					zxzs_item: _.template([
 						'<li>',
-							'<a href="<%= detailUrl %>" class="item">',
+							'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="item">',
 								'<img src="<%= imgUrl %>">',
 								'<div class="ib">',
 									'<div>',
@@ -1143,6 +1098,56 @@
 						'</li>'
 					].join(''))
 				},
+				solution: {
+					doctor: _.template([
+						'<li class="clearfix">',
+							'<div>',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">',
+									'<img src="<%= imgUrl %>">',
+									'<div class="ch tc"><%= title %></div>',
+									'<p>',
+										'<%= content %>',
+									'</p>',
+								'</a>',
+							'</div>',
+							'<div <% if(!title2){ %> class="dn" <%}%> >',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="item" class="ib">',
+									'<img src="<%= imgUrl2 %>">',
+									'<div class="ch tc"><%= title2 %></div>',
+									'<p>',
+										'<%= content2 %>',
+									'</p>',
+								'</a>',
+							'</div>',
+						'</li>'
+					].join(''))
+				},
+				solutionD: {
+					top: _.template([
+						'<img src="http://wx1.sinaimg.cn/mw690/005NNlPGgy1ftc0ze7m0uj309z068dg2.jpg" class="banner">',
+						'<div class="name ml10">',
+							'<div class="title fs22">',
+								'丙肝远程咨询',
+							'</div>',
+							'<div class="tag clearfix">',
+								'<span class="bf38686">预约专家问诊</span>',
+								'<span class="bec99df">病例翻译</span>',
+								'<span class="bf1a55d">医院拿药</span>',
+								'<span class="b5fadda">正品保障</span>',
+								'<span class="bff6033">医院直邮</span>',
+								'<span class="bdc524f">正规医院发票</span>',
+								'<span class="b68ca6d">无需出国</span>',
+							'</div>',
+							'<div class="pp oh">',
+								'<span class="fl cff4b2b">￥<span class="fs24">4800</span></span>',
+								'<span class="fr fs14">服务人数：427人</span>',
+							'</div>',
+						'</div>'
+					].join('')),
+					introduce: [
+
+					]
+				},
 				lists: _.template([
 					'<li class="clearfix">',
 						'<div>',
@@ -1151,10 +1156,24 @@
 								'<span><%= title %></span>',
 								'<div>',
 									'<%= content %>',
-									'<a href="<%= detailUrl %>" class="ib">查看详情&gt;&gt;</a>',
+									'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">查看详情&gt;&gt;</a>',
 								'</div>',
 							'</div>',
 						'</div>',
+					'</li>'
+				].join('')),
+				lists_more: _.template([
+					'<li class="more tc">',
+						'<div class="loading dn"><img src="/static/phoneImages/loading.gif" style="width:32px;"></div>',
+						'<a href="<%= moreUrl %>" data-type="more" data-name="<%= pagename %>" data-currpage="1">',
+							'<div class="vm ib">查看更多</div>',
+							'<i class="vm icon">&#xe686;</i>',
+						'</a>',
+					'</li>'
+				].join('')),
+				links: _.template([
+					'<li>',
+						'<a href="<%= url %>"><%= content %></a>',
 					'</li>'
 				].join(''))
 			}
@@ -1169,12 +1188,11 @@
 				knowledgepoint: 'http://bang.hanmau.com/api_hcvknowledge',
 				// 资讯
 				information: 'http://bang.hanmau.com/api_blog',
-				anli: '',
+				anli: 'http://bang.hanmau.com/api_case',
 				// 医院
 				hospital: 'http://bang.hanmau.com/api_hospital',
 				// 医生
 				doctor: 'http://bang.hanmau.com/api_mingyi'
-				
 			}
 			// 根据 页码参数 获取列表数据
 			var initData = {
@@ -1216,8 +1234,6 @@
 						},'')
 						$('#page-home .block2 ul').html(soData);
 
-						// 医院的临时数据
-						// data.hospitals = [{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"1"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"2"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"3"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"4"},{"name":"/uploads/5b3ce4854e747.jpg","age":"我是文字","id":"5"}];
 						// 合作医院
 						let hosData = _.reduce(_.reduce(data.hospitals, function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
@@ -1236,7 +1252,6 @@
 								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)
 							});
 						},'');
-
 						$('#page-home .block3 ul').html(hosData);
 
 						// 说明书 知识 行业资讯
@@ -1281,6 +1296,28 @@
 							});
 						}, '');
 						$('#page-solution .block2 ul').html(soData);
+						// 印度专家
+						let docData = _.reduce(_.reduce(data.hospitals, function (total, curr, index, list) {
+							if (total.length && total[total.length-1].length < 2) {
+								total[total.length-1].push(curr);
+							} else {
+								total.push([curr]);
+							}
+							return total;
+						}, []), function (total, curr, index, list) {
+							return total + tpl.solution.doctor({
+								detailUrl: url.doctor+'/'+curr[0].id,
+								imgUrl: curr[0].image,
+								title: curr[0].title,
+								content: $(curr[0].content).text().slice(0,50),
+								detailUrl2: curr[1] && url.doctor+'/'+curr[1].id,
+								imgUrl2: curr[1] && curr[1].image,
+								title2: curr[1] && curr[1].title,
+								content2: curr[1] && $(curr[1].content).text().slice(0,50)
+							})
+						}, '')
+						
+						$('#page-solution .block4 .zj .more').before(docData);
 
 						defer.resolve();
 					})
@@ -1290,9 +1327,9 @@
 
 					return defer;
 				},
-				lists: function (url, pageObj) {
+				lists: function (url, pageObj, page) {
 					let defer = $.Deferred();
-					$.when(initData.getData(url))
+					$.when(initData.getData(url, page))
 					.done(function (data) {
 						data = JSON.parse(data);
 						let d = _.reduce(data.data, function (total, curr, index, list) {
@@ -1303,8 +1340,22 @@
 								detailUrl: url+'/'+curr.id
 							});
 						},'');
-						$(pageObj).find('ul .more').before(d);
-						defer.resolve();
+						// 判断是初始化还是新增
+						if ($(pageObj).find('ul .more')[0]) {
+							$(pageObj).find('ul .more').before(d);
+						} else {
+							d += tpl.lists_more({
+								moreUrl: url,
+								pagename: pageObj.id
+							});
+							$(pageObj).find('ul').append(d);
+						}
+						
+						if (data.data.length) {
+							defer.resolve();
+						} else {
+							defer.reject();
+						}
 					})
 					.fail(function () {
 						defer.reject();
@@ -1365,7 +1416,14 @@
 					})
 				},
 				anli: function () {
-					alert("我是 information");
+					$.when(initPage.lists(url.anli, page.mainPage[5]))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[5]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
 				hospital: function () {
 					$.when(initPage.lists(url.hospital, page.mainPage[6]))
@@ -1395,7 +1453,7 @@
 				}
 			}
 			// 默认初始化首页
-			initFunc.home();
+			// initFunc.home();
 			$('#loading .reload').click(function () {
 				page.func.loading();
 				initFunc[page.currPage]();
@@ -1403,17 +1461,20 @@
 
 			// a 标签事件捕获，页面切换，内容更新
 			$('body').on('click', 'a', function (e) {
-				let action = $(this).parents('.action').data('action');
-				switch (action) {
+				let type = $(this).data('type');
+
+				switch (type) {
 					case 'nav':
-						let thisPage = $(page.mainPage[$(this).parent().index()]);
+						let targetPage = $(page.mainPage[$(this).parent().index()]);
+						// 切换页面之前记录，scrollTop
+						$('#page-'+page.currPage).data('scrolltop',$('#content').scrollTop());
 						// 当前页面
 						page.currPage = $(this).data('name');
 						// nav 切换
-						$(this).parents('.action').find('li').removeClass('active');
+						$(this).parents('ul').find('li').removeClass('active');
 						$(this).parent().addClass('active');
 						// 如果该主页面未 初始化数据，则初始化
-						if (!thisPage.data('isInit')) {
+						if (!targetPage.data('isInit')) {
 							page.func.loading();
 							initFunc[$(this).data('name')]();
 						} else {
@@ -1422,20 +1483,24 @@
 						}
 						// 主页面切换
 						page.func.navSwitch();
+						break;
+					case 'solution':
 
+						break;
+					case 'detail':
 
 						break;
-					case 'nav1':
-						break;
-					case 'nav2':
-						break;
-					case 'nav3':
-						break;
-					case 'nav4':
-						break;
-					case 'nav5':
-						break;
-					default:
+					case 'more':
+						let that = this, currpage = parseInt($(that).data('currpage'));
+						$(that).addClass('dn').prev().removeClass('dn');
+
+						initPage.lists($(that)[0].href, $('#'+$(that).data('name'))[0], currpage + 1)
+						.done(function () {
+							$(that).data('currpage', currpage + 1);
+						})
+						.always(function () {
+							$(that).removeClass('dn').prev().addClass('dn');
+						})
 						break;
 				}
 			})
