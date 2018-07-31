@@ -509,56 +509,31 @@
 		<!-- 知识点页面 -->
 		<div id="page-knowledgepoint" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 资讯页面 -->
 		<div id="page-information" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 案例页面 -->
 		<div id="page-anli" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 医院页面 -->
 		<div id="page-hospital" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 医生页面 -->
 		<div id="page-doctor" class="dn page-lists">
 			<ul>
-				<li class="more tc">
-					<a href="">
-						<div class="vm ib">查看更多</div>
-						<i class="vm icon">&#xe686;</i>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- 关于页面 -->
@@ -618,15 +593,15 @@
 		</div>
 
 		<!-- 解决方案详情页面 -->
-		<div id="page-solutionD" class="">
+		<div id="page-solutionD" class="dn">
 			<div class="top-msg">
 			</div>
 			<div class="detail tc">
 				<div class="clearfix">
-					<a href="#tcjs"><span class="top active">套餐介绍</span></a>
-					<a href="#fysm"><span class="top">费用说明</span></a>
-					<a href="#fwlc"><span class="top">服务流程</span></a>
-					<a href="#cjwt"><span class="top">常见问题</span></a>
+					<a href="#tcjs" data-type="jump"><span class="top active">套餐介绍</span></a>
+					<a href="#fysm" data-type="jump"><span class="top">费用说明</span></a>
+					<a href="#fwlc" data-type="jump"><span class="top">服务流程</span></a>
+					<a href="#cjwt" data-type="jump"><span class="top">常见问题</span></a>
 				</div>
 				<ul class="introduce">
 					<li>
@@ -898,8 +873,8 @@
 				</ul>
 			</div>
 		</div>
-		<!-- 案例详情页面 -->
-		<div id="page-anliD" class="">
+		<!-- 案例详情页面（其他说明书、知识点、资讯等列表页公用此详情页） -->
+		<div id="page-anliD" class="dn">
 			<div class="tc fs20">某某某博士</div>
 			<div class="c8 mb30 mt10 tc">
 				<i class="icon vm">&#xe603;</i><span class="vm">德哥</span>
@@ -1002,9 +977,12 @@
 
 			// 阻止所有 a 标签的默认事件。
 			$('body').on('click', 'a', function (e) {
-				e.preventDefault();
 				console.log(this.href);
-				return false;
+				if ($(this).data('type') != 'jump') {
+					e.preventDefault();
+					return false;
+				}
+				
 			})
 		})
 		require(['jquery','underscore'], function ($, _) {
@@ -1037,7 +1015,7 @@
 						$('#page-'+page.currPage).removeClass('dn');
 						$('#content').scrollTop($('#page-'+page.currPage).data('scrolltop') || 0);
 						$('nav .links').addClass('dn');
-
+						
 					}
 				}
 			}
@@ -1058,7 +1036,7 @@
 							'<ul class="lists clearfix ma">',
 								'<li><span class="vm">￥<%= price %></span></li>',
 								'<li><span class="vm">服务<span><%= people %></span>人</span></li>',
-								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solution" class="vm">查看详情&gt;&gt;</a></li>',
+								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solutionD" class="vm">查看详情&gt;&gt;</a></li>',
 							'</ul>',
 						'</li>'
 					].join('')),
@@ -1066,7 +1044,7 @@
 					hospital: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="txt tc">',
 										'<span><%= title %></span>',
@@ -1074,7 +1052,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="item" class="ib">',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anliD" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="txt tc">',
 										'<span><%= title2 %></span>',
@@ -1086,7 +1064,7 @@
 					// 资讯&知识
 					zxzs_item: _.template([
 						'<li>',
-							'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="item">',
+							'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="item">',
 								'<img src="<%= imgUrl %>">',
 								'<div class="ib">',
 									'<div>',
@@ -1102,7 +1080,7 @@
 					doctor: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="ch tc"><%= title %></div>',
 									'<p>',
@@ -1111,7 +1089,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="item" class="ib">',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anliD" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="ch tc"><%= title2 %></div>',
 									'<p>',
@@ -1124,10 +1102,10 @@
 				},
 				solutionD: {
 					top: _.template([
-						'<img src="http://wx1.sinaimg.cn/mw690/005NNlPGgy1ftc0ze7m0uj309z068dg2.jpg" class="banner">',
+						'<img src="<%= bannerUrl %>" class="banner">',
 						'<div class="name ml10">',
 							'<div class="title fs22">',
-								'丙肝远程咨询',
+								'<%= title %>',
 							'</div>',
 							'<div class="tag clearfix">',
 								'<span class="bf38686">预约专家问诊</span>',
@@ -1139,14 +1117,11 @@
 								'<span class="b68ca6d">无需出国</span>',
 							'</div>',
 							'<div class="pp oh">',
-								'<span class="fl cff4b2b">￥<span class="fs24">4800</span></span>',
-								'<span class="fr fs14">服务人数：427人</span>',
+								'<span class="fl cff4b2b">￥<span class="fs24"><%= price %></span></span>',
+								'<span class="fr fs14">服务人数：<%= people %>人</span>',
 							'</div>',
 						'</div>'
-					].join('')),
-					introduce: [
-
-					]
+					].join(''))
 				},
 				lists: _.template([
 					'<li class="clearfix">',
@@ -1156,7 +1131,7 @@
 								'<span><%= title %></span>',
 								'<div>',
 									'<%= content %>',
-									'<a href="<%= detailUrl %>" data-type="detail" data-name="item" class="ib">查看详情&gt;&gt;</a>',
+									'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">查看详情&gt;&gt;</a>',
 								'</div>',
 							'</div>',
 						'</div>',
@@ -1192,7 +1167,9 @@
 				// 医院
 				hospital: 'http://bang.hanmau.com/api_hospital',
 				// 医生
-				doctor: 'http://bang.hanmau.com/api_mingyi'
+				doctor: 'http://bang.hanmau.com/api_mingyi',
+				// 关于
+				about: 'http://bang.hanmau.com/api_contact'
 			}
 			// 根据 页码参数 获取列表数据
 			var initData = {
@@ -1297,7 +1274,7 @@
 						}, '');
 						$('#page-solution .block2 ul').html(soData);
 						// 印度专家
-						let docData = _.reduce(_.reduce(data.hospitals, function (total, curr, index, list) {
+						let docData = _.reduce(_.reduce(data['doctors '], function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
 								total[total.length-1].push(curr);
 							} else {
@@ -1316,7 +1293,6 @@
 								content2: curr[1] && $(curr[1].content).text().slice(0,50)
 							})
 						}, '')
-						
 						$('#page-solution .block4 .zj .more').before(docData);
 
 						defer.resolve();
@@ -1325,6 +1301,45 @@
 						defer.reject();
 					})
 
+					return defer;
+				},
+				solutionD: function (url) {
+					let defer = $.Deferred();
+					$.when(initData.getData(url))
+					.done(function (data) {
+						data = JSON.parse(data);
+						// top-msg
+						let topMsg = tpl.solutionD.top({
+							bannerUrl: data.data.image,
+							title: data.data.title,
+							price: data.data.low_price,
+							people: data.data.service_number
+						});
+						$('#page-solutionD .top-msg').html(topMsg);
+						// 套餐介绍
+						$('#page-solutionD .introduce-detail').html(data.data.introduce);
+					})
+					.fail(function () {
+						defer.reject();
+					})
+
+					return defer;
+				},
+				about: function () {
+					let defer = $.Deferred();
+					$.when(initData.getData(url.about))
+					.done(function (data) {
+						data = JSON.parse(data);
+						if (data.ad.image) {
+							$('#page-about .banner')[0].src = data.ad.image;
+							defer.resolve();
+						} else {
+							defer.reject();
+						}
+					})
+					.fail(function () {
+						defer.reject();
+					})
 					return defer;
 				},
 				lists: function (url, pageObj, page) {
@@ -1446,14 +1461,28 @@
 					})
 				},
 				about: function () {
-					alert("我是 about");
+					$.when(initPage.about())
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[8]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				},
-				list: function () {
-
+				solutionD: function (url) {
+					$.when(initPage.solutionD(url))
+					.done(function () {
+						page.func.loaded();
+						$(page.mainPage[9]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
 				}
 			}
 			// 默认初始化首页
-			// initFunc.home();
+			initFunc.home();
 			$('#loading .reload').click(function () {
 				page.func.loading();
 				initFunc[page.currPage]();
@@ -1484,11 +1513,20 @@
 						// 主页面切换
 						page.func.navSwitch();
 						break;
-					case 'solution':
-
-						break;
 					case 'detail':
-
+						switch ($(this).data('name')) {
+							case 'solutionD':
+								initFunc.solutionD($(this)[0].href);
+								page.currPage = $(this).data('name');
+								page.func.navSwitch();
+								break;
+							case 'anliD':
+							return;
+								initFunc.anliD($(this)[0].href);
+								page.currPage = $(this).data('name');
+								page.func.navSwitch();
+								break;
+						}
 						break;
 					case 'more':
 						let that = this, currpage = parseInt($(that).data('currpage'));
