@@ -1015,7 +1015,7 @@
 						$('#page-'+page.currPage).removeClass('dn');
 						$('#content').scrollTop($('#page-'+page.currPage).data('scrolltop') || 0);
 						$('nav .links').addClass('dn');
-						
+						$('nav .navs').removeClass('dn');
 					}
 				}
 			}
@@ -1148,7 +1148,7 @@
 				].join('')),
 				links: _.template([
 					'<li>',
-						'<a href="<%= url %>"><%= content %></a>',
+						'<a href="" onclick="<%= click %>"><%= content %></a>',
 					'</li>'
 				].join(''))
 			}
@@ -1174,7 +1174,7 @@
 			// 根据 页码参数 获取列表数据
 			var initData = {
 				getData: function (url, page) {
-					let deferred = $.Deferred();
+					let defer = $.Deferred();
 					$.ajax({
 						url: url,
 						type: 'GET',
@@ -1182,11 +1182,11 @@
 							page: page
 						}
 					}).done(function (res) {
-						deferred.resolve(res);
+						defer.resolve(res);
 					}).fail(function () {
-						deferred.reject();
+						defer.reject();
 					})
-					return deferred;
+					return defer;
 				}
 			}
 			var initPage = {
@@ -1194,7 +1194,13 @@
 					let defer = $.Deferred();
 					$.when(initData.getData(url.home))
 					.done(function (data) {
-						data = JSON.parse(data);
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
 						// banner 图片
 						data.ad[0] && ($('#page-home .block1 .banner')[0].src = data.ad[0].image);
 						// 解决方案
@@ -1258,7 +1264,13 @@
 					let defer = $.Deferred();
 					$.when(initData.getData(url.solution))
 					.done(function (data) {
-						data = JSON.parse(data);
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
 						$('#page-solution .block1 img')[0].src = data.ad.image;
 
 						// 解决方案
@@ -1266,7 +1278,7 @@
 							return total + tpl.home.solution({
 								imgUrl: curr.image,
 								title: curr.title,
-								content: curr.desc,
+								content: curr.desc.slice(0,75)+'...',
 								price: curr.low_price,
 								people: curr.service_number,
 								detailUrl: url.solution+'/'+curr.id
@@ -1274,7 +1286,7 @@
 						}, '');
 						$('#page-solution .block2 ul').html(soData);
 						// 印度专家
-						let docData = _.reduce(_.reduce(data['doctors '], function (total, curr, index, list) {
+						let docData = _.reduce(_.reduce(data.doctors, function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
 								total[total.length-1].push(curr);
 							} else {
@@ -1307,7 +1319,13 @@
 					let defer = $.Deferred();
 					$.when(initData.getData(url))
 					.done(function (data) {
-						data = JSON.parse(data);
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
 						// top-msg
 						let topMsg = tpl.solutionD.top({
 							bannerUrl: data.data.image,
@@ -1318,6 +1336,19 @@
 						$('#page-solutionD .top-msg').html(topMsg);
 						// 套餐介绍
 						$('#page-solutionD .introduce-detail').html(data.data.introduce);
+						// 显示 面包屑 导航
+						let links = _.reduce([
+							{content: '首页', click: "(function(){$('nav .navs a')[0].click()})()"},
+							{content: '解决方案', click: "(function(){$('nav .navs a')[1].click()})()"},
+							{content: data.data.title, click: ''},
+						], function (total, curr , index, list) {
+							return total + tpl.links({
+								content: curr.content,
+								click: curr.click
+							})
+						}, '');
+						$('nav .navs').addClass('dn');
+						$('nav .links').html(links).removeClass('dn');
 					})
 					.fail(function () {
 						defer.reject();
@@ -1325,11 +1356,35 @@
 
 					return defer;
 				},
+				anliD: function () {
+					let defer = $.Deferred();
+					$.when(initData.getData())
+					.done(function (data) {
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
+
+					})
+					.fail(function () {
+						defer.reject();
+					})
+					return defer;
+				},
 				about: function () {
 					let defer = $.Deferred();
 					$.when(initData.getData(url.about))
 					.done(function (data) {
-						data = JSON.parse(data);
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
 						if (data.ad.image) {
 							$('#page-about .banner')[0].src = data.ad.image;
 							defer.resolve();
@@ -1346,7 +1401,13 @@
 					let defer = $.Deferred();
 					$.when(initData.getData(url, page))
 					.done(function (data) {
-						data = JSON.parse(data);
+						try {
+							data = JSON.parse(data);
+						} catch (e) {
+							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
 						let d = _.reduce(data.data, function (total, curr, index, list) {
 							return total + tpl.lists({
 								imgUrl: curr.image,
@@ -1369,6 +1430,7 @@
 						if (data.data.length) {
 							defer.resolve();
 						} else {
+							alert('暂无数据');
 							defer.reject();
 						}
 					})
@@ -1474,7 +1536,15 @@
 					$.when(initPage.solutionD(url))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[9]).data('isInit', 1);
+					})
+					.fail(function () {
+						page.func.reload();
+					})
+				},
+				anliD: function (url) {
+					$.when(initPage.anliD(url))
+					.done(function () {
+						page.func.loaded();
 					})
 					.fail(function () {
 						page.func.reload();
@@ -1492,11 +1562,11 @@
 			$('body').on('click', 'a', function (e) {
 				let type = $(this).data('type');
 
+				// 点击任何 a 标签都要记录当前页面的 scrollTop
+				$('#page-'+page.currPage).data('scrolltop',$('#content').scrollTop());
 				switch (type) {
 					case 'nav':
 						let targetPage = $(page.mainPage[$(this).parent().index()]);
-						// 切换页面之前记录，scrollTop
-						$('#page-'+page.currPage).data('scrolltop',$('#content').scrollTop());
 						// 当前页面
 						page.currPage = $(this).data('name');
 						// nav 切换
@@ -1521,12 +1591,12 @@
 								page.func.navSwitch();
 								break;
 							case 'anliD':
-							return;
 								initFunc.anliD($(this)[0].href);
 								page.currPage = $(this).data('name');
 								page.func.navSwitch();
 								break;
 						}
+						$('#content').scrollTop(0);
 						break;
 					case 'more':
 						let that = this, currpage = parseInt($(that).data('currpage'));
