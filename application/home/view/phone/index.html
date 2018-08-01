@@ -593,7 +593,7 @@
 		</div>
 
 		<!-- 解决方案详情页面 -->
-		<div id="page-solutionD" class="dn">
+		<div id="page-solutiond" class="dn">
 			<div class="top-msg">
 			</div>
 			<div class="detail tc">
@@ -874,67 +874,8 @@
 			</div>
 		</div>
 		<!-- 案例详情页面（其他说明书、知识点、资讯等列表页公用此详情页） -->
-		<div id="page-anliD" class="dn">
-			<div class="tc fs20">某某某博士</div>
-			<div class="c8 mb30 mt10 tc">
-				<i class="icon vm">&#xe603;</i><span class="vm">德哥</span>
-				<i class="ml10 vm mr5 icon fs18 fw700">&#xe609;</i><span class="vm">2018-07-19</span>
-				<i class="ml10 vm mr5 icon">&#xe621;</i><span class="vm">说明书</span>
-				<i class="ml10 vm mr5 icon">&#xe625;</i><span class="vm">0浏览</span>
-			</div>
-			<pre>文章内容</pre>
-			<div class="lasnex">
-				<span><a href="">上一篇：Dr.Sandeep Batra</a></span>
-				<span><a href="">下一篇：没有了</a></span>
-			</div>
-			<div class="line"></div>
-			<div class="about-read">
-				<div class="fw700 fs18">相关阅读</div>
-				<ul class="mt20">
-					<li class="clearfix">
-						<img src="http://wx2.sinaimg.cn/mw690/005NNlPGgy1ftixmterrpj302x02ddfo.jpg" class="fl">
-						<div class="ib pr fl ml10">
-							<div class="name">
-								Dr.Sandeep Batra（塞思医生）
-							</div>
-							<div class="tips">
-								<span>2018-7-22</span>
-								<span class="fr">123阅读</span>
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<img src="http://wx2.sinaimg.cn/mw690/005NNlPGgy1ftixmterrpj302x02ddfo.jpg" class="fl">
-						<div class="ib pr fl ml10">
-							<div class="name">
-								Dr.Sandeep Batra（塞思医生）
-							</div>
-							<div class="tips">
-								<span>2018-7-22</span>
-								<span class="fr">123阅读</span>
-							</div>
-						</div>
-					</li>
-					<li class="clearfix">
-						<img src="http://wx2.sinaimg.cn/mw690/005NNlPGgy1ftixmterrpj302x02ddfo.jpg" class="fl">
-						<div class="ib pr fl ml10">
-							<div class="name">
-								Dr.Sandeep Batra（塞思医生）
-							</div>
-							<div class="tips">
-								<span>2018-7-22</span>
-								<span class="fr">123阅读</span>
-							</div>
-						</div>
-					</li>
-					<li class="more mt25 tc clearfix">
-						<a href="">
-							<div class="vm ib">查看更多</div>
-							<i class="vm icon">&#xe686;</i>
-						</a>
-					</li>
-				</ul>
-			</div>
+		<div id="page-anlid" class="dn">
+			
 		</div>
 	</div>
 	<!-- 导航图标 -->
@@ -989,8 +930,8 @@
 			var page = {
 				all: function () {
 					return page.mainPage.concat([
-						$('#page-solutionD')[0],
-						$('#page-anliD')[0]
+						$('#page-solutiond')[0],
+						$('#page-anlid')[0]
 					]);
 				},
 				mainPage: [$('#page-home')[0], $('#page-solution')[0], $('#page-instructions')[0], $('#page-knowledgepoint')[0], $('#page-information')[0], $('#page-anli')[0], $('#page-hospital')[0], $('#page-doctor')[0], $('#page-about')[0]],
@@ -1036,7 +977,7 @@
 							'<ul class="lists clearfix ma">',
 								'<li><span class="vm">￥<%= price %></span></li>',
 								'<li><span class="vm">服务<span><%= people %></span>人</span></li>',
-								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solutionD" class="vm">查看详情&gt;&gt;</a></li>',
+								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solutiond" class="vm">查看详情&gt;&gt;</a></li>',
 							'</ul>',
 						'</li>'
 					].join('')),
@@ -1044,7 +985,7 @@
 					hospital: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="txt tc">',
 										'<span><%= title %></span>',
@@ -1052,7 +993,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anliD" class="ib">',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anlid" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="txt tc">',
 										'<span><%= title2 %></span>',
@@ -1064,7 +1005,7 @@
 					// 资讯&知识
 					zxzs_item: _.template([
 						'<li>',
-							'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="item">',
+							'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="item">',
 								'<img src="<%= imgUrl %>">',
 								'<div class="ib">',
 									'<div>',
@@ -1080,7 +1021,7 @@
 					doctor: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">',
+								'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="ch tc"><%= title %></div>',
 									'<p>',
@@ -1089,7 +1030,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anliD" class="ib">',
+								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anlid" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="ch tc"><%= title2 %></div>',
 									'<p>',
@@ -1100,7 +1041,7 @@
 						'</li>'
 					].join(''))
 				},
-				solutionD: {
+				solutiond: {
 					top: _.template([
 						'<img src="<%= bannerUrl %>" class="banner">',
 						'<div class="name ml10">',
@@ -1123,6 +1064,51 @@
 						'</div>'
 					].join(''))
 				},
+				anlid: {
+					any: _.template([
+						'<li class="clearfix">',
+							'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid">',
+								'<img src="<%= imgUrl %>" class="fl">',
+								'<div class="ib pr fl ml10" style="max-width: 10.4rem">',
+									'<div class="name">',
+										'<%= title %>',
+									'</div>',
+									'<div class="tips">',
+										'<span><%= date %></span>',
+										'<span class="fr"><%= read %>阅读</span>',
+									'</div>',
+								'</div>',
+							'</a>',
+						'</li>'
+					].join('')),
+					main: _.template([
+						'<div class="tc fs20"><%= title %></div>',
+						'<div class="c8 mb30 mt10 tc">',
+							'<i class="icon vm">&#xe603;</i><span class="vm"><%= author %></span>',
+							'<i class="ml10 vm mr5 icon fs18 fw700">&#xe609;</i><span class="vm"><%= date %></span>',
+							'<i class="ml10 vm mr5 icon">&#xe621;</i><span class="vm"><%= description %></span>',
+							'<i class="ml10 vm mr5 icon">&#xe625;</i><span class="vm"><%= read %>浏览</span>',
+						'</div>',
+						'<div style="word-break: break-all"><%= content %></div>',
+						'<div class="lasnex">',
+							'<span><a href="<%= lasturl %>" >上一篇：<%= lasttext %></a></span>',
+							'<span><a href="<%= nexturl %>" >下一篇：<%= nexttext || "没有了"%></a></span>',
+						'</div>',
+						'<div class="line"></div>',
+						'<div class="about-read">',
+							'<div class="fw700 fs18">相关阅读</div>',
+							'<ul class="mt20">',
+								'<%= any %>',
+								'<li class="more mt25 tc clearfix">',
+									'<a href="" onclick="<%= click %>">',
+										'<div class="vm ib">查看更多</div>',
+										'<i class="vm icon">&#xe686;</i>',
+									'</a>',
+								'</li>',
+							'</ul>',
+						'</div>'
+					].join(''))
+				},
 				lists: _.template([
 					'<li class="clearfix">',
 						'<div>',
@@ -1131,7 +1117,7 @@
 								'<span><%= title %></span>',
 								'<div>',
 									'<%= content %>',
-									'<a href="<%= detailUrl %>" data-type="detail" data-name="anliD" class="ib">查看详情&gt;&gt;</a>',
+									'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">查看详情&gt;&gt;</a>',
 								'</div>',
 							'</div>',
 						'</div>',
@@ -1315,7 +1301,7 @@
 
 					return defer;
 				},
-				solutionD: function (url) {
+				solutiond: function (url) {
 					let defer = $.Deferred();
 					$.when(initData.getData(url))
 					.done(function (data) {
@@ -1327,15 +1313,15 @@
 							return;
 						}
 						// top-msg
-						let topMsg = tpl.solutionD.top({
+						let topMsg = tpl.solutiond.top({
 							bannerUrl: data.data.image,
 							title: data.data.title,
 							price: data.data.low_price,
 							people: data.data.service_number
 						});
-						$('#page-solutionD .top-msg').html(topMsg);
+						$('#page-solutiond .top-msg').html(topMsg);
 						// 套餐介绍
-						$('#page-solutionD .introduce-detail').html(data.data.introduce);
+						$('#page-solutiond .introduce-detail').html(data.data.introduce);
 						// 显示 面包屑 导航
 						let links = _.reduce([
 							{content: '首页', click: "(function(){$('nav .navs a')[0].click()})()"},
@@ -1356,9 +1342,9 @@
 
 					return defer;
 				},
-				anliD: function () {
+				anlid: function (url) {
 					let defer = $.Deferred();
-					$.when(initData.getData())
+					$.when(initData.getData(url))
 					.done(function (data) {
 						try {
 							data = JSON.parse(data);
@@ -1367,6 +1353,31 @@
 							defer.reject();
 							return;
 						}
+						let any = _.reduce(data.more_news, function (total, curr, index, list) {
+							return total + tpl.anlid.any({
+								detailUrl: url.replace(/\d+/, curr.id),
+								imgUrl: curr.image,
+								title: curr.title,
+								date: curr.publish_time,
+								read: curr.show
+							})
+						}, '');
+						let con = tpl.anlid.main({
+							title: data.data.title,
+							author: data.data.author,
+							date: data.data.publish_time,
+							description: data.data.keywords,
+							read: data.data.keywords, 
+							content: data.data.content,
+							lasturl: '',
+							lasttext: '上一个文字',
+							nexturl: '',
+							nexttext: '下一个文字',
+							any: any,
+							click: "(function(){ $('nav .navs .active a')[0].click() })()"
+						})
+						$('#page-anlid').html(con);
+						defer.resolve();
 
 					})
 					.fail(function () {
@@ -1412,7 +1423,7 @@
 							return total + tpl.lists({
 								imgUrl: curr.image,
 								title: curr.title,
-								content: curr.content.slice(0,75),
+								content: curr.content.replace(/<[^<>]+>/g,'').slice(0,75),
 								detailUrl: url+'/'+curr.id
 							});
 						},'');
@@ -1430,7 +1441,6 @@
 						if (data.data.length) {
 							defer.resolve();
 						} else {
-							alert('暂无数据');
 							defer.reject();
 						}
 					})
@@ -1532,8 +1542,8 @@
 						page.func.reload();
 					})
 				},
-				solutionD: function (url) {
-					$.when(initPage.solutionD(url))
+				solutiond: function (url) {
+					$.when(initPage.solutiond(url))
 					.done(function () {
 						page.func.loaded();
 					})
@@ -1541,8 +1551,8 @@
 						page.func.reload();
 					})
 				},
-				anliD: function (url) {
-					$.when(initPage.anliD(url))
+				anlid: function (url) {
+					$.when(initPage.anlid(url))
 					.done(function () {
 						page.func.loaded();
 					})
@@ -1561,7 +1571,7 @@
 			// a 标签事件捕获，页面切换，内容更新
 			$('body').on('click', 'a', function (e) {
 				let type = $(this).data('type');
-
+				if (this.href == '') {return;}
 				// 点击任何 a 标签都要记录当前页面的 scrollTop
 				$('#page-'+page.currPage).data('scrolltop',$('#content').scrollTop());
 				switch (type) {
@@ -1585,13 +1595,13 @@
 						break;
 					case 'detail':
 						switch ($(this).data('name')) {
-							case 'solutionD':
-								initFunc.solutionD($(this)[0].href);
+							case 'solutiond':
+								initFunc.solutiond($(this)[0].href);
 								page.currPage = $(this).data('name');
 								page.func.navSwitch();
 								break;
-							case 'anliD':
-								initFunc.anliD($(this)[0].href);
+							case 'anlid':
+								initFunc.anlid($(this)[0].href);
 								page.currPage = $(this).data('name');
 								page.func.navSwitch();
 								break;
