@@ -28,18 +28,17 @@
 	</header>
 	<nav class="tc">
 		<ul class="navs clearfix ib">
-			<li class="active"><a href="" data-type="nav" data-name="home">首页</a></li>
-			<li><a href="" data-type="nav" data-name="solution">方案</a></li>
-			<li><a href="" data-type="nav" data-name="instructions">说明书</a></li>
-			<li><a href="" data-type="nav" data-name="knowledgepoint">知识点</a></li>
-			<li><a href="" data-type="nav" data-name="information">资讯</a></li>
-			<li><a href="" data-type="nav" data-name="anli">案例</a></li>
-			<li><a href="" data-type="nav" data-name="hospital">医院</a></li>
-			<li><a href="" data-type="nav" data-name="doctor">医生</a></li>
-			<li><a href="" data-type="nav" data-name="about">关于</a></li>
+			<li data-name="home" class="active">	<a href="?type=nav&name=home">				首页		</a></li>
+			<li data-name="solution">				<a href="?type=nav&name=solution">			方案		</a></li>
+			<li data-name="instructions">			<a href="?type=nav&name=instructions">		说明书	</a></li>
+			<li data-name="knowledgepoint">			<a href="?type=nav&name=knowledgepoint">	知识点	</a></li>
+			<li data-name="information">			<a href="?type=nav&name=information">		资讯		</a></li>
+			<li data-name="anli">					<a href="?type=nav&name=anli">				案例		</a></li>
+			<li data-name="hospital">				<a href="?type=nav&name=hospital">			医院		</a></li>
+			<li data-name="doctor">					<a href="?type=nav&name=doctor">			医生		</a></li>
+			<li data-name="about">					<a href="?type=nav&name=about">				关于		</a></li>
 		</ul>
 		<ul class="links dn">
-			
 		</ul>
 	</nav>
 	<!-- 动态内容 -->
@@ -527,13 +526,11 @@
 		<!-- 医院页面 -->
 		<div id="page-hospital" class="dn page-lists">
 			<ul>
-				
 			</ul>
 		</div>
 		<!-- 医生页面 -->
 		<div id="page-doctor" class="dn page-lists">
 			<ul>
-				
 			</ul>
 		</div>
 		<!-- 关于页面 -->
@@ -591,13 +588,13 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- 解决方案详情页面 -->
 		<div id="page-solutiond" class="dn">
 			<div class="top-msg">
+				<!-- ajax 填充 -->
 			</div>
 			<div class="detail tc">
-				<div class="clearfix">
+				<div class="clearfix snav">
 					<a href="#tcjs" data-type="jump"><span class="top active">套餐介绍</span></a>
 					<a href="#fysm" data-type="jump"><span class="top">费用说明</span></a>
 					<a href="#fwlc" data-type="jump"><span class="top">服务流程</span></a>
@@ -612,11 +609,8 @@
 							<span class="vm ib dian"></span>
 							<span class="vm ib line"></span>
 						</div>
-						<!-- <img src="http://wx4.sinaimg.cn/mw690/005NNlPGgy1ftc0zekitjj30ac03x0sr.jpg" class="w">
-						<p>
-							详细介绍】： 代，支持的属性值不仅仅上面出现的这几个，还有与underline对应的overline, 表示上划线，虽然兼容性不错，但是似乎没有什么卵用，鄙人不才，写CSS这么多年一次都没有在实际项目中使用过overline
-						</p> -->
 						<div class="introduce-detail">
+							<!-- ajax 填充 -->
 						</div>
 					</li>
 					<li>
@@ -873,9 +867,8 @@
 				</ul>
 			</div>
 		</div>
-		<!-- 案例详情页面（其他说明书、知识点、资讯等列表页公用此详情页） -->
+		<!-- 案例详情页面（其他说明书、知识点、资讯等列表页共用此模板） -->
 		<div id="page-anlid" class="dn">
-			
 		</div>
 	</div>
 	<!-- 导航图标 -->
@@ -926,16 +919,28 @@
 				
 			})
 		})
-		require(['jquery','underscore'], function ($, _) {
+		require(['jquery','underscore','self'], function ($, _, self) {
 			var page = {
-				all: function () {
-					return page.mainPage.concat([
-						$('#page-solutiond')[0],
-						$('#page-anlid')[0]
-					]);
+				$pageObj: {
+					home: $('#page-home'),
+					solution: $('#page-solution'),
+					instructions: $('#page-instructions'),
+					knowledgepoint: $('#page-knowledgepoint'),
+					information: $('#page-information'),
+					anli: $('#page-anli'),
+					hospital: $('#page-hospital'),
+					doctor: $('#page-doctor'),
+					about: $('#page-about'),
+					solutiond: $('#page-solutiond'),
+					anlid: $('#page-anlid')
 				},
-				mainPage: [$('#page-home')[0], $('#page-solution')[0], $('#page-instructions')[0], $('#page-knowledgepoint')[0], $('#page-information')[0], $('#page-anli')[0], $('#page-hospital')[0], $('#page-doctor')[0], $('#page-about')[0]],
-				currPage: 'home',
+				all: function () {
+					return _.reduce(page.$pageObj, function (total, curr) {
+						return total.push(curr[0]) && total;
+					}, [])
+				},
+				currPage: $('#page-home'),
+				lastClickObj: null,
 				func: {
 					loading: function () {
 						$('#loading,#loading img').removeClass('dn');
@@ -949,14 +954,13 @@
 					},
 					loaded: function () {
 						$('#loading').addClass('dn');
-						$('#page-'+page.currPage).removeClass('dn');
+						page.currPage.removeClass('dn');
 					},
-					navSwitch: function (targetNav) {
+					pageSwitch: function (targetNav) {
 						$(page.all()).addClass('dn');
-						$('#page-'+page.currPage).removeClass('dn');
-						$('#content').scrollTop($('#page-'+page.currPage).data('scrolltop') || 0);
-						$('nav .links').addClass('dn');
-						$('nav .navs').removeClass('dn');
+						page.currPage.removeClass('dn');
+						$('#content').scrollTop(page.currPage.data('scrolltop') || 0);
+
 					}
 				}
 			}
@@ -977,7 +981,7 @@
 							'<ul class="lists clearfix ma">',
 								'<li><span class="vm">￥<%= price %></span></li>',
 								'<li><span class="vm">服务<span><%= people %></span>人</span></li>',
-								'<li><a href="<%= detailUrl %>" data-type="detail" data-name="solutiond" class="vm">查看详情&gt;&gt;</a></li>',
+								'<li><a href="<%= detailUrl %>" class="vm">查看详情&gt;&gt;</a></li>',
 							'</ul>',
 						'</li>'
 					].join('')),
@@ -985,7 +989,7 @@
 					hospital: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">',
+								'<a href="<%= detailUrl %>" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="txt tc">',
 										'<span><%= title %></span>',
@@ -993,7 +997,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anlid" class="ib">',
+								'<a href="<%= detailUrl2 %>" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="txt tc">',
 										'<span><%= title2 %></span>',
@@ -1005,7 +1009,7 @@
 					// 资讯&知识
 					zxzs_item: _.template([
 						'<li>',
-							'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="item">',
+							'<a href="<%= detailUrl %>" class="item">',
 								'<img src="<%= imgUrl %>">',
 								'<div class="ib">',
 									'<div>',
@@ -1021,7 +1025,7 @@
 					doctor: _.template([
 						'<li class="clearfix">',
 							'<div>',
-								'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">',
+								'<a href="<%= detailUrl %>" class="ib">',
 									'<img src="<%= imgUrl %>">',
 									'<div class="ch tc"><%= title %></div>',
 									'<p>',
@@ -1030,7 +1034,7 @@
 								'</a>',
 							'</div>',
 							'<div <% if(!title2){ %> class="dn" <%}%> >',
-								'<a href="<%= detailUrl2 %>" data-type="detail" data-name="anlid" class="ib">',
+								'<a href="<%= detailUrl2 %>" class="ib">',
 									'<img src="<%= imgUrl2 %>">',
 									'<div class="ch tc"><%= title2 %></div>',
 									'<p>',
@@ -1067,7 +1071,7 @@
 				anlid: {
 					any: _.template([
 						'<li class="clearfix">',
-							'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid">',
+							'<a href="<%= detailUrl %>">',
 								'<img src="<%= imgUrl %>" class="fl">',
 								'<div class="ib pr fl ml10" style="max-width: 10.4rem">',
 									'<div class="name">',
@@ -1084,15 +1088,15 @@
 					main: _.template([
 						'<div class="tc fs20"><%= title %></div>',
 						'<div class="c8 mb30 mt10 tc">',
-							'<i class="icon vm">&#xe603;</i><span class="vm"><%= author %></span>',
-							'<i class="ml10 vm mr5 icon fs18 fw700">&#xe609;</i><span class="vm"><%= date %></span>',
-							'<i class="ml10 vm mr5 icon">&#xe621;</i><span class="vm"><%= description %></span>',
-							'<i class="ml10 vm mr5 icon">&#xe625;</i><span class="vm"><%= read %>浏览</span>',
+							'<i class="icon vt ib" style="margin-tOp: -1px;">&#xe603;</i><span class="vt"><%= author %></span>',
+							'<i class="ml5 vt icon fs18 fw700">&#xe609;</i><span class="vt"><%= date %></span>',
+							'<i class="ml10 vt mr3 icon">&#xe621;</i><span class="vt"><%= description %></span>',
+							'<i class="ml10 vt icon">&#xe625;</i><span class="vt"><%= read %>浏览</span>',
 						'</div>',
 						'<div style="word-break: break-all"><%= content %></div>',
 						'<div class="lasnex">',
 							'<span><a href="<%= lasturl %>" >上一篇：<%= lasttext %></a></span>',
-							'<span><a href="<%= nexturl %>" >下一篇：<%= nexttext || "没有了"%></a></span>',
+							'<span><a href="<%= nexturl %>" >下一篇：<%= nexttext %></a></span>',
 						'</div>',
 						'<div class="line"></div>',
 						'<div class="about-read">',
@@ -1117,7 +1121,7 @@
 								'<span><%= title %></span>',
 								'<div>',
 									'<%= content %>',
-									'<a href="<%= detailUrl %>" data-type="detail" data-name="anlid" class="ib">查看详情&gt;&gt;</a>',
+									'<a href="<%= detailUrl %>" class="ib">查看详情&gt;&gt;</a>',
 								'</div>',
 							'</div>',
 						'</div>',
@@ -1126,7 +1130,7 @@
 				lists_more: _.template([
 					'<li class="more tc">',
 						'<div class="loading dn"><img src="/static/phoneImages/loading.gif" style="width:32px;"></div>',
-						'<a href="<%= moreUrl %>" data-type="more" data-name="<%= pagename %>" data-currpage="1">',
+						'<a href="<%= moreUrl %>" data-currpage="1">',
 							'<div class="vm ib">查看更多</div>',
 							'<i class="vm icon">&#xe686;</i>',
 						'</a>',
@@ -1134,7 +1138,7 @@
 				].join('')),
 				links: _.template([
 					'<li>',
-						'<a href="" onclick="<%= click %>"><%= content %></a>',
+						'<a href="<%= url %>"><%= content %></a>',
 					'</li>'
 				].join(''))
 			}
@@ -1198,11 +1202,10 @@
 								content: curr.desc,
 								price: curr.low_price,
 								people: curr.service_number,
-								detailUrl: url.solution+'/'+curr.id
+								detailUrl: url.solution+'/'+curr.id+'?type=detail&name=solutiond'
 							});
 						},'')
 						$('#page-home .block2 ul').html(soData);
-
 						// 合作医院
 						let hosData = _.reduce(_.reduce(data.hospitals, function (total, curr, index, list) {
 							if (total.length && total[total.length-1].length < 2) {
@@ -1215,10 +1218,10 @@
 							return total + tpl.home.hospital({
 								imgUrl: curr[0].image,
 								title: curr[0].title,
-								detailUrl: url.doctor+'/'+curr[0].id,
+								detailUrl: url.doctor+'/'+curr[0].id+'?type=detail&name=anlid',
 								imgUrl2: curr[1] && curr[1].image,
 								title2: curr[1] && curr[1].title,
-								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)
+								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)+'?type=detail&name=anlid'
 							});
 						},'');
 						$('#page-home .block3 ul').html(hosData);
@@ -1226,9 +1229,9 @@
 						// 说明书 知识 行业资讯
 						function szh(data, url) {
 							return _.reduce(data, function (total, curr, index, list) {
-								let d = new Date(curr.publish_time*1000);
+								let d = new Date(curr.addtime*1000);
 								return total + tpl.home.zxzs_item({
-									detailUrl: url+'/'+curr.id,
+									detailUrl: url+'/'+curr.id+'?type=detail&name=anlid',
 									imgUrl: curr.image,
 									title: curr.title,
 									date: d.getFullYear()+'年'+d.getMonth()+'月'+d.getDate()+'日' 
@@ -1267,7 +1270,7 @@
 								content: curr.desc.slice(0,75)+'...',
 								price: curr.low_price,
 								people: curr.service_number,
-								detailUrl: url.solution+'/'+curr.id
+								detailUrl: url.solution+'/'+curr.id+'?type=detail&name=solutiond'
 							});
 						}, '');
 						$('#page-solution .block2 ul').html(soData);
@@ -1281,11 +1284,11 @@
 							return total;
 						}, []), function (total, curr, index, list) {
 							return total + tpl.solution.doctor({
-								detailUrl: url.doctor+'/'+curr[0].id,
+								detailUrl: url.doctor+'/'+curr[0].id+'?type=detail&name=anlid',
 								imgUrl: curr[0].image,
 								title: curr[0].title,
 								content: $(curr[0].content).text().slice(0,50),
-								detailUrl2: curr[1] && url.doctor+'/'+curr[1].id,
+								detailUrl2: curr[1] && url.doctor+'/'+curr[1].id+'?type=detail&name=anlid',
 								imgUrl2: curr[1] && curr[1].image,
 								title2: curr[1] && curr[1].title,
 								content2: curr[1] && $(curr[1].content).text().slice(0,50)
@@ -1301,7 +1304,7 @@
 
 					return defer;
 				},
-				solutiond: function (url) {
+				solutiond: function (url, navCn, navHref) {
 					let defer = $.Deferred();
 					$.when(initData.getData(url))
 					.done(function (data) {
@@ -1324,17 +1327,21 @@
 						$('#page-solutiond .introduce-detail').html(data.data.introduce);
 						// 显示 面包屑 导航
 						let links = _.reduce([
-							{content: '首页', click: "(function(){$('nav .navs a')[0].click()})()"},
-							{content: '解决方案', click: "(function(){$('nav .navs a')[1].click()})()"},
-							{content: data.data.title, click: ''},
+							{content: '首页', url: '?type=nav&name=home'},
+							{content: navCn, url: navHref},
+							{content: data.data.title, url: ''},
 						], function (total, curr , index, list) {
+							if (index == 1 && list[0].content == list[1].content) {
+								return total;
+							}
 							return total + tpl.links({
 								content: curr.content,
-								click: curr.click
+								url: curr.url
 							})
 						}, '');
 						$('nav .navs').addClass('dn');
 						$('nav .links').html(links).removeClass('dn');
+						defer.resolve();
 					})
 					.fail(function () {
 						defer.reject();
@@ -1342,7 +1349,7 @@
 
 					return defer;
 				},
-				anlid: function (url) {
+				anlid: function (url, navCn, navHref) {
 					let defer = $.Deferred();
 					$.when(initData.getData(url))
 					.done(function (data) {
@@ -1350,6 +1357,10 @@
 							data = JSON.parse(data);
 						} catch (e) {
 							alert('JSON数据有误');
+							defer.reject();
+							return;
+						}
+						if (!data.data) {
 							defer.reject();
 							return;
 						}
@@ -1366,8 +1377,8 @@
 							title: data.data.title,
 							author: data.data.author,
 							date: data.data.publish_time,
-							description: data.data.keywords,
-							read: data.data.keywords, 
+							description: data.data.typename || '知识',
+							read: data.data.show_real, 
 							content: data.data.content,
 							lasturl: '',
 							lasttext: '上一个文字',
@@ -1377,8 +1388,30 @@
 							click: "(function(){ $('nav .navs .active a')[0].click() })()"
 						})
 						$('#page-anlid').html(con);
+						// 显示 面包屑 导航
+						let links = _.reduce([
+							{content: '首页', url: '?type=nav&name=home'},
+							{
+								content: navCn,
+								url: navHref
+							},
+							{
+								content: 
+								data.data.title.length > 12 ? data.data.title.slice(0,12)+'...' : data.data.title, url: ''
+							},
+						], function (total, curr , index, list) {
+							// 直接从首页点进详情页的情况
+							if (index == 1 && list[0].content == list[1].content) {
+								return total;
+							}
+							return total + tpl.links({
+								content: curr.content,
+								url: curr.url
+							})
+						}, '');
+						$('nav .navs').addClass('dn');
+						$('nav .links').html(links).removeClass('dn');
 						defer.resolve();
-
 					})
 					.fail(function () {
 						defer.reject();
@@ -1408,9 +1441,9 @@
 					})
 					return defer;
 				},
-				lists: function (url, pageObj, page) {
+				lists: function (url, $page, pageNum) {
 					let defer = $.Deferred();
-					$.when(initData.getData(url, page))
+					$.when(initData.getData(url, pageNum))
 					.done(function (data) {
 						try {
 							data = JSON.parse(data);
@@ -1423,19 +1456,18 @@
 							return total + tpl.lists({
 								imgUrl: curr.image,
 								title: curr.title,
-								content: curr.content.replace(/<[^<>]+>/g,'').slice(0,75),
-								detailUrl: url+'/'+curr.id
+								content: curr.content.replace(/<[^<>]+>/g,'').slice(0,65)+'...',
+								detailUrl: url+'/'+curr.id+'?type=detail&name=anlid'
 							});
 						},'');
 						// 判断是初始化还是新增
-						if ($(pageObj).find('ul .more')[0]) {
-							$(pageObj).find('ul .more').before(d);
+						if ($page.find('ul .more')[0]) {
+							$page.find('ul .more').before(d);
 						} else {
 							d += tpl.lists_more({
-								moreUrl: url,
-								pagename: pageObj.id
+								moreUrl: url+'?type=more'
 							});
-							$(pageObj).find('ul').append(d);
+							$page.find('ul').append(d);
 						}
 						
 						if (data.data.length) {
@@ -1456,7 +1488,7 @@
 					$.when(initPage.home())
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[0]).data('isInit', 1);
+						page.$pageObj.home.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
@@ -1466,67 +1498,67 @@
 					$.when(initPage.solution())
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[1]).data('isInit', 1);
+						page.$pageObj.solution.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				instructions: function () {
-					$.when(initPage.lists(url.instructions, page.mainPage[2]))
+					$.when(initPage.lists(url.instructions, page.$pageObj.instructions))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[2]).data('isInit', 1);
+						page.$pageObj.instructions.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				knowledgepoint: function () {
-					$.when(initPage.lists(url.knowledgepoint, page.mainPage[3]))
+					$.when(initPage.lists(url.knowledgepoint, page.$pageObj.knowledgepoint))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[3]).data('isInit', 1);
+						page.$pageObj.knowledgepoint.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				information: function () {
-					$.when(initPage.lists(url.information, page.mainPage[4]))
+					$.when(initPage.lists(url.information, page.$pageObj.information))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[4]).data('isInit', 1);
+						page.$pageObj.information.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				anli: function () {
-					$.when(initPage.lists(url.anli, page.mainPage[5]))
+					$.when(initPage.lists(url.anli, page.$pageObj.anli))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[5]).data('isInit', 1);
+						page.$pageObj.anli.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				hospital: function () {
-					$.when(initPage.lists(url.hospital, page.mainPage[6]))
+					$.when(initPage.lists(url.hospital, page.$pageObj.hospital))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[6]).data('isInit', 1);
+						page.$pageObj.hospital.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
 				doctor: function () {
-					$.when(initPage.lists(url.doctor, page.mainPage[7]))
+					$.when(initPage.lists(url.doctor, page.$pageObj.doctor))
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[7]).data('isInit', 1);
+						page.$pageObj.doctor.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
@@ -1536,14 +1568,14 @@
 					$.when(initPage.about())
 					.done(function () {
 						page.func.loaded();
-						$(page.mainPage[8]).data('isInit', 1);
+						page.$pageObj.about.data('isInit', 1);
 					})
 					.fail(function () {
 						page.func.reload();
 					})
 				},
-				solutiond: function (url) {
-					$.when(initPage.solutiond(url))
+				solutiond: function (url, navCn, navHref) {
+					$.when(initPage.solutiond(url, navCn, navHref))
 					.done(function () {
 						page.func.loaded();
 					})
@@ -1551,8 +1583,8 @@
 						page.func.reload();
 					})
 				},
-				anlid: function (url) {
-					$.when(initPage.anlid(url))
+				anlid: function (url, navCn, navHref) {
+					$.when(initPage.anlid(url, navCn, navHref))
 					.done(function () {
 						page.func.loaded();
 					})
@@ -1565,54 +1597,61 @@
 			initFunc.home();
 			$('#loading .reload').click(function () {
 				page.func.loading();
-				initFunc[page.currPage]();
+				page.lastClickObj && page.lastClickObj.click();
 			})
-
 			// a 标签事件捕获，页面切换，内容更新
 			$('body').on('click', 'a', function (e) {
-				let type = $(this).data('type');
-				if (this.href == '') {return;}
+				var a = self.parseURL(this.href);
+				// 保存加载失败点击的对象，方便 reload
+				page.lastClickObj = this;
 				// 点击任何 a 标签都要记录当前页面的 scrollTop
-				$('#page-'+page.currPage).data('scrolltop',$('#content').scrollTop());
-				switch (type) {
+				page.currPage.data('scrolltop',$('#content').scrollTop());
+				switch (a.params.type) {
 					case 'nav':
-						let targetPage = $(page.mainPage[$(this).parent().index()]);
 						// 当前页面
-						page.currPage = $(this).data('name');
+						page.currPage = page.$pageObj[a.params.name];
 						// nav 切换
-						$(this).parents('ul').find('li').removeClass('active');
-						$(this).parent().addClass('active');
+						$('nav .navs li').removeClass('active');
+						// $(this).parent().addClass('active');
+						$('nav .navs li[data-name='+a.params.name+']').addClass('active');
 						// 如果该主页面未 初始化数据，则初始化
-						if (!targetPage.data('isInit')) {
+						if (!page.currPage.data('isInit')) {
 							page.func.loading();
-							initFunc[$(this).data('name')]();
+							initFunc[a.params.name]();
 						} else {
 							// 防止其他页面的 reload
 							page.func.loaded();
 						}
 						// 主页面切换
-						page.func.navSwitch();
+						page.func.pageSwitch();
+						$('nav .links').addClass('dn');
+						$('nav .navs').removeClass('dn');
 						break;
 					case 'detail':
-						switch ($(this).data('name')) {
+						let navCn = $('nav .navs li.active a').text().trim();
+						let navHref = $('nav .navs li.active a')[0].href;
+						switch (a.params.name) {
 							case 'solutiond':
-								initFunc.solutiond($(this)[0].href);
-								page.currPage = $(this).data('name');
-								page.func.navSwitch();
+								page.func.loading();
+								initFunc.solutiond(a.source, navCn, navHref);
+								page.currPage = page.$pageObj[a.params.name];
+								page.func.pageSwitch();
 								break;
 							case 'anlid':
-								initFunc.anlid($(this)[0].href);
-								page.currPage = $(this).data('name');
-								page.func.navSwitch();
+								page.func.loading();
+								initFunc.anlid(a.source, navCn, navHref);
+								page.currPage = page.$pageObj[a.params.name];
+								page.func.pageSwitch();
 								break;
 						}
 						$('#content').scrollTop(0);
 						break;
 					case 'more':
 						let that = this, currpage = parseInt($(that).data('currpage'));
+						// 显示 loading 图片
 						$(that).addClass('dn').prev().removeClass('dn');
 
-						initPage.lists($(that)[0].href, $('#'+$(that).data('name'))[0], currpage + 1)
+						initPage.lists(a.source.split('?')[0], page.currPage, currpage + 1)
 						.done(function () {
 							$(that).data('currpage', currpage + 1);
 						})
@@ -1631,6 +1670,11 @@
 				$(this).addClass('active');
 				$(zxzs).addClass('dn');
 				$(zxzs[$(this).index()]).removeClass('dn');
+			})
+			// 列表详情页-套餐介绍
+			$('#page-solutiond .snav span').click(function () {
+				$(this).parents('.snav').find('span').removeClass('active');
+				$(this).addClass('active');
 			})
 		})
 	</script>
