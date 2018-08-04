@@ -1380,10 +1380,10 @@
 							description: data.data.typename || '知识',
 							read: data.data.show_real, 
 							content: data.data.content,
-							lasturl: '',
-							lasttext: '上一个文字',
-							nexturl: '',
-							nexttext: '下一个文字',
+							lasturl: data.prev && url.replace(/\d+/, data.prev.id) || '',
+							lasttext: data.prev && data.prev.title || '没有了',
+							nexturl: data.next && url.replace(/\d+/, data.next.id) || '',
+							nexttext: data.next && data.next.title || '没有了',
 							any: any,
 							click: "(function(){ $('nav .navs .active a')[0].click() })()"
 						})
