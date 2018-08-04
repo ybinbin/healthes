@@ -20,7 +20,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 
 
 /*中间的内容*/
-#content {overflow: auto;}
+#content {overflow: auto;-webkit-overflow-scrolling: touch;}
 #loading {height: 100%;}
 #loading:before,#loading:after {content: '';display: inline-block;height: 100%;vertical-align: middle;}
 /*首页*/
@@ -208,7 +208,10 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-about .info .qr img {margin-bottom: 3px;width: 5.9rem;}
 #page-about .info .copyright {background: #000;color: #fff;padding: .5rem 0;}
 
-
+/*针对后端输出的html内容，进行限制----补丁（随内容而变化，最好还是后台编辑良好的格式）*/
+#content table {width: 100%!important;}
+#content table td,#content table th {width: 1%!important;}
+#content img {max-width: 100%!important;}
 
 
 
