@@ -41,34 +41,21 @@
 #process .num li + li:before {content: '';width: 143px;height: 1px;background: #e5e5e5;display: block;position: absolute;left: -143px;top: 50%;}
 #process .num div {width: 30px;height: 30px;line-height: 30px;text-align: center;border: 1px solid #d9d9d9;border-radius: 100px;color: #a3bad2;font-size: 17px;}
 
-#knowledge {background: #f5f5f5;padding: 40px 0 50px 0;margin-top: 40px;}
-#knowledge .content {margin-top: 50px!important;color: #373d41;width: 1362px;}
-#knowledge .content .box {width: 1208px;}
-#knowledge .content ul {width: 30000px;}
-#knowledge .content a {color: #373d41;}
-#knowledge .sprites-arrow {margin-top: 83px;cursor: pointer;}
-#knowledge .img-box {border: 1px solid #c5d8db;font-size: 0;}
-#knowledge li {float: left;}
-#knowledge li + li {margin-left: 34px;}
+.knowledge {background: #f5f5f5;padding: 40px 0 50px 0;margin-top: 40px;}
+.knowledge .content {margin-top: 50px!important;color: #373d41;width: 1362px;}
+.knowledge .content .box {width: 1205px;}
+.knowledge .content ul {width: 30000px;}
+.knowledge .content a {color: #373d41;}
+.knowledge .sprites-arrow {margin-top: 83px;cursor: pointer;}
+.knowledge .img-box {border: 1px solid #c5d8db;font-size: 0;}
+.knowledge .img-box img {width: 290px;}
+.knowledge li {float: left;}
+.knowledge li + li {margin-left: 15px;}
 .sprites-arrow{background:url(/static/images/index/sprites-arrow.png)  no-repeat;}
 .arrow1{height:55px;width:55px;background-position:0 0;}
 .arrow0{height:55px;width:55px;background-position:-55px 0;}
 
-
-
-
-#question {padding: 27px 0 42px 0;}
-#question .content {margin-top: 50px!important;color: #373d41;}
-#question .content .box {width: 1210px;}
-#question .content ul {width: 30000px;}
-#question .yjd {background: #00a4ff;border-radius: 10px;color: #fff;font-size: 12px;width: 60px;height: 22px;line-height: 22px;padding: 0 8px 0 4px;}
-#question .detail {border: 1px solid #00a4ff;padding: 6px 35px;color: #00a4ff;}
-#question .sprites-arrow {margin-top: 99px;font-size: 35px;color: #9d9d9d;cursor: pointer;}
-#question p {font-size: 14px;color: #666;}
-#question li {float: left;border: 1px solid #d7d8d9;padding: 30px 54px;background: url(/static/images/index/talk-bg.jpg) 95% 92% no-repeat;}
-#question li i {font-size: 20px;color: #fff;margin-top: -2px;}
-#question li > div {width: 480px;}
-#question li + li {margin-left: 30px;}
+#question {background: #fff;}
 
 
 #cooperation {padding: 27px 0 42px 0;}

@@ -97,6 +97,12 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
    clear:both;
 }
 
+/*针对后端填充的数据，打补丁，所有后端填充内容均用 dynamic-content 作为 class*/
+.dynamic-content {word-break: break-all;}
+.dynamic-content table {width: 100%!important;}
+.dynamic-content th,.dynamic-content td {width: 1%!important;}
+.dynamic-content img {max-width: 100%!important;}
+
 /*默认样式*/
 html,body {margin: 0;padding: 0;font: 12px/1.5 'Microsoft YaHei',arial;}
 input[type=search]::-webkit-search-cancel-button{

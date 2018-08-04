@@ -24,26 +24,40 @@
 
 
 #div-table {margin-top: 47px;}
-#div-table .title {margin: 3px 0;}
+#div-table .title {margin: 13px 0;padding: 30px 26px 0;display: block;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAjCAYAAADWtVmPAAADK0lEQVRYhe2Z204UQRCGv+k9wbK4K7KIsweCwfj+j6SGxERjTDQigowXXb1b01vd01yYAOFPJsP0VtdfVXOoA1XTNAgcsAA+0Y09YAZ8LpCdyfl7geypyP0ukF0Bl8AdeOMDFsCJIs5hDdR4h3LoCeFK/s5hT3SuC/hneFsXYSE4Mgbmysgc6SvgEKgKSGtgKEfdIbsWnYfCkUJP8c7xtuNk85mcAQYZ0j6wVNeHwHFCVgenRWrgWHQFLIXLQi02grLd4W9RTDAHDgwlFsHCWIuDk1pD9i6MtSW7OKAdHPC2n/SBG+CDsckZ1z/liDEAbiNDvhhy4bebaO9lQtYhL7O6/mjI3VXqq/WoEUf90eLJOmK94BYqYL9QdsD2K9OFfXY/Bim0bNWOTIF3haSnwNtC0pAQu1CJztMC2QHe1mlYcOocEmFXkhsJ2V4B6RR4Kce0Q1brHHXIalsdbB0JGRh8+s+VKWdqXyC3EIKjyVPvpA6KE44UtH2bisEhCSUSXiVIQ3mSMlZDB6dFaiB2MlWmOHYf0xNg3MeXB1fGpiPgq7quZO1XJNcT4h+R0RNDdiK//YmM7hmyR8A3oInWbmknX4Dj54T40PBkHSlNRveV/R86W7LakQFwUahkQlmSA192x6V3CivRXYILVPLWjiyBFwWkoTOcF5AO8L3Ggu6KYSI6Q6eYw1xs3fQswZEp/tNGAelrtnVWF2no1UPvnoJum/eFI4UQHPA2T8E7Eie1HOkIeKOuc6ShPAnIlSk6OAhHqkyJBxlrwDnZNIyEU6RWmWGRpjK+tT8OTm5/HByQiqFqmiZVOv8FrtV1rnS/od2+9khH9Fp0B+TK/CvamX2EPeFpnjP7Q8OzIw8NsSOlvTWkJ4EWR2nA7sPfktUEY+B9IekRvr8uQU333DfgnG1izsHhbR3rBdhm1lEBaR+flLqGzbDtPq2xbIzQfa7ovtu12LqpLIIjetbbRarnv7lhs571pua+AXrWm5r7BujWfDMLduz20jnS+C7kSOPpezyd14gDEs8GcrbVwDA083G2tEhT/w+xSIfsTtg3pNFa6hG1ClLraekBq3/1z0sOBFVx6AAAAABJRU5ErkJggg==") no-repeat 0 0;}
 #div-table .content {margin-top: 50px;}
 #div-table .table {border-collapse: collapse;}
 #div-table .table th {background: #66a3c3;color: #fff;}
 #div-table .table td,#div-table .table th {border-collapse: collapse;border: 1px solid #999;width: 290px;height: 35px;padding: 3px 0;}
-#div-table .zixun {width: 406px;height: 455px;background: #ff9933;}
+#div-table .zixun {width: 406px;height: 547px;background: url(/static/images/solution/form-bg_dce1ccc.png);background-size: 100% 100%;}
 #div-table .zixun table {width: 100%;}
-#div-table .zixun td:first-child {width: 28%;text-align: center;color: #868686;}
+#div-table .zixun td:first-child {width: 28%;text-align: center;color: #fff;}
 #div-table .zixun td:only-child {width: 156px;}
-#div-table .zixun td {text-align: left;padding-top: 8px;}
-#div-table .zixun input {width: 90%;height: 30px;text-align: center;border: 1px solid #d7d7d7;}
-#div-table .zixun textarea {width: 87%;resize: none;height: 87px;}
-#div-table .zixun button {background: #ff9933;border:0;color: #fff;width: 89%;height: 30px;line-height: 30px;border-radius: 5px;font-size: 20px;font-weight: bold;cursor: pointer;}
+#div-table .zixun td {text-align: left;}
+#div-table .zixun .tag {}
+#div-table .zixun input {width: 90%;height: 44px;text-align: center;}
+#div-table .zixun textarea {width: 90%;resize: none;height: 115px;padding: 6px 5px;}
+#div-table .zixun input,#div-table .zixun textarea {background: rgba(218,110,37,.8);outline: 0;border: 0;color: #fff;box-sizing: border-box;margin-bottom: 10px;}
+#div-table .zixun input::-webkit-input-placeholder,#div-table .zixun textarea::-webkit-input-placeholder {
+  color: #EEAE81;  
+}  
+#div-table .zixun input::-moz-placeholder,#div-table .zixun textarea::-moz-placeholder {
+  color: #EEAE81;  
+}  
+#div-table .zixun input::-moz-placeholder,#div-table .zixun textarea:-moz-placeholder {
+  color: #EEAE81;  
+}  
+#div-table .zixun input:-ms-input-placeholder,#div-table .zixun textarea:-ms-input-placeholder {
+  color: #EEAE81;  
+} 
+#div-table .zixun button {background: #fff;border:0;color: #ff6900;width: 90%;height: 40px;line-height: 40px;font-size: 20px;cursor: pointer;font-family: 'Microsoft yahei'}
 #div-table .xing,#div-table .zhou {width: 100px!important;}
-#div-table form {background: #fff;width: 392px;height: 390px;}
 
 #div-table .table2 {border-collapse: collapse;}
-#div-table .table2 tr:first-child td {background: #f2f2f2;line-height: 60px;color: #000;font-size: 14px;font-weight: bold;}
+#div-table .table2 tr:first-child td {background: #20B09F;line-height: 60px;color: #000;font-size: 14px;font-weight: bold;}
 #div-table .table2 td:first-child {color: #000;font-size: 14px;}
 #div-table .table2 td {border: 1px solid #e9e9e9;width: 193px;line-height: 45px;color: #726666;font-size: 12px;}
+#div-table .table2 td:nth-child(3) {font-weight: bold;}
 #div-table .logo {width: 406px;height: 186px;}
 #div-table .logo img,#div-table .logo div {position: absolute;}
 #div-table .logo .img0 {left: 0;}
