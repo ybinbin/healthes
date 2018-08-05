@@ -55,9 +55,10 @@
 
 #div-table .table2 {border-collapse: collapse;}
 #div-table .table2 tr:first-child td {background: #20B09F;line-height: 60px;color: #000;font-size: 14px;font-weight: bold;}
+#div-table .table2 tr:first-child td:nth-child(3) {background: rgba(253,145,70,1);}
 #div-table .table2 td:first-child {color: #000;font-size: 14px;}
 #div-table .table2 td {border: 1px solid #e9e9e9;width: 193px;line-height: 45px;color: #726666;font-size: 12px;}
-#div-table .table2 td:nth-child(3) {font-weight: bold;}
+#div-table .table2 td:nth-child(3) {font-weight: bold;background: rgba(253,145,70,1);}
 #div-table .logo {width: 406px;height: 186px;}
 #div-table .logo img,#div-table .logo div {position: absolute;}
 #div-table .logo .img0 {left: 0;}

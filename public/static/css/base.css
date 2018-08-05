@@ -99,6 +99,9 @@ ul,li {margin: 0;padding: 0;list-style: none!important;}
 
 /*针对后端填充的数据，打补丁，所有后端填充内容均用 dynamic-content 作为 class*/
 .dynamic-content {word-break: break-all;}
+.dynamic-content span {font-size: 15px!important;}
+.dynamic-content div {font-size: 15px!important;}
+.dynamic-content p {font-size: 15px!important;}
 .dynamic-content table {width: 100%!important;}
 .dynamic-content th,.dynamic-content td {width: 1%!important;}
 .dynamic-content img {max-width: 100%!important;}

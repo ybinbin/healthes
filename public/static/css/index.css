@@ -46,9 +46,9 @@
 .knowledge .content .box {width: 1205px;}
 .knowledge .content ul {width: 30000px;}
 .knowledge .content a {color: #373d41;}
-.knowledge .sprites-arrow {margin-top: 83px;cursor: pointer;}
+.knowledge .sprites-arrow {margin-top: 143px;cursor: pointer;}
 .knowledge .img-box {border: 1px solid #c5d8db;font-size: 0;}
-.knowledge .img-box img {width: 290px;}
+.knowledge .img-box img {width: 290px;height: 290px;}
 .knowledge li {float: left;}
 .knowledge li + li {margin-left: 15px;}
 .sprites-arrow{background:url(/static/images/index/sprites-arrow.png)  no-repeat;}
