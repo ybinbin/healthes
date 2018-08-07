@@ -50,7 +50,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-home .block2 .lists a {color: #3399ff;}
 
 #page-home .block3 ul {width: 17.8rem;}
-#page-home .block3 img {width: 100%;}
+#page-home .block3 img {width: 100%;height: 6.55rem;}
 #page-home .block3 li > div {position: relative;width: 8.5rem;}
 #page-home .block3 .txt {width:100%;position: absolute;bottom: 0;color: #fff;background: rgba(0,0,0,.6);padding: 4px 0;}
 #page-home .block3 .txt span {display: block;width: 95%;margin: 0 auto;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
@@ -62,12 +62,21 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-home .block4 .nav li {float: left;width: 4.3rem;text-align: center;}
 #page-home .block4 .nav li.active span {border-bottom: 2px solid #3399ff;padding-bottom: 5px;}
 #page-home .block4 .con {width: 17.8rem;margin: 0 auto;}
-#page-home .block4 .con img {width: 5.9rem;height: 4.25rem;}
+#page-home .block4 .con img {width: 5.9rem;height: 3.6rem;}
 #page-home .block4 .con li {padding: 1.2rem 0 1rem 0;border-bottom: 1px solid #dedede;}
-#page-home .block4 .con li .item > div {width: 11rem;margin-left: .6rem;height: 4.25rem;float: right;position: relative;}
-#page-home .block4 .con span {color: #989898;font-size: .7rem;position: absolute;bottom: 0;right: 0;}
+#page-home .block4 .con li .item > div {width: 11rem;margin-left: .6rem;height: 3.6rem;float: right;position: relative;}
+#page-home .block4 .con .dateread {color: #989898;font-size: .7rem;position: absolute;bottom: 0;width: 100%;}
 #page-home .block4 .con .more {border: 0;}
 #page-home .block4 .con .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
+
+#page-home .block45 {}
+#page-home .block45 .tit {border-bottom: 1px solid #e5e5e5;padding: 20px 0;}
+#page-home .block45 img {width: 2rem;height: 2rem;margin: 0 .5rem 0 1rem;}
+#page-home .block45 li {padding: 10px 12px;}
+#page-home .block45 li + li {border-top: 1px solid #f1f1f1;}
+#page-home .block45 .text {display: inline-block;vertical-align: middle;max-width: 15.5rem;}
+#page-home .block45 .text div {margin-bottom: .3rem;font-size: .9rem;}
+#page-home .block45 .text span {font: .6rem/1.5 -apple-system-font,'Helvetica Neue',sans-serif;}
 
 #page-home .block5 .concat {border: 1px solid #e4e4e4;width: 88%;padding: 1rem 0;}
 #page-home .block5 .concat li {width: 72%;margin: 0 auto;}
@@ -82,13 +91,13 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 .page-lists li {padding: 1rem 0;}
 .page-lists li + li {border-top: 1px solid #d7d7d7;}
 .page-lists li > div {margin-left: .8rem;}
-.page-lists li:not(.more) img {width: 6.75rem;float: left;min-height: 1px;}
+.page-lists li:not(.more) img {width: 6.75rem;height: 5.5rem;float: left;min-height: 1px;}
 .page-lists .con {width: 11rem;margin-left: 1.1rem;margin-top: -3px;}
-.page-lists .con div {color: #b6b7b6;font-size: .7rem;margin-top: 10px;}
-.page-lists a {color: #3399ff;}
+.page-lists .con div {color: #b6b7b6;font-size: .7rem;margin-top: 10px;position: relative;}
+.page-lists a {color: #3399ff;position: absolute;bottom: 0;right: 0;background: #fff;}
 .page-lists .more {border: 0;}
 .page-lists .more .icon {font-size: .8rem;}
-.page-lists .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
+.page-lists .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;position: static;}
 
 /*列表详情页面*/
 #page-anlid {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
@@ -102,6 +111,11 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-anlid .about-read .tips {color: #bababa;}
 #page-anlid .about-read .name {height: 65px;}
 #page-anlid .about-read img {width: 5.9rem;min-height: 1px;}
+
+/*列表详情页---补丁---限制后台编辑内容*/
+#page-anlid img {max-width: 100%!important;}
+#page-anlid table {width: 100%!important;}
+#page-anlid td,#page-anlid th {width: 1%!important;}
 
 
 /*解决方案详情页面*/
@@ -130,11 +144,11 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solutiond .detail .price-db tr.active {color: #fff;background: #f37777;}
 #page-solutiond .detail .s-tit {color: #9c9e9c;}
 #page-solutiond .detail .report {border: 1px solid #00a4ff;padding: .9rem 0;color: #979997;}
-#page-solutiond .detail .report table {width: 96%;}
+#page-solutiond .detail .report table {width: 96%;text-align: left;padding-left: 2rem;}
 #page-solutiond .detail .report .txt {width: 160px;line-height: 30px;left: 38px;top: -15px;background: #fff;}
-#page-solutiond .detail .process li span,#solution .detail .process li div {display: inline-block;float: left;}
+#page-solutiond .detail .process li span,#solution .detail .process li div {display: inline-block;float: left;width: 4.2rem;}
 #page-solutiond .detail .process li {float: left;color: #5d5f5d;margin-top: .75rem;}
-#page-solutiond .detail .process li div {width: 12rem;margin-left: 1.5rem;position: relative;float: left;}
+#page-solutiond .detail .process li div {width: 12rem;margin-left: .8rem;position: relative;float: left;}
 #page-solutiond .detail .process li div:before {content: '';width: 4px;position: absolute;left: -19px;top: 2px;background: #7ce216;display: block;height: 10000px;}
 #page-solutiond .detail .process li:last-child div:before {background: #fff;width: 6px;margin-left: -1px;}
 #page-solutiond .detail .process li div:after {content: '';width: 12px;height: 12px;position: absolute;left: -23px;top: 2px;display: block;background: url(data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMqaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAxNCA3OS4xNTE0ODEsIDIwMTMvMDMvMTMtMTI6MDk6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Qzg0NjgyNzg4QjY2MTFFOEFGOTVGQ0FBRDQ3NzE4MTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Qzg0NjgyNzk4QjY2MTFFOEFGOTVGQ0FBRDQ3NzE4MTkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDODQ2ODI3NjhCNjYxMUU4QUY5NUZDQUFENDc3MTgxOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDODQ2ODI3NzhCNjYxMUU4QUY5NUZDQUFENDc3MTgxOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx8BBwcHDQwNGBAQGBoVERUaHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//AABEIAAwADAMBEQACEQEDEQH/xAB/AAADAQAAAAAAAAAAAAAAAAAAAgQHAQABBQEAAAAAAAAAAAAAAAABAAIDBAUGEAAABAQEBAcAAAAAAAAAAAABAgMUABITBfARQRYhUXEEIkJEhBUlBhEAAAQEBQEJAAAAAAAAAAAAARESEwBBAgPwMVEEFIFh4fEiMkKCIyT/2gAMAwEAAhEDEQA/AN9tVpR/QIKXO5KKKGVOcqKJTiUqJSjkAAAa8I5jZbKnfUjevCIiIiQH6e+M+1aC8CqvCInlxe7adnpOJHmfjpST05uekVH7rnDWKVkqaSNJ6xGupTRzz7IO6f8AyHd7acUJxdyyUqnmpz69IF512vhrSfmySc0nCrUoWjKenSH+g2/6h84927xjOH/l4vvcX83MYOD9bc1H1OP/2Q==);}
@@ -187,9 +201,9 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block4 .price-db td {border: 1px solid #fff;padding: .4rem .25rem}
 #page-solution .block4 .price-db tr.active {color: #fff;background: #40bafd;}
 #page-solution .block4 .zj {width: 85%;}
-#page-solution .block4 .zj img {width: 8.4rem;}
+#page-solution .block4 .zj img {width: 8.4rem;height: 8.4rem;}
 #page-solution .block4 .zj p {color: #b6b7b6;width: 8.4rem;}
-#page-solution .block4 .zj .ch {color: #5d5f5d;}
+#page-solution .block4 .zj .ch {color: #5d5f5d;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 8.4rem;}
 #page-solution .block4 .zj li > div {display: inline-block;width: 8.4rem;}
 #page-solution .block4 .zj li > div:first-child {float: left;}
 #page-solution .block4 .zj li > div:first-child + div {float: right;}
