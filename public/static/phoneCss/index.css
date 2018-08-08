@@ -1,4 +1,3 @@
-.icon {font-size: .8rem!important;}
 header {padding: .5rem 0;background: #666;}
 header img {width: 27.5%;}
 
@@ -103,7 +102,7 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-anlid {width: 17.95rem;margin: 0 auto;padding: 1.5rem 0;}
 #page-anlid .lasnex span {display: block;line-height: 2.25rem;padding-left: 15px;background: #ecf2ff;margin: 2px 0;}
 #page-anlid .lasnex a {color: #767676;}
-#page-anlid .line {height: 4px;background: #eeeeef;margin-top: 2rem;}
+#page-anlid .line {height: 4px;background: #eeeeef;margin-top: 1rem;}
 #page-anlid .about-read > div {border-bottom: 1px solid #eeeeef;padding: .5rem 0;}
 #page-anlid .about-read li + li {margin-top: 10px;border-top: 1px solid #eeeeef;padding-top: 10px;}
 #page-anlid .about-read .more {border: 0;}
@@ -111,6 +110,26 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-anlid .about-read .tips {color: #bababa;}
 #page-anlid .about-read .name {height: 65px;}
 #page-anlid .about-read img {width: 5.9rem;min-height: 1px;}
+#page-anlid .line {
+	height: 3px;
+	background: -webkit-gradient(linear,0 0,100% 0,from(#0038dc),to(#00de62));
+	background: -moz-linear-gradient(left,#0038dc,#00de62);
+}
+#page-anlid .gg-zx {font-weight: 300;}
+#page-anlid .gg-zx .person {width: 3.7rem;height: 3.7rem;border-radius: 4rem;}
+#page-anlid .gg-zx .tip-img {width: 1.5rem;}
+#page-anlid .gg-zx .title {color: #373d41;margin: 0 0 .5rem 0;}
+#page-anlid .gg-zx .aps_tooltip span {
+	color: #00a4ff;
+	padding: 3px 10px 2px;
+	border: 1px solid #00a4ff;
+	letter-spacing: 0;
+
+}
+#page-anlid .gg-zx {
+	padding: 16px 16px 10px 16px;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+}
 
 /*列表详情页---补丁---限制后台编辑内容*/
 #page-anlid img {max-width: 100%!important;}

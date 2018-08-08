@@ -7,8 +7,9 @@
  	<meta name="description" content="">
 	<title>海迈健康</title>
 	<link rel="stylesheet" type="text/css" href="/static/phoneCss/base.css">
-	<link rel="stylesheet" type="text/css" href="/static/phoneCss/index.css">
 	<link rel="stylesheet" type="text/css" href="/static/phoneCss/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/phoneCss/index.css">
+	
 	<script src="/static/phoneJs/plugins/require.js"></script>
 	<script src="/static/phoneJs/config.js"></script>
 	<script type="text/javascript">
@@ -1144,10 +1145,29 @@
 					main: _.template([
 						'<div class="tc fs20"><%= title %></div>',
 						'<div class="c8 mb30 mt10 tc">',
-							'<i class="icon vt ib" style="margin-tOp: -1px;">&#xe603;</i><span class="vt"><%= author %></span>',
-							'<i class="ml5 vt icon fs18 fw700">&#xe609;</i><span class="vt"><%= date %></span>',
-							'<i class="ml10 vt mr3 icon">&#xe621;</i><span class="vt"><%= description %></span>',
-							'<i class="ml10 vt icon">&#xe625;</i><span class="vt"><%= read %>浏览</span>',
+							'<i class="vm icon ib fs12 mr3">&#xe607;</i><span class="vm"><%= author %></span>',
+							'<i class="ml5 icon fs18 fw700" style="vertical-align:text-bottom;">&#xe609;</i><span class="vm"><%= date %></span>',
+							'<i class="vm ml10 fs13 mr3 icon">&#xe621;</i><span class="vm"><%= description %></span>',
+							'<i class="vm ml10 fs16 icon">&#xe625;</i><span class="vm"><%= read %>浏览</span>',
+						'</div>',
+						'<div class="line"></div>',
+						'<div class="gg-zx">',
+							'<img class="person vm" src="http://m.huayinyiliao.com/templets/default/images/guwen/yixueguwen.png">',
+							'<div class="ib vm ml20">',
+							    '<div class="title fs22">',
+							        '看，不如直接问！',
+							        '<img class="tip-img" src="http://m.huayinyiliao.com/templets/default/images/guwen/tag.svg">',
+							    '</div>',
+							    '<div class="aps_tooltip fs12">',
+							        '<a href="tel:13399806488" data-type="jump">',
+							            '<span class="link_tel">电话咨询</span>',
+							        '</a>',
+							        '<a href="mqqwpa://im/chat?chat_type=wpa&uin=822129040&version=1&src_type=web&web_src=oicqzone.com" class="ml10" data-type="jump">',
+							            '<span class="link_tel">在线咨询</span>',
+							        '</a>',
+							    '</div>',
+							'</div>',
+							'<div class="fs12 mt10">为您解决：全球找药、用药指导、治疗方案、临床招募</div>',
 						'</div>',
 						'<div style="word-break: break-all"><%= content %></div>',
 						'<div class="lasnex">',
@@ -1274,10 +1294,10 @@
 							return total + tpl.home.hospital({
 								imgUrl: curr[0].image,
 								title: curr[0].title,
-								detailUrl: url.doctor+'/'+curr[0].id+'?type=detail&name=anlid',
+								detailUrl: url.hospital+'/'+curr[0].id+'?type=detail&name=anlid',
 								imgUrl2: curr[1] && curr[1].image,
 								title2: curr[1] && curr[1].title,
-								detailUrl2: curr[1] && (url.doctor+'/'+curr[1].id)+'?type=detail&name=anlid'
+								detailUrl2: curr[1] && (url.hospital+'/'+curr[1].id)+'?type=detail&name=anlid'
 							});
 						},'');
 						$('#page-home .block3 ul').html(hosData);
@@ -1285,13 +1305,12 @@
 						// 说明书 知识 行业资讯
 						function szh(data, url) {
 							return _.reduce(data, function (total, curr, index, list) {
-								let d = new Date(curr.addtime*1000);
 								return total + tpl.home.zxzs_item({
 									detailUrl: url+'/'+curr.id+'?type=detail&name=anlid',
 									imgUrl: curr.image,
 									title: curr.title,
-									date: d.getFullYear()+'年'+d.getMonth()+'月'+d.getDate()+'日',
-									readnum: curr.readnum || '0'
+									date: curr.publish_time,
+									readnum: curr.show_real || '0'
 								});
 							},'')
 						}
