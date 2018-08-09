@@ -68,7 +68,6 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-home .block4 .con .more {border: 0;}
 #page-home .block4 .con .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
 
-#page-home .block45 {}
 #page-home .block45 .tit {border-bottom: 1px solid #e5e5e5;padding: 20px 0;}
 #page-home .block45 img {width: 2rem;height: 2rem;margin: 0 .5rem 0 1rem;}
 #page-home .block45 li {padding: 10px 12px;}
@@ -174,6 +173,8 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solutiond .detail .questions div {color: #f37777;}
 #page-solutiond .detail .questions p {margin-top: 10px;color: #979997;}
 
+
+
 .sprite-sm{background:url(/static/phoneImages/solution/sprite-sm.jpg)  no-repeat;}
 .sm3{height:46px;width:46px;background-position:0 0;}
 .sm4{height:46px;width:46px;background-position:-46px 0;}
@@ -227,6 +228,14 @@ nav .links li + li:before {content: '>';float: left;margin: 0 .5rem;color: #5151
 #page-solution .block4 .zj li > div:first-child {float: left;}
 #page-solution .block4 .zj li > div:first-child + div {float: right;}
 #page-solution .block4 .how {width: 18.05rem;}
+
+#page-solution .block4 .bgxy {width: 17.8rem;margin: 0 auto;}
+#page-solution .block4 .bgxy img {width: 5.9rem;height: 3.6rem;}
+#page-solution .block4 .bgxy li {padding: 1.2rem 0 1rem 0;border-bottom: 1px solid #dedede;}
+#page-solution .block4 .bgxy li .item > div {width: 11rem;margin-left: .6rem;height: 3.6rem;float: right;position: relative;}
+#page-solution .block4 .bgxy .dateread {color: #989898;font-size: .7rem;position: absolute;bottom: 0;width: 100%;}
+#page-solution .block4 .bgxy .more {border: 0;}
+#page-solution .block4 .bgxy .more a,#page-home .block4 .con .more i {color: #31b7be;font-size: .9rem;}
 
 /*关于我们*/
 #page-about {padding-bottom: .5rem;}

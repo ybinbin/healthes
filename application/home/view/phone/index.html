@@ -994,7 +994,7 @@
 					}, [])
 				},
 				currPage: $('#page-home'),
-				lastClickObj: null,
+				lastClickObj: $('nav .navs li[data-name=home] a')[0],
 				func: {
 					loading: function () {
 						$('#loading,#loading img').removeClass('dn');
@@ -1373,7 +1373,16 @@
 						}, '')
 						$('#page-solution .block4 .zj .more').before(docData);
 						// 丙肝新药说明书  bgxy
-						// let instrData = _reduce(data.)
+						let instrData = _.reduce(data.instructions, function (total, curr, index, list) {
+							return total + tpl.home.zxzs_item({
+								detailUrl: url.instructions+'/'+curr.id+'?type=detail&name=anlid',
+								imgUrl: curr.image,
+								title: curr.title,
+								date: curr.publish_time,
+								readnum: curr.show_real || '0'
+							});
+						}, '')
+						$('#page-solution .block4 .bgxy .more').before(instrData);
 
 						defer.resolve();
 					})
