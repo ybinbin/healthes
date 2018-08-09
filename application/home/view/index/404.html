@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="/static/css/404/medicplus-layout.css" type="text/css">
 	<link rel="stylesheet" href="/static/css/404/medicplus-components.css" type="text/css">
 	<link rel="stylesheet" href="/static/css/404/medicplus-custom-theme.css" type="text/css">
+	<!-- 上面样式 copy 下面是header和footer -->
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<script src="/static/js/plugins/require.js"></script>
+	<script src="/static/js/config.js"></script>
 
 	<style type="text/css">
 		footer .footer-content-style-2,footer .footer-content-style-1{
@@ -16,6 +21,37 @@
 			background-image:url("/static/images/404/background-quickconnect-1.jpg");
 			background-position: left top;
 			background-attachment: fixed;
+		}
+		.icon-tool-listen-baby:before {
+		  content: "\e9d6";
+		}
+		.icon-hphone:before {
+		  content: "\e9f7";
+		}
+		@font-face {
+			font-family: 'medic-font';
+			src:  url('/static/fonts/404/medic-font.eot?hc30tj');
+			src:  url('/static/fonts/404/medic-font.eot?hc30tj#iefix') format('embedded-opentype'),
+			  url('/static/fonts/404/medic-font.ttf?hc30tj') format('truetype'),
+			  url('/static/fonts/404/medic-font.woff?hc30tj') format('woff'),
+			  url('/static/fonts/404/medic-font.svg?hc30tj#medic-font') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		[class^="icon-"], [class*=" icon-"] {
+			/* use !important to prevent issues with browser extensions that change fonts */
+			font-family: 'medic-font' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 	</style>
 </head>
@@ -102,7 +138,7 @@
 			</div>
 			<!-- WRAPPER CONTENT -->
 			<!-- FOOTER-->
-			<footer style="margin-bottom: 50px;">
+			<footer style="padding: 0;">
 				<div class="hidden-sm hidden-xs">
 					<div class="hidden-sm hidden-xs">
 						<div class="footer-content footer-content-style-1">
