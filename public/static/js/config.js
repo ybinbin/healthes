@@ -6,3 +6,4 @@ require.config({
 		self: "plugins/self"
 	}
 })
+
