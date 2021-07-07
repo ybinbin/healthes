@@ -5,7 +5,7 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 
-class Index extends Controller
+class Phone extends Controller
 {
     /**
      * 显示资源列表

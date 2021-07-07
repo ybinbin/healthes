@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<script src="/static/js/plugins/require.js"></script>
+	<script src="/static/js/config.js"></script>
+</head>
+<body>
+	<!-- 轮播图 -->
+	<div id="product-loop" class="pr">
+		<!-- 图片显示顺序是逆序，box是为了可能左右切换准备的 -->
+		<div class="box">
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop2.jpg);"></div></a>
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop1.jpg);"></div></a>
+			<a href=""><div class="img" style="background-image: url(/static/images/index/loop0.jpg);"></div></a>
+		</div>
+		<div class="index tc fs32 pa fw900">
+			<ul class="ib">
+				<li class="active">○</li>
+				<li>○</li>
+				<li>○</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 产品介绍 -->
+	<div id="product-text" class="tc">
+		<ul class="text ib">
+			<li>
+				<ul>
+					<li class="title">免费套餐</li>
+					<li>提供40余款高性能云产品帮助您获得上云实践经验</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">阿里云AI产品矩阵发布</li>
+					<li>即刻了解130余款AI产品，12个产业级解决方案</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">云数据库POLARDB</li>
+					<li>自研创新智能数据引擎，全新一代企业级云数据库</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">ET城市大脑</li>
+					<li>利用AI、大数据等突破性技术，全局优化城市治理</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="title">移动云</li>
+					<li>用于研发、构建、运维、营销等移动应用的基础设施</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- 公司介绍 -->
+	<div id="introduce" class="tc">
+		<div class="txt0 fs33 c009eb6">海迈健康用心服务，让丙肝患者更多选择</div>
+		<div class="txt1 fs18 c009eb6">团队于2017年6月赴印度考察，并与Fortis医院、Apollo医院、Max医院等多家权威医院签订合作协议，为丙肝患者提供优质医疗旅游服务</div>
+
+		<div class="txt2 fs14 cfd6501 ib">极少数耐药者在海迈健康协助下且按医嘱治疗未能转阴的，将免费为患者提供同等价值的康复资助，并未患者联系境外医生提供进一步治疗建议，详情见与海迈健康签署的咨询服务协议。</div>
+
+		<!-- 提供的服务 -->
+		<div id="supply" class="c787878 tc">
+			<ul class="ib tl content">
+			{notempty name="plans"}
+            {volist name="plans" id="vo"}
+				<li>
+					<ul>
+						<li class="c797979">
+							<span class="fw700">{$vo.title}</span>
+							<i class="icon fs36 cf05536 vm">&#xe608;</i>
+						</li>
+						<li class="fs13">
+							{$vo.desc}
+							<span class="cf05536 fs19">￥{$vo.low_price}</span>元</li>
+						<li>
+							<a href="/home/solution/show/id/{$vo.id}"><div>查看详情</div></a>
+							<a href=""><div>立即咨询</div></a>
+						</li>
+					</ul>
+				</li>
+				{/volist}
+			 	{/notempty}							
+			</ul>
+		</div>
+		<!-- 关于海迈健康 -->
+		<div id="about" class="tc">
+			<div class="fs24 c797979 title">关于海迈健康</div>
+			<div class="introduce-detail c797979 tl">
+				海迈健康（hanmau.com）是一站式国际医疗旅游服务,由重庆视焦网络科技有限责任公司运营，是属于视焦网络科技的品牌，海迈健康让您远离非法，杜绝救命假药,重获新生!团队于2017年6月赴印度考察，并与Fortis医院、Apollo医院、Max医院等多家权威医院签订合作协议，为患者提供医疗旅游服务，海迈健康的小伙伴们有一颗仁心和严谨的心，真正做到让您省心、安心、放心、贴心；我们只做一个桥梁，通向印度医院，开通VIP绿色就诊通道。在外期间保障您合法的利益与权益，回国后您能继续与我们联络， 跟踪诊疗效果，在国外您享受奢华吃住行体验，治病的同时感受异国风情，并且问诊印度国宝级肝病专家。
+			</div>
+		</div>
+		<!-- 海迈健康服务流程 -->
+		<div id="process" class="tc">
+			<div class="fs24 c797979 title">海迈健康服务流程</div>
+			<div class="c797979 mt10">我们只做一个桥梁，疗旅游服务 ,由重庆视焦网络科技有限责任公司运</div>
+			<ul class="content ib">
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server6.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server0.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server3.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server4.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server1.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server5.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<img src="/static/images/index/server2.png">
+						</li>
+						<li>
+							沟通咨询
+						</li>
+						<li>
+							通过电话微信沟通了解你的情况
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<br>
+			<ul class="num ib">
+				<li>
+					<div>1</div>
+				</li>
+				<li>
+					<div>2</div>
+				</li>
+				<li>
+					<div>3</div>
+				</li>
+				<li>
+					<div>4</div>
+				</li>
+				<li>
+					<div>5</div>
+				</li>
+				<li>
+					<div>6</div>
+				</li>
+				<li>
+					<div>7</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 大咖云集，知识分享 -->
+	<div id="knowledge" class="tc fs24">
+		<span>大咖云集，知识分享的开发者技术社区</span>
+		<div class="mt20 c6 fs16">实战干货、在线直播、专家问答、技术论坛、学习、成长、分享、共建</div>
+		<div class="wrapper clearfix content">
+			<div class="sprites-arrow arrow0 fl"></div>
+			<div class="sprites-arrow arrow1 fr"></div>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+					<li>
+						<div class="bf ib img-box">
+							<a href="">
+								<img src="/static/images/index/knowledge0.jpg">
+								<p class="fs14">【精彩】 2018云栖大会.武汉峰会精彩回顾！</p>
+							</a>
+						</div>
+						<p class="fs13 tl">
+							【揭秘】阿里云媒体处理技术全解<br>
+							【案例合集】阿里云场景实践研究合集
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- question -->
+	<div id="question" class="tc fs24">
+		<span>肿瘤问答库，携手抗癌</span>
+		<div class="mt20 c6 fs16">优质交流，名医指导，资源汇聚，共建共享，有问必答</div>
+		<div class="wrapper clearfix content" style="width: 1362px!important;">
+			<div class="sprites-arrow arrow0 fl"></div>
+			<div class="sprites-arrow arrow1 fr"></div>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治1</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治2</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治3</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="tl">
+							<span class="fs22">肝癌晚期怎么治4</span>
+							<p>
+								对于年龄较大的肝癌晚期患者治疗最好以中医中药为主，以“扶正”为基本治则，扶助人体正气以攻邪，通过辨证后运用对症用药调节机体气血阴阳脏腑平
+							</p>
+							<span class="c9 vm fs12">阅读数：5</span>
+							<span class="yjd ib vm">
+								<i class="icon ib">&#xe609;</i>
+								<span class="fr">已解答</span>
+							</span>
+							<br>
+							<a href=""><div class="detail ib fs16 mt10">查看详情</div></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> 
+	<!-- 携手共赢 -->
+	<div id="cooperation" class="tc fs24">
+		<span>携手共赢，与全球合作伙伴共建云端生态</span>
+		<div class="mt20 c6 fs16">加入阿里云生态合作伙伴计划，开创新业务，获取技术、资源，实现更快速成长</div>
+		<ul class="ib Certified clearfix">
+			<li>
+				<img src="/static/images/index/Certified0.png" class="vm">
+				<span class="vm">全球首长云安全国际认证</span>
+			</li>
+			<li>
+				<img src="/static/images/index/Certified1.png" class="vm">
+				<span class="vm">全球首长云安全国际认证</span>
+			</li>
+			<li>
+				<img src="/static/images/index/Certified2.png" class="vm">
+				<span class="vm">全球首长云安全国际认证</span>
+			</li>
+			<li>
+				<img src="/static/images/index/Certified3.png" class="vm">
+				<span class="vm">全球首长云安全国际认证</span>
+			</li>
+		</ul>
+		<ul class="ib imgs">
+			<li>
+				<img src="/static/images/index/cooperation-imgs0.png">
+			</li>
+			<li>
+				<img src="/static/images/index/cooperation-imgs1.png">
+			</li>
+			<li>
+				<img src="/static/images/index/cooperation-imgs2.png">
+			</li>
+			<li>
+				<img src="/static/images/index/cooperation-imgs3.png">
+			</li>
+			<li>
+				<img src="/static/images/index/cooperation-imgs4.png">
+			</li>
+		</ul>
+		<div class="wrapper clearfix content">
+			<div class="sprites-arrow arrow0 fl"></div>
+			<div class="sprites-arrow arrow1 fr"></div>
+			<div class="box ma oh">
+				<ul>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+					<li>
+						<img src="/static/images/index/head0.jpg">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--  -->
+	<div id="kouhao" class="ma clearfix">
+        <div class="title clearfix">
+            <div class="active">我们的承诺</div>
+            <div>我们的实力</div>
+            <div>我们的角色</div>
+        </div>
+        <div class="contents">
+            <div class="content">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行111</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="content dn">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行222</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="content dn">
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-1.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">同行333</p>
+                            <p class="item-p">持续陪伴企业成长，共创，共赢</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-2.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">赋能</p>
+                            <p class="item-p">帮助企业建立智能经营的能力</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-3.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">连接</p>
+                            <p class="item-p">为企业连接一切潜在商业价值</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="item">
+                        <img src="//s.300.cn/v3.0/home/images/index/img-items-our-4.svg?20180711171650" alt="img">
+                        <div class="item-block">
+                            <p class="item-title">开放</p>
+                            <p class="item-p">面向所有企业和伙伴开放共享</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+	<!-- 印度医疗门户，点亮生命曙光 -->
+	<div id="good-yd" class="tc fs24">
+		<span>印度医疗门户，点亮生命曙光</span>
+		<div class="mt20 c6 fs16">我们致力于让国内所有家庭能享受到质优价廉的海外医疗医药服务。<br>我们努力寻访海外，尤其是印度的优秀医疗集团和医院，为您找到最好的大夫和最佳诊疗康复方案。</div>
+		<div class="wrapper content clearfix">
+			<ul>
+				<li>
+					<img src="/static/images/index/good-yd0.jpg">
+					<div>强大的印度医疗背景</div>
+					<p>
+						华印医疗与印度医疗FORTIS等顶级医院签署正式合作协议。在印度医疗领域有着广泛的人脉、帮助中国病友分享印度经济与有效的医疗体系。
+					</p>
+				</li>
+				<li>
+					<img src="/static/images/index/good-yd1.jpg">
+					<div>一流的印度就诊医院</div>
+					<p>
+						华印医疗与印度医疗FORTIS等顶级医院签署正式合作协议。在印度医疗领域有着广泛的人脉、帮助中国病友分享印度经济与有效的医疗体系。
+					</p>
+				</li>
+				<li>
+					<img src="/static/images/index/good-yd2.jpg">
+					<div>华印医疗五心服务</div>
+					<p>
+						华印医疗与印度医疗FORTIS等顶级医院签署正式合作协议。在印度医疗领域有着广泛的人脉、帮助中国病友分享印度经济与有效的医疗体系。
+					</p>
+				</li>
+				<li>
+					<img src="/static/images/index/good-yd3.jpg">
+					<div>利益保障后续保障</div>
+					<p>
+						华印医疗与印度医疗FORTIS等顶级医院签署正式合作协议。在印度医疗领域有着广泛的人脉、帮助中国病友分享印度经济与有效的医疗体系。
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div> 
+	<!-- 友情链接 -->
+	<div id="friend-link" class="ma">
+		<div class="fs16 ma" style="height: 43px;line-height: 43px;width: 1189px;border-bottom: 1px solid #eff0f0;">
+			友情链接
+		</div>
+		<ul class="ma mt10" style="width: 1189px">
+			<li><a href=""> 吉四代说明书		</a>	</li>
+			<li><a href=""> 吉三代说明书		</a>	</li>
+			<li><a href=""> 吉三代说明书		</a>	</li>
+			<li><a href=""> 吉三代说明书		</a>	</li>
+			<li><a href=""> 吉三代说明书		</a>	</li>
+			<li><a href=""> 吉三代			</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+			<li><a href=""> 吉三代直邮		</a>	</li>
+		</ul>
+	</div>
+	<!-- footer -->
+	{include file="common/footer" /}
+
+	<script>
+		require(['jquery', 'underscore'], function ($, _) {
+			// 顶部 banner 切换
+			(function () {
+				var banners = $('#product-loop .box a'),
+					pointer = $('#product-loop .index li'),
+					interval,
+					currIndex = 0;
+
+				// 给小圆点指定下标
+				pointer.each(function (index) {
+					$(this).data('pointer',index);
+				})
+				pointer.click(function () {
+					clearInterval(interval);
+					currIndex = $(this).data('pointer');
+					change(currIndex);
+					startChange();
+				})
+				// 自动切换
+				startChange();
+				function startChange() {
+					interval = setInterval(function () {
+						currIndex = ++currIndex % pointer.size();
+						change(currIndex);
+					}, 2000)
+				}
+				function change(index) {
+					banners.hide();
+					$(banners[index]).show();
+					pointer.removeClass('active');
+					$(pointer[index]).addClass('active');
+				}
+			})();
+			// *******************************************************************
+			// 大咖云集，知识分享的开发者技术社区 切换
+			(function () {
+				var kl = $('#knowledge .sprites-arrow'),
+					ul = $('#knowledge .box ul'),
+					itemWidth = 290+15,
+					showNum = 4;
+
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('arrow0') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+			// *******************************************************************
+			// 肿瘤问答库，携手抗癌 切换
+			(function () {
+				var kl = $('#question .sprites-arrow'),
+					ul = $('#question .box ul'),
+					itemWidth = 590+30,
+					showNum = 2;
+
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('fl') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+			// *******************************************************************
+			// 携手共赢，与全球合作伙伴共建云端生态 切换
+			(function () {
+				var kl = $('#cooperation .sprites-arrow'),
+					ul = $('#cooperation .box ul'),
+					itemWidth = 257+60,
+					showNum = 4;
+
+				kl.click(function () {
+					var that = this;
+					if ($(this).hasClass('arrow0') && !$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) <= -itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'+='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					} else if (!$(this).data('locked')) {
+						if (parseInt(ul.css('margin-left')) > -(ul.find('li').size()-showNum)*itemWidth) {
+							$(this).data('locked',1);
+							ul.animate({'margin-left':'-='+itemWidth+'px'},200, function () {
+								$(that).data('locked',0);
+							});
+						}
+					}
+				})
+			})();
+
+			// 我们的承诺-我们实力-我们的角色
+			(function () {
+				var kh = $('#kouhao'),
+					tits = kh.find('.title div'),
+					cons = kh.find('.contents .content');
+				tits.hover(function () {
+					tits.removeClass('active');
+					$(this).addClass('active');
+					cons.hide();
+					$(cons[$(this).index()]).removeClass('dn').show();
+				})
+			})()
+		})
+	</script>
+</body>
+</html>

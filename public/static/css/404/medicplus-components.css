@@ -1,0 +1,123 @@
+.breadcrumb {
+  background-repeat: repeat;
+  background-size: 0.6%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+.breadcrumb .breadcrumb-wrapper {
+  position: relative;
+}
+.breadcrumb .breadcrumb-content {
+  padding: 65px 0;
+  margin: 0;
+  display: block;
+  list-style: none;
+}
+.breadcrumb .breadcrumb-content .breadcrumb-list {
+  display: inline-block;
+  text-transform: capitalize;
+  position: relative;
+}
+.breadcrumb .breadcrumb-content .breadcrumb-list.active {
+  color: #ffffff;
+}
+.breadcrumb .breadcrumb-content .breadcrumb-list + .breadcrumb-list:before {
+  content: '\f105';
+  font-size: 14px;
+  font-family: "fontawesome";
+  color: #71828f;
+  margin: 0 10px;
+}
+.breadcrumb .breadcrumb-content .breadcrumb-link {
+  color: #d4e3ee;
+}
+.breadcrumb .breadcrumb-content .breadcrumb-link:hover {
+  color: #07932E;
+}
+.breadcrumb .breadcrumb-text {
+  font-size: 65.75px;
+  font-weight: bold;
+  font-family: 'Microsoft YaHei', sans-serif;
+  color: #2c3a44;
+  text-transform: uppercase;
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+.btn-wrapper button {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.btn-wrapper .btn {
+  background-color: #0f77ad;
+  padding: 0 40px;
+  border: 2px solid #0f77ad;
+  line-height: 40px;
+  text-transform: uppercase;
+  border-radius: 0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-right: 10px;
+  position: relative;
+  letter-spacing: 2px;
+}
+.btn-wrapper .btn:last-child {
+  margin-right: 0;
+}
+/*----------  3.1. 404  ----------*/
+.page-404-wrapper {
+  padding: 94px 0 130px;
+}
+.page-404-wrapper .page-404-inner {
+  position: relative;
+}
+.page-404-wrapper .page-not-found {
+  color: #51616b;
+  font-size: 32px;
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-weight: bold;
+  position: relative;
+  left: -6px;
+}
+.page-404-wrapper .page-not-found .title-404 {
+  font-weight: bold;
+  font-size: 190px;
+  color: #e6eef3;
+  margin: 0;
+  letter-spacing: 18px;
+}
+.page-404-wrapper .page-not-found .description-404 {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+.page-404-wrapper .whoops {
+  position: relative;
+  margin-top: -57px;
+}
+.page-404-wrapper .img-doctor {
+  position: absolute;
+  bottom: -130px;
+  right: -200px;
+  width: auto;
+  height: 506px;
+}
+.page-404-wrapper .page-404-text {
+  margin: -5px 0 43px;
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-size: 15px;
+  color: #51616b;
+  text-transform: uppercase;
+}
+.page-404-wrapper .btn-wrapper .btn:hover {
+  color: #ffffff;
+  background-color: #07932E;
+  border-color: #07932E;
+}

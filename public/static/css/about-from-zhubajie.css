@@ -1,0 +1,28 @@
+/* \u5173\u4e8e\u9875\u9762\u5957\u7528\u7684\u732a\u516b\u6212\u7f51 */
+.about-zbj-banner{height:150px;background:url('/static/images/about/banner_5c5fb8c.png') no-repeat center top}
+.about-zbj-introduce .item{background:#f6f7f9}
+.about-zbj-introduce .item .text{width:1046px;margin:0 auto;padding:0 72px;height:420px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.about-zbj-introduce .item:nth-child(2n){background:#fff}
+.about-zbj-introduce .item:nth-child(2n) .body{margin-left:415px;width:658px}
+.about-zbj-introduce .item:nth-child(2n) .title{margin-left:415px}
+.about-zbj-introduce .item .title{font-size:26px;color:#333;position:relative;padding-bottom:16px}
+.about-zbj-introduce .item .title:after{position:absolute;left:0;bottom:0;content:"";display:inline-block;width:42px;border-bottom:2px solid #ff6900}
+.about-zbj-introduce .item .body{margin-top:28px;color:#333;font-size:16px;line-height:26px}
+.about-zbj-introduce .item.item-1 .body{width:636px}
+.about-zbj-introduce .item.item-1 .text{background:url('/static/images/about/info1_c9d20f9.png') no-repeat right center}
+.about-zbj-introduce .item.item-2 .text{background:url('/static/images/about/info2_4fc56ef.png') no-repeat 72px center}
+.about-zbj-introduce .item.item-3 .body{width:678px}
+.about-zbj-introduce .item.item-3 .text{background:url('/static/images/about/info3_bb11f27.png') no-repeat right center}
+.about-zbj-introduce .item.item-4 .text{background:url('/static/images/about/info4_02a4bf5.png') no-repeat 72px center}
+.about-zbj-content .workspace{background:#f6f7f9}
+.about-zbj-content .workspace .title{padding:64px 0 42px;text-align:center}
+.about-zbj-content .workspace .title h3{font-size:30px;color:#ff6900}
+.about-zbj-content .workspace .title .description{position:relative;display:inline-block;color:#fbb07c}
+.about-zbj-content .workspace .title .description:before,.about-zbj-content .workspace .title .description:after{content:'';display:block;position:absolute;width:30px;height:1px;background:#fbb07c;top:10px}
+.about-zbj-content .workspace .title .description:before{left:-40px}
+.about-zbj-content .workspace .title .description:after{right:-40px}
+.about-zbj-content .workspace .gallery-block{width:1190px;margin:0 auto}
+.about-zbj-content .workspace .gallery-block .gallery-con{margin-right:-10px;padding-bottom:62px}
+.about-zbj-content .workspace .gallery-block .gallery-con .item{float:left;width:286px;height:186px;overflow:hidden;border:2px solid #ffa800;margin:0 10px 10px 0}
+.about-zbj-content .workspace .gallery-block .gallery-con .item img{width:286px;height:186px;transition:.6s}
+.about-zbj-content .workspace .gallery-block .gallery-con .item img:hover{-webkit-transform:scale3d(1.1,1.1,1.1);transform:scale3d(1.1,1.1,1.1)}

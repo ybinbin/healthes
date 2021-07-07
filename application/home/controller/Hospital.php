@@ -5,43 +5,20 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 
-class Index extends Controller
+class Hospital extends Controller
 {
     /**
      * 显示资源列表
-     *
+     *  
      * @return \think\Response
      */
     public function index()
     {
+        //访问方式  http://www.haimai.com/home/Hospital/index
+        echo "这里是Hospital de index";
+        die();
         return $this->view->fetch("index");
     }
-
-    public function solution()
-    {
-        return $this->view->fetch("solution");
-    }
-
-    public function solutiondetail()
-    {
-        return $this->view->fetch("solution-detail");
-    }
-
-    public function newslist()
-    {
-        return $this->view->fetch("news-list");
-    }
-
-    public function newsdetail()
-    {
-        return $this->view->fetch("news-detail");
-    }
-
-    public function hospitallist()
-    {
-        return $this->view->fetch("hospital-list");
-    }
-   
 
     /**
      * 显示创建资源表单页.
@@ -50,7 +27,8 @@ class Index extends Controller
      */
     public function create()
     {
-        //
+        
+        return $this->view->fetch("create");
     }
 
     /**
@@ -108,5 +86,4 @@ class Index extends Controller
     {
         //
     }
-
 }

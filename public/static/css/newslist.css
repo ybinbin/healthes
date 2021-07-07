@@ -1,0 +1,15 @@
+#left {width: 805px;}
+#left > img {width: 100%;}
+#left li > img {width: 200px;height: 190px;}
+#left li {margin-top: 22px;background: #fff;padding: 24px 21px;}
+#left li > div {margin-left: 15px;}
+#left li > div > span {color: #63727b;font-weight: bold;font-size: 20px;}
+#left li p {width: 530px;line-height: 25px;font-size: 16px;position: relative;}
+#left li p a {padding: 1px 9px;background: #ff6600;color: #fff;display: inline-block;position: absolute;right: 0;}
+
+#page {margin-top: 15px;font-size: 14px;}
+#page a {color: #333}
+#page ul {padding: 10px;}
+#page li {float: left;border: 1px solid #ddd;padding: 6px 12px;margin-right: 8px;background: #fff;}
+#page li.active {background: #00a4ff;border-color: #00a4ff;color: #fff;}
+#page .num {line-height: 55px;margin: 0 30px;}
